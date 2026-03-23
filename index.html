@@ -1,662 +1,2640 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-lang="ar">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أثر | الحضارات الخالدة</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --gold: #C9A84C; --gold-light: #E8C97A; --gold-dark: #8B6914;
-  --sand: #F2E8D0; --sand-dark: #D4C49A;
-  --obsidian: #0D0A05; --stone: #1A1510; --stone-mid: #2E2518;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أثر | الحضارات الخالدة</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Serif+SC:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dark: #8B6914;
+      --sand: #F2E8D0;
+      --sand-dark: #D4C49A;
+      --obsidian: #0D0A05;
+      --stone: #1A1510;
+      --stone-mid: #2E2518;
+    }
 
-body {
-  background: var(--obsidian);
-  color: var(--sand);
-  font-family: 'Noto Naskh Arabic', serif;
-  overflow-x: hidden;
-  cursor: none;
-}
-html[data-lang="zh"] body { font-family: 'Noto Serif SC', serif; direction: ltr; }
-html[data-lang="zh"] { direction: ltr; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.cursor {
-  width: 18px; height: 18px;
-  border: 2px solid var(--gold); border-radius: 50%;
-  position: fixed; pointer-events: none; z-index: 9999;
-  transform: translate(-50%,-50%);
-  transition: transform 0.1s, background 0.2s;
-  mix-blend-mode: screen;
-}
-.cursor.hover { transform: translate(-50%,-50%) scale(2); background: rgba(201,168,76,0.2); }
+    body {
+      background: var(--obsidian);
+      color: var(--sand);
+      font-family: 'Noto Naskh Arabic', serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
 
-body::before {
-  content:''; position:fixed; inset:0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-  pointer-events:none; z-index:9998; opacity:0.4;
-}
+    html[data-lang="zh"] body {
+      font-family: 'Noto Serif SC', serif;
+      direction: ltr;
+    }
 
-/* ===== HEADER ===== */
-header {
-  position:fixed; top:0; left:0; right:0; z-index:200;
-  padding:1rem 2.5rem;
-  display:flex; justify-content:space-between; align-items:center;
-  background:linear-gradient(to bottom,rgba(13,10,5,0.98),rgba(13,10,5,0));
-  border-bottom:1px solid rgba(201,168,76,0.15);
-  transition: background 0.4s;
-}
-header.scrolled { background:rgba(13,10,5,0.97); }
+    html[data-lang="zh"] {
+      direction: ltr;
+    }
 
-.logo { display:flex; align-items:center; gap:1rem; cursor:none; }
-.logo-emblem {
-  width:44px; height:44px; border:1.5px solid var(--gold);
-  transform:rotate(45deg); display:flex; align-items:center; justify-content:center;
-}
-.logo-emblem::before { content:'𓂀'; font-size:1.3rem; transform:rotate(-45deg); color:var(--gold); }
-.logo-text { font-family:'Amiri',serif; font-size:1.7rem; font-weight:700; color:var(--gold-light); }
-.logo-sub { font-size:0.65rem; color:var(--sand-dark); letter-spacing:0.2em; }
+    .cursor {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s, background 0.2s;
+      mix-blend-mode: screen;
+    }
 
-nav { display:flex; gap:0; align-items:center; }
-.nav-link {
-  color:var(--sand-dark); text-decoration:none; font-size:0.88rem;
-  letter-spacing:0.08em; padding:0.5rem 1.2rem; cursor:none;
-  transition:color 0.3s; position:relative; white-space:nowrap;
-}
-.nav-link::after {
-  content:''; position:absolute; bottom:-2px; right:1.2rem; left:1.2rem;
-  height:1px; background:var(--gold); transform:scaleX(0); transition:transform 0.3s;
-}
-.nav-link:hover, .nav-link.active { color:var(--gold-light); }
-.nav-link:hover::after, .nav-link.active::after { transform:scaleX(1); }
+    .cursor.hover {
+      transform: translate(-50%, -50%) scale(2);
+      background: rgba(201, 168, 76, 0.2);
+    }
 
-.header-right { display:flex; align-items:center; gap:1rem; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9998;
+      opacity: 0.4;
+    }
 
-/* Language switcher */
-.lang-switch {
-  display:flex; border:1px solid rgba(201,168,76,0.3); overflow:hidden;
-}
-.lang-btn {
-  padding:0.35rem 0.8rem; background:transparent;
-  border:none; color:var(--sand-dark); font-size:0.8rem;
-  cursor:none; transition:all 0.3s; font-family:inherit;
-}
-.lang-btn.active { background:var(--gold); color:var(--obsidian); }
-.lang-btn:hover:not(.active) { color:var(--gold-light); background:rgba(201,168,76,0.08); }
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      padding: 1rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(13, 10, 5, 0.98), rgba(13, 10, 5, 0));
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      transition: background 0.4s;
+    }
 
-/* ===== SECTIONS ===== */
-.page-section { display:none; }
-.page-section.active { display:block; }
+    header.scrolled {
+      background: rgba(13, 10, 5, 0.97);
+    }
 
-/* ===== HERO ===== */
-.hero {
-  height:100vh; position:relative;
-  display:flex; align-items:center; justify-content:center; overflow:hidden;
-}
-.hero-bg {
-  position:absolute; inset:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 60%,rgba(139,105,20,0.12),transparent 70%),
-    radial-gradient(ellipse 40% 40% at 20% 80%,rgba(139,58,31,0.08),transparent 60%),
-    linear-gradient(to bottom,var(--obsidian),#140E08 50%,var(--obsidian));
-}
-.hero-ring {
-  position:absolute; top:50%; left:50%;
-  transform:translate(-50%,-50%);
-  width:580px; height:580px; border-radius:50%;
-  border:1px solid rgba(201,168,76,0.07);
-  animation:rotateSlow 70s linear infinite;
-}
-.hero-ring::before {
-  content:'𓂀 𓃀 𓅱 𓆣 𓇯 𓈖 𓉐 𓊪 𓋴 𓌂 𓍯 𓎼 𓏏 𓐍 𓀀 𓁿';
-  position:absolute; top:-1rem; left:50%; transform:translateX(-50%);
-  font-size:1rem; color:rgba(201,168,76,0.18);
-  letter-spacing:0.5rem; white-space:nowrap;
-}
-@keyframes rotateSlow { to { transform:translate(-50%,-50%) rotate(360deg); } }
-@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-@keyframes shimmer { 0%,100%{opacity:0.3} 50%{opacity:1} }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: none;
+    }
 
-.hero-content { position:relative; z-index:2; text-align:center; }
-.hero-eyebrow { font-size:0.78rem; letter-spacing:0.4em; color:var(--gold); margin-bottom:1.5rem; opacity:0; animation:fadeUp 1s 0.3s forwards; }
-.hero-title { font-family:'Amiri',serif; font-size:clamp(3rem,7vw,6.5rem); font-weight:700; line-height:1.1; color:var(--sand); text-shadow:0 0 80px rgba(201,168,76,0.3); opacity:0; animation:fadeUp 1s 0.5s forwards; margin-bottom:1rem; }
-.hero-title span { color:var(--gold-light); display:block; }
-.hero-divider { width:100px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:1.5rem auto; opacity:0; animation:fadeUp 1s 0.7s forwards; }
-.hero-desc { font-size:1.05rem; color:var(--sand-dark); max-width:480px; margin:0 auto 2.5rem; line-height:1.9; opacity:0; animation:fadeUp 1s 0.9s forwards; }
-.hero-cta {
-  display:inline-flex; align-items:center; gap:0.8rem;
-  padding:0.9rem 2.2rem; border:1px solid var(--gold);
-  color:var(--gold-light); text-decoration:none; font-size:0.9rem;
-  letter-spacing:0.15em; transition:all 0.4s; cursor:none;
-  opacity:0; animation:fadeUp 1s 1.1s forwards;
-}
-.hero-cta:hover { background:var(--gold); color:var(--obsidian); box-shadow:0 0 40px rgba(201,168,76,0.25); }
-.hieroglyph-band { position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); animation:shimmer 3s infinite; }
-.corner-glyph { position:absolute; font-size:2.5rem; color:rgba(201,168,76,0.05); }
-.corner-glyph.tr { top:7rem; left:3rem; }
-.corner-glyph.bl { bottom:3rem; right:3rem; }
+    .logo-emblem {
+      width: 44px;
+      height: 44px;
+      border: 1.5px solid var(--gold);
+      transform: rotate(45deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* ===== SECTION HEADER ===== */
-.section-header { text-align:center; padding:5rem 2rem 2.5rem; }
-.section-label { font-size:0.72rem; letter-spacing:0.4em; color:var(--gold); text-transform:uppercase; margin-bottom:1rem; }
-.section-title { font-family:'Amiri',serif; font-size:clamp(2rem,4vw,3.2rem); color:var(--sand); }
-.ornament { display:flex; align-items:center; justify-content:center; gap:1rem; margin:1rem 0 0; }
-.orn-line { width:70px; height:1px; }
-.orn-line.l { background:linear-gradient(90deg,transparent,var(--gold)); }
-.orn-line.r { background:linear-gradient(90deg,var(--gold),transparent); }
-.orn-sym { color:var(--gold); }
+    .logo-emblem::before {
+      content: '𓂀';
+      font-size: 1.3rem;
+      transform: rotate(-45deg);
+      color: var(--gold);
+    }
 
-/* ===== GRID ===== */
-.sites-wrap { padding:2rem 3.5rem 6rem; max-width:1440px; margin:0 auto; }
-.filter-bar { display:flex; gap:0.8rem; justify-content:center; margin-bottom:3rem; flex-wrap:wrap; }
-.filter-btn {
-  padding:0.45rem 1.3rem; border:1px solid rgba(201,168,76,0.25);
-  background:transparent; color:var(--sand-dark); font-family:inherit;
-  font-size:0.82rem; letter-spacing:0.08em; cursor:none; transition:all 0.3s;
-}
-.filter-btn.active, .filter-btn:hover { border-color:var(--gold); color:var(--gold-light); background:rgba(201,168,76,0.05); }
+    .logo-text {
+      font-family: 'Amiri', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
 
-.sites-grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  grid-template-rows:auto;
-  gap:1.2rem;
-}
-.site-card {
-  position:relative; overflow:hidden; cursor:none;
-  background:var(--stone); border:1px solid rgba(201,168,76,0.1);
-  transition:border-color 0.4s, transform 0.4s;
-  aspect-ratio:3/4;
-}
-.site-card.wide { grid-column:span 2; aspect-ratio:16/9; }
-.site-card.tall { grid-row:span 2; aspect-ratio:auto; }
-.site-card:hover { border-color:rgba(201,168,76,0.5); transform:translateY(-4px); }
+    .logo-sub {
+      font-size: 0.65rem;
+      color: var(--sand-dark);
+      letter-spacing: 0.2em;
+    }
 
-.card-img { width:100%; height:100%; object-fit:cover; transition:transform 0.7s,filter 0.5s; filter:sepia(30%) brightness(0.75); }
-.site-card:hover .card-img { transform:scale(1.06); filter:sepia(10%) brightness(0.9); }
-.card-overlay {
-  position:absolute; inset:0;
-  background:linear-gradient(to top,rgba(13,10,5,0.96) 0%,rgba(13,10,5,0.45) 40%,transparent 75%);
-  transition:background 0.4s;
-}
-.site-card:hover .card-overlay { background:linear-gradient(to top,rgba(13,10,5,0.98) 0%,rgba(13,10,5,0.6) 50%,rgba(13,10,5,0.15) 80%,transparent 100%); }
-.card-glyph { position:absolute; top:1rem; right:1rem; font-size:1.8rem; color:rgba(201,168,76,0.45); }
-.card-arrow { position:absolute; top:1rem; left:1rem; width:32px; height:32px; border:1px solid rgba(201,168,76,0.4); display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:1rem; opacity:0; transition:opacity 0.3s; background:rgba(13,10,5,0.6); }
-.site-card:hover .card-arrow { opacity:1; }
-.card-content { position:absolute; bottom:0; left:0; right:0; padding:1.5rem; }
-.card-era { display:inline-block; font-size:0.65rem; letter-spacing:0.2em; color:var(--gold); border:1px solid rgba(201,168,76,0.3); padding:0.15rem 0.6rem; margin-bottom:0.6rem; background:rgba(201,168,76,0.05); }
-.card-title { font-family:'Amiri',serif; font-size:1.35rem; color:var(--sand); margin-bottom:0.4rem; line-height:1.2; }
-.site-card.wide .card-title { font-size:1.8rem; }
-.card-loc { font-size:0.75rem; color:var(--sand-dark); letter-spacing:0.1em; }
-.card-meta { display:flex; gap:1.2rem; margin-top:0.8rem; opacity:0; transform:translateY(8px); transition:all 0.4s; }
-.site-card:hover .card-meta { opacity:1; transform:translateY(0); }
-.meta-v { font-size:0.8rem; color:var(--gold-light); font-weight:600; }
-.meta-l { font-size:0.62rem; color:var(--sand-dark); letter-spacing:0.08em; }
-.card-cat { position:absolute; top:1rem; right:3.5rem; font-size:0.62rem; letter-spacing:0.15em; background:rgba(13,10,5,0.7); color:var(--gold-dark); padding:0.2rem 0.6rem; border:1px solid rgba(201,168,76,0.2); }
+    nav {
+      display: flex;
+      gap: 0;
+      align-items: center;
+    }
 
-/* ===== DETAIL OVERLAY ===== */
-.detail-overlay { position:fixed; inset:0; background:var(--obsidian); z-index:500; overflow-y:auto; opacity:0; pointer-events:none; transition:opacity 0.5s; }
-.detail-overlay.active { opacity:1; pointer-events:all; }
-.detail-close { position:fixed; top:1.2rem; left:1.5rem; z-index:600; width:44px; height:44px; border:1px solid rgba(201,168,76,0.5); background:rgba(13,10,5,0.85); color:var(--gold-light); font-size:1.2rem; display:flex; align-items:center; justify-content:center; cursor:none; transition:all 0.3s; }
-.detail-close:hover { background:var(--gold); color:var(--obsidian); }
-.detail-hero { height:65vh; position:relative; overflow:hidden; }
-.detail-hero-img { width:100%; height:100%; object-fit:cover; filter:sepia(20%) brightness(0.72); }
-.detail-hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(13,10,5,0.35),rgba(13,10,5,0.15) 40%,rgba(13,10,5,0.88) 80%,var(--obsidian)); }
-.detail-hero-content { position:absolute; bottom:2.5rem; right:3.5rem; left:3.5rem; }
-.detail-era-tag { display:inline-block; font-size:0.72rem; letter-spacing:0.3em; color:var(--gold); border:1px solid rgba(201,168,76,0.4); padding:0.25rem 0.9rem; margin-bottom:0.8rem; background:rgba(13,10,5,0.5); }
-.detail-title { font-family:'Amiri',serif; font-size:clamp(2.2rem,5vw,4rem); color:var(--sand); text-shadow:0 2px 20px rgba(0,0,0,0.8); }
-.detail-body { max-width:1200px; margin:0 auto; padding:3.5rem; }
-.detail-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(201,168,76,0.12); margin-bottom:3.5rem; border:1px solid rgba(201,168,76,0.12); }
-.stat-box { padding:1.5rem; background:var(--stone); text-align:center; }
-.stat-icon { font-size:1.4rem; margin-bottom:0.4rem; display:block; }
-.stat-value { font-family:'Amiri',serif; font-size:1.6rem; color:var(--gold-light); display:block; margin-bottom:0.2rem; }
-.stat-label { font-size:0.7rem; color:var(--sand-dark); letter-spacing:0.18em; }
-.detail-grid { display:grid; grid-template-columns:1.1fr 0.9fr; gap:3.5rem; margin-bottom:3.5rem; }
-.detail-description h3, .detail-sidebar h3 { font-family:'Amiri',serif; font-size:1.5rem; color:var(--gold-light); margin-bottom:1rem; padding-bottom:0.7rem; border-bottom:1px solid rgba(201,168,76,0.18); }
-.detail-description p { font-size:0.97rem; color:var(--sand-dark); line-height:2; margin-bottom:1.1rem; }
-.detail-facts { list-style:none; margin-top:1.2rem; }
-.detail-facts li { display:flex; align-items:flex-start; gap:0.7rem; padding:0.7rem 0; border-bottom:1px solid rgba(201,168,76,0.07); font-size:0.88rem; color:var(--sand-dark); }
-.detail-facts li::before { content:'◈'; color:var(--gold); flex-shrink:0; }
-.quote-block { margin:2rem 0; padding:1.8rem 2.5rem; border-right:3px solid var(--gold); background:linear-gradient(135deg,rgba(26,21,16,0.8),rgba(46,37,24,0.3)); position:relative; }
-.quote-block::before { content:'❝'; position:absolute; top:-0.8rem; right:1.5rem; font-size:2.5rem; color:rgba(201,168,76,0.25); font-family:serif; }
-.quote-text { font-family:'Amiri',serif; font-size:1.1rem; color:var(--sand); line-height:1.8; font-style:italic; }
-.quote-source { font-size:0.75rem; color:var(--gold-dark); margin-top:0.6rem; letter-spacing:0.12em; }
-.info-table { width:100%; border-collapse:collapse; }
-.info-table tr { border-bottom:1px solid rgba(201,168,76,0.07); }
-.info-table td { padding:0.75rem 0; font-size:0.87rem; vertical-align:top; }
-.info-table td:first-child { color:var(--gold); width:38%; font-size:0.78rem; letter-spacing:0.1em; }
-.info-table td:last-child { color:var(--sand-dark); }
-.timeline-section { margin-top:2rem; }
-.timeline-item { display:flex; gap:1.2rem; padding-bottom:1.3rem; position:relative; }
-.timeline-item::before { content:''; position:absolute; right:0.55rem; top:1.2rem; bottom:0; width:1px; background:rgba(201,168,76,0.18); }
-.timeline-dot { width:12px; height:12px; border:2px solid var(--gold); border-radius:50%; flex-shrink:0; margin-top:0.25rem; background:var(--obsidian); position:relative; z-index:1; }
-.timeline-year { font-size:0.72rem; color:var(--gold); letter-spacing:0.1em; margin-bottom:0.25rem; }
-.timeline-event { font-size:0.83rem; color:var(--sand-dark); line-height:1.6; }
-.detail-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:0.7rem; margin-bottom:3.5rem; }
-.gallery-img { width:100%; aspect-ratio:4/3; object-fit:cover; filter:sepia(20%) brightness(0.82); transition:all 0.4s; cursor:none; }
-.gallery-img:hover { filter:sepia(0%) brightness(1); transform:scale(0.98); }
-.gallery-title { font-family:'Amiri',serif; font-size:1.5rem; color:var(--gold-light); margin-bottom:1rem; padding-bottom:0.7rem; border-bottom:1px solid rgba(201,168,76,0.18); }
+    .nav-link {
+      color: var(--sand-dark);
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1.2rem;
+      cursor: none;
+      transition: color 0.3s;
+      position: relative;
+      white-space: nowrap;
+    }
 
-/* ===== CIVILIZATIONS PAGE ===== */
-.civs-wrap { padding:2rem 3.5rem 6rem; max-width:1440px; margin:0 auto; }
-.civ-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
-.civ-card {
-  background:var(--stone); border:1px solid rgba(201,168,76,0.12);
-  padding:2.5rem; position:relative; overflow:hidden;
-  transition:border-color 0.4s, transform 0.4s; cursor:none;
-}
-.civ-card:hover { border-color:rgba(201,168,76,0.45); transform:translateY(-4px); }
-.civ-card::before { content:''; position:absolute; top:0; right:0; width:120px; height:120px; background:radial-gradient(circle,rgba(201,168,76,0.06),transparent 70%); }
-.civ-glyph { font-size:3rem; margin-bottom:1.2rem; display:block; }
-.civ-name { font-family:'Amiri',serif; font-size:1.8rem; color:var(--gold-light); margin-bottom:0.5rem; }
-.civ-era { font-size:0.72rem; letter-spacing:0.2em; color:var(--gold-dark); margin-bottom:1rem; }
-.civ-desc { font-size:0.88rem; color:var(--sand-dark); line-height:1.9; }
-.civ-sites { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.2rem; }
-.civ-site-tag { font-size:0.7rem; padding:0.2rem 0.7rem; border:1px solid rgba(201,168,76,0.25); color:var(--gold-dark); letter-spacing:0.1em; }
-.civ-bar { position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold-dark),var(--gold),transparent); opacity:0; transition:opacity 0.4s; }
-.civ-card:hover .civ-bar { opacity:1; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      right: 1.2rem;
+      left: 1.2rem;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
 
-/* ===== MUSEUMS PAGE ===== */
-.museums-wrap { padding:2rem 3.5rem 6rem; max-width:1440px; margin:0 auto; }
-.museum-list { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
-.museum-card {
-  display:flex; gap:1.5rem; background:var(--stone);
-  border:1px solid rgba(201,168,76,0.1); padding:1.8rem;
-  transition:border-color 0.4s; cursor:none;
-}
-.museum-card:hover { border-color:rgba(201,168,76,0.4); }
-.museum-num { font-family:'Amiri',serif; font-size:2.5rem; color:rgba(201,168,76,0.2); flex-shrink:0; line-height:1; }
-.museum-info { flex:1; }
-.museum-name { font-family:'Amiri',serif; font-size:1.3rem; color:var(--gold-light); margin-bottom:0.3rem; }
-.museum-loc { font-size:0.72rem; color:var(--gold-dark); letter-spacing:0.15em; margin-bottom:0.7rem; }
-.museum-desc { font-size:0.85rem; color:var(--sand-dark); line-height:1.8; }
-.museum-tag { display:inline-block; font-size:0.65rem; padding:0.15rem 0.6rem; border:1px solid rgba(201,168,76,0.2); color:var(--gold-dark); margin-top:0.7rem; margin-left:0.4rem; }
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--gold-light);
+    }
 
-/* ===== ABOUT PAGE ===== */
-.about-wrap { padding:2rem 3.5rem 6rem; max-width:1000px; margin:0 auto; }
-.about-hero-text { text-align:center; margin-bottom:4rem; }
-.about-big { font-family:'Amiri',serif; font-size:clamp(2rem,4vw,3rem); color:var(--sand); line-height:1.4; margin-bottom:1.5rem; }
-.about-sub { font-size:1rem; color:var(--sand-dark); line-height:2; max-width:650px; margin:0 auto; }
-.about-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:4rem; }
-.about-box { background:var(--stone); border:1px solid rgba(201,168,76,0.12); padding:2rem; text-align:center; }
-.about-box-icon { font-size:2rem; margin-bottom:1rem; display:block; }
-.about-box-title { font-family:'Amiri',serif; font-size:1.2rem; color:var(--gold-light); margin-bottom:0.5rem; }
-.about-box-text { font-size:0.83rem; color:var(--sand-dark); line-height:1.8; }
-.about-mission { background:var(--stone); border:1px solid rgba(201,168,76,0.15); padding:2.5rem 3rem; margin-bottom:3rem; }
-.about-mission h3 { font-family:'Amiri',serif; font-size:1.5rem; color:var(--gold-light); margin-bottom:1rem; }
-.about-mission p { font-size:0.92rem; color:var(--sand-dark); line-height:2; }
-.about-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(201,168,76,0.15); }
-.about-stat { background:var(--stone); padding:2rem; text-align:center; }
-.about-stat-v { font-family:'Amiri',serif; font-size:2.2rem; color:var(--gold-light); display:block; }
-.about-stat-l { font-size:0.72rem; color:var(--sand-dark); letter-spacing:0.15em; }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
 
-/* ===== FOOTER ===== */
-footer { border-top:1px solid rgba(201,168,76,0.12); padding:2.5rem 3.5rem; display:flex; justify-content:space-between; align-items:center; background:var(--stone); }
-.footer-glyph { font-size:1.3rem; color:rgba(201,168,76,0.12); letter-spacing:0.8rem; }
-.footer-copy { font-size:0.75rem; color:rgba(212,196,154,0.35); letter-spacing:0.1em; }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-/* ===== FADE IN ===== */
-.fade-in { opacity:0; transform:translateY(18px); transition:opacity 0.8s,transform 0.8s; }
-.fade-in.visible { opacity:1; transform:translateY(0); }
+    /* Language switcher */
+    .lang-switch {
+      display: flex;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      overflow: hidden;
+    }
 
-::-webkit-scrollbar { width:3px; }
-::-webkit-scrollbar-track { background:var(--obsidian); }
-::-webkit-scrollbar-thumb { background:var(--gold-dark); }
+    .lang-btn {
+      padding: 0.35rem 0.8rem;
+      background: transparent;
+      border: none;
+      color: var(--sand-dark);
+      font-size: 0.8rem;
+      cursor: none;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
 
-@media(max-width:1100px) {
-  .sites-grid { grid-template-columns:repeat(3,1fr); }
-}
-@media(max-width:780px) {
-  .sites-grid { grid-template-columns:1fr 1fr; }
-  .site-card.wide { grid-column:span 2; aspect-ratio:16/9; }
-  .site-card.tall { grid-row:span 1; aspect-ratio:3/4; }
-  .detail-grid { grid-template-columns:1fr; gap:2rem; }
-  .detail-stats { grid-template-columns:1fr 1fr; }
-  .detail-body { padding:2rem 1.2rem; }
-  .detail-hero-content { right:1.2rem; left:1.2rem; bottom:1.5rem; }
-  .detail-title { font-size:2rem; }
-  .detail-gallery { grid-template-columns:1fr 1fr; }
-  .sites-wrap,.civs-wrap,.museums-wrap,.about-wrap { padding:1.2rem 1rem 4rem; }
-  header { padding:0.8rem 1rem; }
-  nav { gap:0; }
-  .nav-link { padding:0.35rem 0.55rem; font-size:0.75rem; letter-spacing:0; }
-  .logo-text { font-size:1.3rem; }
-  .logo-emblem { width:36px; height:36px; }
-  .civ-cards,.about-grid { grid-template-columns:1fr; }
-  .museum-list { grid-template-columns:1fr; }
-  .about-stats { grid-template-columns:1fr 1fr; }
-  .hero-title { font-size:clamp(2.2rem,10vw,4rem); }
-  .hero-desc { font-size:0.92rem; padding:0 1rem; }
-  .section-title { font-size:clamp(1.6rem,5vw,2.5rem); }
-  footer { flex-direction:column; gap:1rem; text-align:center; padding:1.5rem; }
-  .footer-glyph { letter-spacing:0.4rem; }
-  .lang-switch { margin-top:0; }
-}
-@media(max-width:480px) {
-  .sites-grid { grid-template-columns:1fr; }
-  .site-card.wide { grid-column:span 1; aspect-ratio:4/3; }
-  .filter-bar { gap:0.4rem; }
-  .filter-btn { padding:0.35rem 0.8rem; font-size:0.75rem; }
-  .detail-stats { grid-template-columns:1fr 1fr; }
-  .stat-value { font-size:1.2rem; }
-  nav { display:none; }
-  .about-stats { grid-template-columns:1fr 1fr; }
-  .detail-gallery { grid-template-columns:1fr; }
-  .museum-card { flex-direction:column; }
-}
-</style>
+    .lang-btn.active {
+      background: var(--gold);
+      color: var(--obsidian);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: var(--gold-light);
+      background: rgba(201, 168, 76, 0.08);
+    }
+
+    /* ===== SECTIONS ===== */
+    .page-section {
+      display: none;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 60%, rgba(139, 105, 20, 0.12), transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(139, 58, 31, 0.08), transparent 60%),
+        linear-gradient(to bottom, var(--obsidian), #140E08 50%, var(--obsidian));
+    }
+
+    .hero-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 580px;
+      height: 580px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 168, 76, 0.07);
+      animation: rotateSlow 70s linear infinite;
+    }
+
+    .hero-ring::before {
+      content: '𓂀 𓃀 𓅱 𓆣 𓇯 𓈖 𓉐 𓊪 𓋴 𓌂 𓍯 𓎼 𓏏 𓐍 𓀀 𓁿';
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1rem;
+      color: rgba(201, 168, 76, 0.18);
+      letter-spacing: 0.5rem;
+      white-space: nowrap;
+    }
+
+    @keyframes rotateSlow {
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes shimmer {
+
+      0%,
+      100% {
+        opacity: 0.3
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--sand);
+      text-shadow: 0 0 80px rgba(201, 168, 76, 0.3);
+      opacity: 0;
+      animation: fadeUp 1s 0.5s forwards;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .hero-divider {
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 1.5rem auto;
+      opacity: 0;
+      animation: fadeUp 1s 0.7s forwards;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--sand-dark);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.9;
+      opacity: 0;
+      animation: fadeUp 1s 0.9s forwards;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 2.2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      transition: all 0.4s;
+      cursor: none;
+      opacity: 0;
+      animation: fadeUp 1s 1.1s forwards;
+    }
+
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--obsidian);
+      box-shadow: 0 0 40px rgba(201, 168, 76, 0.25);
+    }
+
+    .hieroglyph-band {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    .corner-glyph {
+      position: absolute;
+      font-size: 2.5rem;
+      color: rgba(201, 168, 76, 0.05);
+    }
+
+    .corner-glyph.tr {
+      top: 7rem;
+      left: 3rem;
+    }
+
+    .corner-glyph.bl {
+      bottom: 3rem;
+      right: 3rem;
+    }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+      text-align: center;
+      padding: 5rem 2rem 2.5rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--sand);
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0 0;
+    }
+
+    .orn-line {
+      width: 70px;
+      height: 1px;
+    }
+
+    .orn-line.l {
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+
+    .orn-line.r {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .orn-sym {
+      color: var(--gold);
+    }
+
+    /* ===== GRID ===== */
+    .sites-wrap {
+      padding: 2rem 3.5rem 6rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.45rem 1.3rem;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      background: transparent;
+      color: var(--sand-dark);
+      font-family: inherit;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      cursor: none;
+      transition: all 0.3s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    .sites-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 1.2rem;
+    }
+
+    .site-card {
+      position: relative;
+      overflow: hidden;
+      cursor: none;
+      background: var(--stone);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      transition: border-color 0.4s, transform 0.4s;
+      aspect-ratio: 3/4;
+    }
+
+    .site-card.wide {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    .site-card.tall {
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
+
+    .site-card:hover {
+      border-color: rgba(201, 168, 76, 0.5);
+      transform: translateY(-4px);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s, filter 0.5s;
+      filter: sepia(30%) brightness(0.75);
+    }
+
+    .site-card:hover .card-img {
+      transform: scale(1.06);
+      filter: sepia(10%) brightness(0.9);
+    }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13, 10, 5, 0.96) 0%, rgba(13, 10, 5, 0.45) 40%, transparent 75%);
+      transition: background 0.4s;
+    }
+
+    .site-card:hover .card-overlay {
+      background: linear-gradient(to top, rgba(13, 10, 5, 0.98) 0%, rgba(13, 10, 5, 0.6) 50%, rgba(13, 10, 5, 0.15) 80%, transparent 100%);
+    }
+
+    .card-glyph {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.8rem;
+      color: rgba(201, 168, 76, 0.45);
+    }
+
+    .card-arrow {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      background: rgba(13, 10, 5, 0.6);
+    }
+
+    .site-card:hover .card-arrow {
+      opacity: 1;
+    }
+
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+    }
+
+    .card-era {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 0.15rem 0.6rem;
+      margin-bottom: 0.6rem;
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    .card-title {
+      font-family: 'Amiri', serif;
+      font-size: 1.35rem;
+      color: var(--sand);
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .site-card.wide .card-title {
+      font-size: 1.8rem;
+    }
+
+    .card-loc {
+      font-size: 0.75rem;
+      color: var(--sand-dark);
+      letter-spacing: 0.1em;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 0.8rem;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.4s;
+    }
+
+    .site-card:hover .card-meta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .meta-v {
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .meta-l {
+      font-size: 0.62rem;
+      color: var(--sand-dark);
+      letter-spacing: 0.08em;
+    }
+
+    .card-cat {
+      position: absolute;
+      top: 1rem;
+      right: 3.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      background: rgba(13, 10, 5, 0.7);
+      color: var(--gold-dark);
+      padding: 0.2rem 0.6rem;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    /* ===== DETAIL OVERLAY ===== */
+    .detail-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--obsidian);
+      z-index: 500;
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s;
+    }
+
+    .detail-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .detail-close {
+      position: fixed;
+      top: 1.2rem;
+      left: 1.5rem;
+      z-index: 600;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(201, 168, 76, 0.5);
+      background: rgba(13, 10, 5, 0.85);
+      color: var(--gold-light);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: none;
+      transition: all 0.3s;
+    }
+
+    .detail-close:hover {
+      background: var(--gold);
+      color: var(--obsidian);
+    }
+
+    .detail-hero {
+      height: 65vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .detail-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(20%) brightness(0.72);
+    }
+
+    .detail-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(13, 10, 5, 0.35), rgba(13, 10, 5, 0.15) 40%, rgba(13, 10, 5, 0.88) 80%, var(--obsidian));
+    }
+
+    .detail-hero-content {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 3.5rem;
+      left: 3.5rem;
+    }
+
+    .detail-era-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      padding: 0.25rem 0.9rem;
+      margin-bottom: 0.8rem;
+      background: rgba(13, 10, 5, 0.5);
+    }
+
+    .detail-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--sand);
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .detail-body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3.5rem;
+    }
+
+    .detail-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(201, 168, 76, 0.12);
+      margin-bottom: 3.5rem;
+      border: 1px solid rgba(201, 168, 76, 0.12);
+    }
+
+    .stat-box {
+      padding: 1.5rem;
+      background: var(--stone);
+      text-align: center;
+    }
+
+    .stat-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .stat-value {
+      font-family: 'Amiri', serif;
+      font-size: 1.6rem;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--sand-dark);
+      letter-spacing: 0.18em;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .detail-description h3,
+    .detail-sidebar h3 {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+    }
+
+    .detail-description p {
+      font-size: 0.97rem;
+      color: var(--sand-dark);
+      line-height: 2;
+      margin-bottom: 1.1rem;
+    }
+
+    .detail-facts {
+      list-style: none;
+      margin-top: 1.2rem;
+    }
+
+    .detail-facts li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.07);
+      font-size: 0.88rem;
+      color: var(--sand-dark);
+    }
+
+    .detail-facts li::before {
+      content: '◈';
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .quote-block {
+      margin: 2rem 0;
+      padding: 1.8rem 2.5rem;
+      border-right: 3px solid var(--gold);
+      background: linear-gradient(135deg, rgba(26, 21, 16, 0.8), rgba(46, 37, 24, 0.3));
+      position: relative;
+    }
+
+    .quote-block::before {
+      content: '❝';
+      position: absolute;
+      top: -0.8rem;
+      right: 1.5rem;
+      font-size: 2.5rem;
+      color: rgba(201, 168, 76, 0.25);
+      font-family: serif;
+    }
+
+    .quote-text {
+      font-family: 'Amiri', serif;
+      font-size: 1.1rem;
+      color: var(--sand);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    .quote-source {
+      font-size: 0.75rem;
+      color: var(--gold-dark);
+      margin-top: 0.6rem;
+      letter-spacing: 0.12em;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .info-table tr {
+      border-bottom: 1px solid rgba(201, 168, 76, 0.07);
+    }
+
+    .info-table td {
+      padding: 0.75rem 0;
+      font-size: 0.87rem;
+      vertical-align: top;
+    }
+
+    .info-table td:first-child {
+      color: var(--gold);
+      width: 38%;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+    }
+
+    .info-table td:last-child {
+      color: var(--sand-dark);
+    }
+
+    .timeline-section {
+      margin-top: 2rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 1.2rem;
+      padding-bottom: 1.3rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      right: 0.55rem;
+      top: 1.2rem;
+      bottom: 0;
+      width: 1px;
+      background: rgba(201, 168, 76, 0.18);
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+      background: var(--obsidian);
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-year {
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-event {
+      font-size: 0.83rem;
+      color: var(--sand-dark);
+      line-height: 1.6;
+    }
+
+    .detail-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.7rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .gallery-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      filter: sepia(20%) brightness(0.82);
+      transition: all 0.4s;
+      cursor: none;
+    }
+
+    .gallery-img:hover {
+      filter: sepia(0%) brightness(1);
+      transform: scale(0.98);
+    }
+
+    .gallery-title {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+    }
+
+    /* ===== CIVILIZATIONS PAGE ===== */
+    .civs-wrap {
+      padding: 2rem 3.5rem 6rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .civ-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .civ-card {
+      background: var(--stone);
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s, transform 0.4s;
+      cursor: none;
+    }
+
+    .civ-card:hover {
+      border-color: rgba(201, 168, 76, 0.45);
+      transform: translateY(-4px);
+    }
+
+    .civ-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.06), transparent 70%);
+    }
+
+    .civ-glyph {
+      font-size: 3rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .civ-name {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .civ-era {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dark);
+      margin-bottom: 1rem;
+    }
+
+    .civ-desc {
+      font-size: 0.88rem;
+      color: var(--sand-dark);
+      line-height: 1.9;
+    }
+
+    .civ-sites {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .civ-site-tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      color: var(--gold-dark);
+      letter-spacing: 0.1em;
+    }
+
+    .civ-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .civ-card:hover .civ-bar {
+      opacity: 1;
+    }
+
+    /* ===== MUSEUMS PAGE ===== */
+    .museums-wrap {
+      padding: 2rem 3.5rem 6rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .museum-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .museum-card {
+      display: flex;
+      gap: 1.5rem;
+      background: var(--stone);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      padding: 1.8rem;
+      transition: border-color 0.4s;
+      cursor: none;
+    }
+
+    .museum-card:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+    }
+
+    .museum-num {
+      font-family: 'Amiri', serif;
+      font-size: 2.5rem;
+      color: rgba(201, 168, 76, 0.2);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .museum-info {
+      flex: 1;
+    }
+
+    .museum-name {
+      font-family: 'Amiri', serif;
+      font-size: 1.3rem;
+      color: var(--gold-light);
+      margin-bottom: 0.3rem;
+    }
+
+    .museum-loc {
+      font-size: 0.72rem;
+      color: var(--gold-dark);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.7rem;
+    }
+
+    .museum-desc {
+      font-size: 0.85rem;
+      color: var(--sand-dark);
+      line-height: 1.8;
+    }
+
+    .museum-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.6rem;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      color: var(--gold-dark);
+      margin-top: 0.7rem;
+      margin-left: 0.4rem;
+    }
+
+    /* ===== ABOUT PAGE ===== */
+    .about-wrap {
+      padding: 2rem 3.5rem 6rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-hero-text {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .about-big {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--sand);
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-sub {
+      font-size: 1rem;
+      color: var(--sand-dark);
+      line-height: 2;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .about-box {
+      background: var(--stone);
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .about-box-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .about-box-title {
+      font-family: 'Amiri', serif;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-box-text {
+      font-size: 0.83rem;
+      color: var(--sand-dark);
+      line-height: 1.8;
+    }
+
+    .about-mission {
+      background: var(--stone);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 2.5rem 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .about-mission h3 {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+    }
+
+    .about-mission p {
+      font-size: 0.92rem;
+      color: var(--sand-dark);
+      line-height: 2;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(201, 168, 76, 0.15);
+    }
+
+    .about-stat {
+      background: var(--stone);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .about-stat-v {
+      font-family: 'Amiri', serif;
+      font-size: 2.2rem;
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .about-stat-l {
+      font-size: 0.72rem;
+      color: var(--sand-dark);
+      letter-spacing: 0.15em;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid rgba(201, 168, 76, 0.12);
+      padding: 2.5rem 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--stone);
+    }
+
+    .footer-glyph {
+      font-size: 1.3rem;
+      color: rgba(201, 168, 76, 0.12);
+      letter-spacing: 0.8rem;
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(212, 196, 154, 0.35);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== FADE IN ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--obsidian);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold-dark);
+    }
+
+    /* ===== RESPONSIVE IMAGES ===== */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .pg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media(max-width:1100px) {
+      .sites-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .detail-hero {
+        height: 55vh;
+      }
+
+      .pg-img-wrap {
+        height: 200px;
+      }
+    }
+
+    @media(max-width:780px) {
+      .sites-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .site-card.wide {
+        grid-column: span 2;
+        aspect-ratio: 16/9;
+      }
+
+      .site-card.tall {
+        grid-row: span 1;
+        aspect-ratio: 3/4;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .detail-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .detail-body {
+        padding: 2rem 1.2rem;
+      }
+
+      .detail-hero {
+        height: 45vh;
+        min-height: 260px;
+      }
+
+      .detail-hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .detail-hero-content {
+        right: 1.2rem;
+        left: 1.2rem;
+        bottom: 1.5rem;
+      }
+
+      .detail-title {
+        font-size: 2rem;
+      }
+
+      .detail-gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+      }
+
+      .gallery-img {
+        aspect-ratio: 4/3;
+        width: 100%;
+      }
+
+      .pg-img-wrap {
+        height: 200px;
+      }
+
+      .pyramid-groups-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .sites-wrap,
+      .civs-wrap,
+      .museums-wrap,
+      .about-wrap {
+        padding: 1.2rem 1rem 4rem;
+      }
+
+      header {
+        padding: 0.8rem 1rem;
+      }
+
+      nav {
+        gap: 0;
+      }
+
+      .nav-link {
+        padding: 0.35rem 0.55rem;
+        font-size: 0.75rem;
+        letter-spacing: 0;
+      }
+
+      .logo-text {
+        font-size: 1.3rem;
+      }
+
+      .logo-emblem {
+        width: 36px;
+        height: 36px;
+      }
+
+      .civ-cards,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .museum-list {
+        grid-template-columns: 1fr;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-title {
+        font-size: clamp(2.2rem, 10vw, 4rem);
+      }
+
+      .hero-desc {
+        font-size: 0.92rem;
+        padding: 0 1rem;
+      }
+
+      .section-title {
+        font-size: clamp(1.6rem, 5vw, 2.5rem);
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .footer-glyph {
+        letter-spacing: 0.4rem;
+      }
+
+      .lang-switch {
+        margin-top: 0;
+      }
+    }
+
+    @media(max-width:480px) {
+      .sites-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .site-card {
+        aspect-ratio: 4/3;
+      }
+
+      .site-card.wide {
+        grid-column: span 1;
+        aspect-ratio: 4/3;
+      }
+
+      .site-card.tall {
+        aspect-ratio: 4/3;
+      }
+
+      .card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .detail-hero {
+        height: 38vh;
+        min-height: 220px;
+      }
+
+      .detail-hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .detail-gallery {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .gallery-img {
+        aspect-ratio: 16/9;
+        width: 100%;
+      }
+
+      .pg-img-wrap {
+        height: 180px;
+      }
+
+      .filter-bar {
+        gap: 0.4rem;
+      }
+
+      .filter-btn {
+        padding: 0.35rem 0.8rem;
+        font-size: 0.75rem;
+      }
+
+      .detail-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-value {
+        font-size: 1.2rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .detail-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .museum-card {
+        flex-direction: column;
+      }
+    }
+
+    /* ===== PYRAMID PASSAGES SECTION ===== */
+    .pyr-section {
+      margin-bottom: 3rem;
+    }
+
+    .pyr-section-hd {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 2rem 0 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(201, 168, 76, 0.25);
+    }
+
+    .pyr-section-glyph {
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+
+    .pyr-section-hd h2 {
+      font-family: 'Amiri', serif;
+      font-size: 1.6rem;
+      color: var(--gold-light);
+      margin: 0;
+    }
+
+    .pyr-section-hd .pyr-section-sub {
+      font-size: 0.8rem;
+      color: var(--gold-dark);
+      letter-spacing: 0.12em;
+      margin-top: 0.15rem;
+    }
+
+    /* King info card */
+    .king-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      background: var(--stone);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-right: 3px solid var(--gold-dark);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .king-seal {
+      width: 70px;
+      height: 70px;
+      border: 1.5px solid var(--gold-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    .king-name {
+      font-family: 'Amiri', serif;
+      font-size: 1.3rem;
+      color: var(--gold-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .king-title {
+      font-size: 0.75rem;
+      color: var(--gold-dark);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+    }
+
+    .king-desc {
+      font-size: 0.88rem;
+      color: var(--sand-dark);
+      line-height: 1.9;
+    }
+
+    /* Passage blocks — image + text alternating */
+    .passage-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .passage-block {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      border: 1px solid rgba(201, 168, 76, 0.12);
+      overflow: hidden;
+      background: var(--stone);
+      transition: border-color 0.3s;
+    }
+
+    .passage-block:hover {
+      border-color: rgba(201, 168, 76, 0.35);
+    }
+
+    .passage-block.reverse {
+      grid-template-columns: 1fr 280px;
+    }
+
+    .passage-img-wrap {
+      overflow: hidden;
+      position: relative;
+      min-height: 200px;
+    }
+
+    .passage-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(15%) brightness(0.82);
+      transition: filter 0.5s, transform 0.5s;
+    }
+
+    .passage-block:hover .passage-img {
+      filter: sepia(5%) brightness(0.95);
+      transform: scale(1.03);
+    }
+
+    .passage-text-wrap {
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .passage-num {
+      font-size: 0.65rem;
+      color: var(--gold-dark);
+      letter-spacing: 0.2em;
+      margin-bottom: 0.4rem;
+    }
+
+    .passage-title {
+      font-family: 'Amiri', serif;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .passage-body {
+      font-size: 0.88rem;
+      color: var(--sand-dark);
+      line-height: 1.95;
+    }
+
+    .passage-tag {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      color: var(--gold-dark);
+      letter-spacing: 0.1em;
+    }
+
+    /* Complex elements grid */
+    .complex-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .complex-card {
+      background: var(--stone);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .complex-card:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .complex-img-wrap {
+      height: 160px;
+      overflow: hidden;
+    }
+
+    .complex-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(20%) brightness(0.78);
+      transition: filter 0.5s, transform 0.5s;
+    }
+
+    .complex-card:hover .complex-img {
+      filter: sepia(5%) brightness(0.92);
+      transform: scale(1.05);
+    }
+
+    .complex-body {
+      padding: 1rem 1.2rem;
+    }
+
+    .complex-title {
+      font-family: 'Amiri', serif;
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .complex-desc {
+      font-size: 0.82rem;
+      color: var(--sand-dark);
+      line-height: 1.85;
+    }
+
+    /* Abu Simbel sphinx section */
+    .sphinx-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sphinx-img-wrap {
+      overflow: hidden;
+    }
+
+    .sphinx-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      filter: sepia(15%) brightness(0.82);
+      transition: filter 0.5s;
+    }
+
+    .sphinx-img:hover {
+      filter: sepia(5%) brightness(0.95);
+    }
+
+    .sphinx-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sphinx-info-block {
+      background: var(--stone);
+      border: 1px solid rgba(201, 168, 76, 0.1);
+      border-right: 2px solid var(--gold-dark);
+      padding: 1rem 1.3rem;
+    }
+
+    .sphinx-info-title {
+      font-family: 'Amiri', serif;
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .sphinx-info-text {
+      font-size: 0.85rem;
+      color: var(--sand-dark);
+      line-height: 1.9;
+    }
+
+    @media (max-width: 900px) {
+
+      .passage-block,
+      .passage-block.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .passage-block.reverse .passage-img-wrap {
+        order: -1;
+      }
+
+      .passage-img-wrap {
+        min-height: 200px;
+      }
+
+      .complex-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .sphinx-block {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .complex-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .king-card {
+        grid-template-columns: 1fr;
+      }
+
+      .king-seal {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="cursor" id="cursor"></div>
+  <div class="cursor" id="cursor"></div>
 
-<header id="mainHeader">
-  <div class="logo" onclick="showSection('home')">
-    <div class="logo-emblem"></div>
-    <div>
-      <div class="logo-text" id="logo-text">أثـر</div>
-      <div class="logo-sub" data-ar="حضارات خالدة" data-zh="永恒的文明" id="logo-sub">حضارات خالدة</div>
+  <header id="mainHeader">
+    <div class="logo" onclick="showSection('home')">
+      <div class="logo-emblem"></div>
+      <div>
+        <div class="logo-text" id="logo-text">أثـر</div>
+        <div class="logo-sub" data-ar="حضارات خالدة" data-zh="永恒的文明" id="logo-sub">حضارات خالدة</div>
+      </div>
     </div>
+    <nav>
+      <a class="nav-link active" onclick="showSection('home')" data-ar="المواقع الأثرية" data-zh="考古遗址">المواقع
+        الأثرية</a>
+      <a class="nav-link" onclick="showSection('civs')" data-ar="الحضارات" data-zh="文明">الحضارات</a>
+      <a class="nav-link" onclick="showSection('museums')" data-ar="المتاحف" data-zh="博物馆">المتاحف</a>
+      <a class="nav-link" onclick="showSection('about')" data-ar="عن الموقع" data-zh="关于我们">عن الموقع</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('ar')">عربي</button>
+        <button class="lang-btn" onclick="setLang('zh')">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HOME SECTION ===== -->
+  <div class="page-section active" id="sec-home">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-ring"></div>
+      <span class="corner-glyph tr">𓂀</span>
+      <span class="corner-glyph bl">𓅱</span>
+      <div class="hero-content">
+        <p class="hero-eyebrow" data-ar="𓂀  اكتشف إرث الحضارات  𓂀" data-zh="𓂀  探索文明的遗产  𓂀">𓂀 اكتشف إرث الحضارات 𓂀
+        </p>
+        <h1 class="hero-title">
+          <span id="hero-t1" data-ar="الحضارات الخالدة" data-zh="永恒的文明">الحضارات الخالدة</span>
+          <span id="hero-t2" style="font-size:0.65em;color:var(--gold-light)" data-ar="تحكي قصتها"
+            data-zh="讲述它们的故事">تحكي قصتها</span>
+        </h1>
+        <div class="hero-divider"></div>
+        <p class="hero-desc" data-ar="رحلة عبر آلاف السنين لاستكشاف أعظم المواقع الأثرية التي شكّلت تاريخ الإنسانية"
+          data-zh="穿越数千年的旅程，探索塑造人类历史的最伟大考古遗址">رحلة عبر آلاف السنين لاستكشاف أعظم المواقع الأثرية التي شكّلت تاريخ
+          الإنسانية</p>
+        <a href="#sites" class="hero-cta" id="hero-cta" data-ar="استكشف المواقع  ↓" data-zh="探索遗址  ↓">استكشف المواقع
+          ↓</a>
+      </div>
+      <div class="hieroglyph-band"></div>
+    </section>
+
+    <section id="sites">
+      <div class="section-header fade-in">
+        <p class="section-label" data-ar="𓂀  المواقع الأثرية" data-zh="𓂀  考古遗址">𓂀 المواقع الأثرية</p>
+        <h2 class="section-title" data-ar="كنوز عبر الزمن" data-zh="跨越时间的宝藏">كنوز عبر الزمن</h2>
+        <div class="ornament">
+          <div class="orn-line r"></div><span class="orn-sym">◆</span>
+          <div class="orn-line l"></div>
+        </div>
+      </div>
+      <div class="sites-wrap">
+        <div class="filter-bar fade-in" id="filterBar">
+          <button class="filter-btn active" data-filter="all" data-ar="الكل" data-zh="全部">الكل</button>
+          <button class="filter-btn" data-filter="egypt" data-ar="مصر القديمة" data-zh="古埃及">مصر القديمة</button>
+        </div>
+        <div class="sites-grid fade-in" id="sitesGrid"></div>
+      </div>
+    </section>
   </div>
-  <nav>
-    <a class="nav-link active" onclick="showSection('home')" data-ar="المواقع الأثرية" data-zh="考古遗址">المواقع الأثرية</a>
-    <a class="nav-link" onclick="showSection('civs')" data-ar="الحضارات" data-zh="文明">الحضارات</a>
-    <a class="nav-link" onclick="showSection('museums')" data-ar="المتاحف" data-zh="博物馆">المتاحف</a>
-    <a class="nav-link" onclick="showSection('about')" data-ar="عن الموقع" data-zh="关于我们">عن الموقع</a>
-  </nav>
-  <div class="header-right">
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLang('ar')">عربي</button>
-      <button class="lang-btn" onclick="setLang('zh')">中文</button>
-    </div>
-  </div>
-</header>
 
-<!-- ===== HOME SECTION ===== -->
-<div class="page-section active" id="sec-home">
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-ring"></div>
-    <span class="corner-glyph tr">𓂀</span>
-    <span class="corner-glyph bl">𓅱</span>
-    <div class="hero-content">
-      <p class="hero-eyebrow" data-ar="𓂀  اكتشف إرث الحضارات  𓂀" data-zh="𓂀  探索文明的遗产  𓂀">𓂀  اكتشف إرث الحضارات  𓂀</p>
-      <h1 class="hero-title">
-        <span id="hero-t1" data-ar="الحضارات الخالدة" data-zh="永恒的文明">الحضارات الخالدة</span>
-        <span id="hero-t2" style="font-size:0.65em;color:var(--gold-light)" data-ar="تحكي قصتها" data-zh="讲述它们的故事">تحكي قصتها</span>
-      </h1>
-      <div class="hero-divider"></div>
-      <p class="hero-desc" data-ar="رحلة عبر آلاف السنين لاستكشاف أعظم المواقع الأثرية التي شكّلت تاريخ الإنسانية" data-zh="穿越数千年的旅程，探索塑造人类历史的最伟大考古遗址">رحلة عبر آلاف السنين لاستكشاف أعظم المواقع الأثرية التي شكّلت تاريخ الإنسانية</p>
-      <a href="#sites" class="hero-cta" id="hero-cta" data-ar="استكشف المواقع  ↓" data-zh="探索遗址  ↓">استكشف المواقع  ↓</a>
-    </div>
-    <div class="hieroglyph-band"></div>
-  </section>
-
-  <section id="sites">
+  <!-- ===== CIVILIZATIONS SECTION ===== -->
+  <div class="page-section" id="sec-civs">
+    <div style="height:80px"></div>
     <div class="section-header fade-in">
-      <p class="section-label" data-ar="𓂀  المواقع الأثرية" data-zh="𓂀  考古遗址">𓂀  المواقع الأثرية</p>
-      <h2 class="section-title" data-ar="كنوز عبر الزمن" data-zh="跨越时间的宝藏">كنوز عبر الزمن</h2>
-      <div class="ornament"><div class="orn-line r"></div><span class="orn-sym">◆</span><div class="orn-line l"></div></div>
-    </div>
-    <div class="sites-wrap">
-            <div class="filter-bar fade-in" id="filterBar">
-        <button class="filter-btn active" data-filter="all" data-ar="الكل" data-zh="全部">الكل</button>
-        <button class="filter-btn" data-filter="egypt" data-ar="مصر القديمة" data-zh="古埃及">مصر القديمة</button>
-      </div>
-      <div class="sites-grid fade-in" id="sitesGrid"></div>
-    </div>
-  </section>
-</div>
-
-<!-- ===== CIVILIZATIONS SECTION ===== -->
-<div class="page-section" id="sec-civs">
-  <div style="height:80px"></div>
-  <div class="section-header fade-in">
-    <p class="section-label" data-ar="𓇯  عبر العصور" data-zh="𓇯  穿越时代">𓇯  عبر العصور</p>
-    <h2 class="section-title" data-ar="الحضارات العظيمة" data-zh="伟大的文明">الحضارات العظيمة</h2>
-    <div class="ornament"><div class="orn-line r"></div><span class="orn-sym">◆</span><div class="orn-line l"></div></div>
-  </div>
-  <div class="civs-wrap">
-    <div class="civ-cards fade-in" id="civCards"></div>
-  </div>
-</div>
-
-<!-- ===== MUSEUMS SECTION ===== -->
-<div class="page-section" id="sec-museums">
-  <div style="height:80px"></div>
-  <div class="section-header fade-in">
-    <p class="section-label" data-ar="𓏏  صون التراث" data-zh="𓏏  遗产保护">𓏏  صون التراث</p>
-    <h2 class="section-title" data-ar="أعظم المتاحف الأثرية" data-zh="最伟大的考古博物馆">أعظم المتاحف الأثرية</h2>
-    <div class="ornament"><div class="orn-line r"></div><span class="orn-sym">◆</span><div class="orn-line l"></div></div>
-  </div>
-  <div class="museums-wrap">
-    <div class="museum-list fade-in" id="museumList"></div>
-  </div>
-</div>
-
-<!-- ===== ABOUT SECTION ===== -->
-<div class="page-section" id="sec-about">
-  <div style="height:80px"></div>
-  <div class="about-wrap">
-    <div class="about-hero-text fade-in">
-      <h2 class="about-big" data-ar="نحن نؤمن أن التاريخ ليس ماضياً — بل هو حوار حيّ مع الحاضر" data-zh="我们相信历史不是过去——而是与现在的鲜活对话">نحن نؤمن أن التاريخ ليس ماضياً — بل هو حوار حيّ مع الحاضر</h2>
-      <p class="about-sub" data-ar="منصة أثر هي بوابتك الرقمية للاستكشاف والتعلم والتواصل مع إرث الحضارات الإنسانية العظيمة عبر العصور" data-zh="Athar平台是您探索、学习和连接人类伟大文明遗产的数字门户">منصة أثر هي بوابتك الرقمية للاستكشاف والتعلم والتواصل مع إرث الحضارات الإنسانية العظيمة عبر العصور</p>
-    </div>
-    <div class="about-grid fade-in">
-      <div class="about-box">
-        <span class="about-box-icon">🏛</span>
-        <div class="about-box-title" data-ar="توثيق دقيق" data-zh="精确记录">توثيق دقيق</div>
-        <p class="about-box-text" data-ar="نوثّق كل موقع بمعلومات تاريخية دقيقة مراجعة من متخصصين في الآثار والتاريخ" data-zh="我们用经考古和历史专家审核的准确历史信息记录每个遗址">نوثّق كل موقع بمعلومات تاريخية دقيقة مراجعة من متخصصين في الآثار والتاريخ</p>
-      </div>
-      <div class="about-box">
-        <span class="about-box-icon">🌍</span>
-        <div class="about-box-title" data-ar="تغطية عالمية" data-zh="全球覆盖">تغطية عالمية</div>
-        <p class="about-box-text" data-ar="نغطي مواقع أثرية من جميع أنحاء العالم، من مصر إلى الصين، ومن روما إلى المايا" data-zh="我们涵盖全球各地的考古遗址，从埃及到中国，从罗马到玛雅">نغطي مواقع أثرية من جميع أنحاء العالم، من مصر إلى الصين، ومن روما إلى المايا</p>
-      </div>
-      <div class="about-box">
-        <span class="about-box-icon">🌐</span>
-        <div class="about-box-title" data-ar="متعدد اللغات" data-zh="多语言">متعدد اللغات</div>
-        <p class="about-box-text" data-ar="نقدم محتوانا باللغتين العربية والصينية لخدمة أوسع شريحة من المهتمين بالتراث" data-zh="我们以阿拉伯语和中文提供内容，服务更广泛的遗产爱好者">نقدم محتوانا باللغتين العربية والصينية لخدمة أوسع شريحة من المهتمين بالتراث</p>
+      <p class="section-label" data-ar="𓇯  عبر العصور" data-zh="𓇯  穿越时代">𓇯 عبر العصور</p>
+      <h2 class="section-title" data-ar="الحضارات العظيمة" data-zh="伟大的文明">الحضارات العظيمة</h2>
+      <div class="ornament">
+        <div class="orn-line r"></div><span class="orn-sym">◆</span>
+        <div class="orn-line l"></div>
       </div>
     </div>
-    <div class="about-mission fade-in">
-      <h3 data-ar="رسالتنا" data-zh="我们的使命">رسالتنا</h3>
-      <p data-ar="تأسست منصة أثر بهدف جعل التراث الإنساني في متناول الجميع. نؤمن أن فهم الحضارات السابقة يُغني حياتنا الحاضرة ويُرشد مستقبلنا. لذا نسعى إلى تقديم محتوى أثري رصين، موثوق، وجذاب بصرياً، يُلهم الأجيال القادمة على التواصل مع جذورهم الإنسانية المشتركة." data-zh="Athar平台的成立旨在让人类遗产触手可及。我们相信理解过去的文明能丰富我们的现在，引领我们的未来。因此，我们致力于提供严谨、可靠、视觉上引人入胜的考古内容，激励后代与共同的人类根源相连。">تأسست منصة أثر بهدف جعل التراث الإنساني في متناول الجميع. نؤمن أن فهم الحضارات السابقة يُغني حياتنا الحاضرة ويُرشد مستقبلنا. لذا نسعى إلى تقديم محتوى أثري رصين، موثوق، وجذاب بصرياً، يُلهم الأجيال القادمة على التواصل مع جذورهم الإنسانية المشتركة.</p>
-    </div>
-    <div class="about-stats fade-in">
-      <div class="about-stat"><span class="about-stat-v">1</span><span class="about-stat-l" data-ar="موقع أثري" data-zh="考古遗址">موقع أثري</span></div>
-      <div class="about-stat"><span class="about-stat-v">6</span><span class="about-stat-l" data-ar="حضارات موثقة" data-zh="记录文明">حضارات موثقة</span></div>
-      <div class="about-stat"><span class="about-stat-v">2</span><span class="about-stat-l" data-ar="لغات مدعومة" data-zh="支持语言">لغات مدعومة</span></div>
-      <div class="about-stat"><span class="about-stat-v">∞</span><span class="about-stat-l" data-ar="سنوات من التاريخ" data-zh="历史年份">سنوات من التاريخ</span></div>
+    <div class="civs-wrap">
+      <div class="civ-cards fade-in" id="civCards"></div>
     </div>
   </div>
-</div>
 
-<footer>
-  <div class="footer-copy" id="footer-left">© 2024 أثر — جميع الحقوق محفوظة</div>
-  <div class="footer-glyph">𓂀 𓃀 𓅱 𓆣 𓇯</div>
-  <div class="footer-copy" id="footer-right" data-ar="صُنع بشغف للحضارة" data-zh="为文明而生">صُنع بشغف للحضارة</div>
-</footer>
+  <!-- ===== MUSEUMS SECTION ===== -->
+  <div class="page-section" id="sec-museums">
+    <div style="height:80px"></div>
+    <div class="section-header fade-in">
+      <p class="section-label" data-ar="𓏏  صون التراث" data-zh="𓏏  遗产保护">𓏏 صون التراث</p>
+      <h2 class="section-title" data-ar="أعظم المتاحف الأثرية" data-zh="最伟大的考古博物馆">أعظم المتاحف الأثرية</h2>
+      <div class="ornament">
+        <div class="orn-line r"></div><span class="orn-sym">◆</span>
+        <div class="orn-line l"></div>
+      </div>
+    </div>
+    <div class="museums-wrap">
+      <div class="museum-list fade-in" id="museumList"></div>
+    </div>
+  </div>
 
-<!-- DETAIL OVERLAY -->
-<div class="detail-overlay" id="detailOverlay">
-  <button class="detail-close" onclick="closeDetail()">✕</button>
-  <div id="detailContent"></div>
-</div>
+  <!-- ===== ABOUT SECTION ===== -->
+  <div class="page-section" id="sec-about">
+    <div style="height:80px"></div>
+    <div class="about-wrap">
+      <div class="about-hero-text fade-in">
+        <h2 class="about-big" data-ar="نحن نؤمن أن التاريخ ليس ماضياً — بل هو حوار حيّ مع الحاضر"
+          data-zh="我们相信历史不是过去——而是与现在的鲜活对话">نحن نؤمن أن التاريخ ليس ماضياً — بل هو حوار حيّ مع الحاضر</h2>
+        <p class="about-sub"
+          data-ar="منصة أثر هي بوابتك الرقمية للاستكشاف والتعلم والتواصل مع إرث الحضارات الإنسانية العظيمة عبر العصور"
+          data-zh="Athar平台是您探索、学习和连接人类伟大文明遗产的数字门户">منصة أثر هي بوابتك الرقمية للاستكشاف والتعلم والتواصل مع إرث الحضارات
+          الإنسانية العظيمة عبر العصور</p>
+      </div>
+      <div class="about-grid fade-in">
+        <div class="about-box">
+          <span class="about-box-icon">🏛</span>
+          <div class="about-box-title" data-ar="توثيق دقيق" data-zh="精确记录">توثيق دقيق</div>
+          <p class="about-box-text" data-ar="نوثّق كل موقع بمعلومات تاريخية دقيقة مراجعة من متخصصين في الآثار والتاريخ"
+            data-zh="我们用经考古和历史专家审核的准确历史信息记录每个遗址">نوثّق كل موقع بمعلومات تاريخية دقيقة مراجعة من متخصصين في الآثار
+            والتاريخ</p>
+        </div>
+        <div class="about-box">
+          <span class="about-box-icon">🌍</span>
+          <div class="about-box-title" data-ar="تغطية عالمية" data-zh="全球覆盖">تغطية عالمية</div>
+          <p class="about-box-text"
+            data-ar="نغطي مواقع أثرية من جميع أنحاء العالم، من مصر إلى الصين، ومن روما إلى المايا"
+            data-zh="我们涵盖全球各地的考古遗址，从埃及到中国，从罗马到玛雅">نغطي مواقع أثرية من جميع أنحاء العالم، من مصر إلى الصين، ومن روما إلى
+            المايا</p>
+        </div>
+        <div class="about-box">
+          <span class="about-box-icon">🌐</span>
+          <div class="about-box-title" data-ar="متعدد اللغات" data-zh="多语言">متعدد اللغات</div>
+          <p class="about-box-text"
+            data-ar="نقدم محتوانا باللغتين العربية والصينية لخدمة أوسع شريحة من المهتمين بالتراث"
+            data-zh="我们以阿拉伯语和中文提供内容，服务更广泛的遗产爱好者">نقدم محتوانا باللغتين العربية والصينية لخدمة أوسع شريحة من المهتمين
+            بالتراث</p>
+        </div>
+      </div>
+      <div class="about-mission fade-in">
+        <h3 data-ar="رسالتنا" data-zh="我们的使命">رسالتنا</h3>
+        <p data-ar="تأسست منصة أثر بهدف جعل التراث الإنساني في متناول الجميع. نؤمن أن فهم الحضارات السابقة يُغني حياتنا الحاضرة ويُرشد مستقبلنا. لذا نسعى إلى تقديم محتوى أثري رصين، موثوق، وجذاب بصرياً، يُلهم الأجيال القادمة على التواصل مع جذورهم الإنسانية المشتركة."
+          data-zh="Athar平台的成立旨在让人类遗产触手可及。我们相信理解过去的文明能丰富我们的现在，引领我们的未来。因此，我们致力于提供严谨、可靠、视觉上引人入胜的考古内容，激励后代与共同的人类根源相连。">تأسست
+          منصة أثر بهدف جعل التراث الإنساني في متناول الجميع. نؤمن أن فهم الحضارات السابقة يُغني حياتنا الحاضرة ويُرشد
+          مستقبلنا. لذا نسعى إلى تقديم محتوى أثري رصين، موثوق، وجذاب بصرياً، يُلهم الأجيال القادمة على التواصل مع جذورهم
+          الإنسانية المشتركة.</p>
+      </div>
+      <div class="about-stats fade-in">
+        <div class="about-stat"><span class="about-stat-v">2</span><span class="about-stat-l" data-ar="موقع أثري"
+            data-zh="考古遗址">موقع أثري</span></div>
+        <div class="about-stat"><span class="about-stat-v">6</span><span class="about-stat-l" data-ar="حضارات موثقة"
+            data-zh="记录文明">حضارات موثقة</span></div>
+        <div class="about-stat"><span class="about-stat-v">2</span><span class="about-stat-l" data-ar="لغات مدعومة"
+            data-zh="支持语言">لغات مدعومة</span></div>
+        <div class="about-stat"><span class="about-stat-v">∞</span><span class="about-stat-l" data-ar="سنوات من التاريخ"
+            data-zh="历史年份">سنوات من التاريخ</span></div>
+      </div>
+    </div>
+  </div>
 
-<script>
-// ===== DATA =====
-const T = {
-  ar: {
-    historical: 'نبذة تاريخية', amazing: 'حقائق مذهلة',
-    gallery: 'معرض الصور', siteInfo: 'معلومات الموقع', timeline: 'الخط الزمني',
-    copyright: '© 2024 أثر — جميع الحقوق محفوظة',
-    logoText: 'أثـر'
-  },
-  zh: {
-    historical: '历史简介', amazing: '惊人事实',
-    gallery: '图片画廊', siteInfo: '遗址信息', timeline: '时间线',
-    copyright: '© 2024 Athar — 版权所有',
-    logoText: '遗 迹'
-  }
-};
-let currentLang = 'ar';
+  <footer>
+    <div class="footer-copy" id="footer-left">© 2024 أثر — جميع الحقوق محفوظة</div>
+    <div class="footer-glyph">𓂀 𓃀 𓅱 𓆣 𓇯</div>
+    <div class="footer-copy" id="footer-right" data-ar="صُنع بشغف للحضارة" data-zh="为文明而生">صُنع بشغف للحضارة</div>
+  </footer>
 
-const sites = [
-  {
-    id:'abusimbel', cat:'egypt', wide:true,
-    glyph:'𓇯', catLabel:{ar:'مصر القديمة',zh:'古埃及'},
-    era:{ar:'الأسرة التاسعة عشرة — 1264 ق.م',zh:'第十九王朝 — 公元前1264年'},
-    title:{ar:'معبد أبو سمبل',zh:'阿布辛贝勒神庙'},
-    loc:{ar:'أسوان، مصر',zh:'阿斯旺，埃及'},
-    meta:[
-      {v:{ar:'33م',zh:'33米'},l:{ar:'ارتفاع الواجهة',zh:'立面高度'}},
-      {v:{ar:'63م',zh:'63米'},l:{ar:'العمق في الصخر',zh:'岩石深度'}}
-    ],
-    heroImg:'images/img2.jpeg',
-    videoSrc:'videos/video.mp4',
-    stats:[
-      {icon:'⛰',v:{ar:'33م',zh:'33米'},l:{ar:'ارتفاع الواجهة',zh:'立面高度'}},
-      {icon:'📏',v:{ar:'63م — 38م',zh:'63米 × 38米'},l:{ar:'عمق × عرض الصخر',zh:'深度 × 宽度'}},
-      {icon:'👑',v:{ar:'رمسيس الثاني',zh:'拉美西斯二世'},l:{ar:'الباني',zh:'建造者'}},
-      {icon:'🌍',v:'UNESCO',l:{ar:'تراث عالمي 1979',zh:'世界遗产 1979'}}
-    ],
-    desc:{
-      ar:`يُعدّ معبد أبو سمبل أعظم معابد النوبة، لما له من تأثير عميق في النفس لإعجازه المعماري وروعته الفنية ومناظره التاريخية والدينية. نُحت المعبد بارتفاع 33 متراً وعرض 38 متراً وبعمق 63 متراً في الصخر، وأُقيم لعبادة إله الشمس "رع حور أختي".\n\nبُني في عهد الملك رمسيس الثاني من الأسرة التاسعة عشرة، واستغرق بناؤه حوالي 20 عاماً كجزء من مشروع ملكي كبير لإقامة معابد في النوبة. يقع على الضفة الغربية لنهر النيل جنوب مصر، بالقرب من الحدود السودانية. اختير موقعه بعناية ليواجه الشرق بحيث تدخل أشعة الشمس إلى قدس الأقداس مرتين سنوياً في ظاهرة فلكية نادرة. كان الموقع قديماً قريباً من الحدود الجنوبية لمصر، لذلك حمل بُعداً دينياً وسياسياً في آنٍ واحد.\n\nالغرض من بنائه: تخليد ذكرى رمسيس الثاني وانتصاراته العسكرية، وعبادة الآلهة: آمون رع، رع حور أختي، وبتاح، وإظهار قوة مصر وهيبتها أمام شعوب الجنوب، وتثبيت النفوذ المصري في النوبة.`,
-      zh:`阿布辛贝勒神庙是努比亚最伟大的神庙，以其深刻的精神影响、建筑奇迹、艺术魅力和历史宗教景观而著称。神庙高33米、宽38米、深63米，完全雕凿于岩石之中，专为祭祀太阳神"拉-哈拉赫提"而建。\n\n神庙建于第十九王朝拉美西斯二世统治时期，历时约20年完工，是在努比亚建造神庙的宏大王室计划之一。它坐落于埃及南部尼罗河西岸，靠近苏丹边境。其选址经过精心设计，使阳光一年两次射入至圣所，呈现出罕见的天文奇观。该地点古时靠近埃及南部边境，因此同时具有宗教和政治意义。\n\n建造目的：纪念拉美西斯二世及其军事胜利，供奉诸神（阿蒙-拉、拉-哈拉赫提、普塔赫），展示埃及在南方各民族面前的力量与威严，并巩固埃及在努比亚的统治地位。`
-    },
-    quote:{
-      ar:'يعكس معبد أبو سمبل قوة ونفوذ الدولة المصرية في عهد رمسيس الثاني، ويمثل أحد أعظم إنجازات العمارة الصخرية في التاريخ القديم.',
-      zh:'阿布辛贝勒神庙体现了拉美西斯二世时代埃及国家的力量与影响，是古代历史上岩石建筑最伟大成就之一。'
-    },
-    quoteSrc:{
-      ar:'— زاهي حواس، أبو سمبل: معابد الشمس المشرقة، دار الشروق',
-      zh:'— 扎希·哈瓦斯，《阿布辛贝勒：初升之阳的神庙》'
-    },
-    facts:{
-      ar:[
-        'تتعامد الشمس على ثلاثة تماثيل فقط في قدس الأقداس مرتين سنوياً: 22 فبراير و22 أكتوبر — ولا تُضيء تمثال بتاح إله الظلام',
-        'الواجهة الأمامية تضم أربعة تماثيل ضخمة لرمسيس الثاني بارتفاع يقارب 20 متراً لكل منها',
-        'الجدار الشمالي لبهو الأعمدة يصور تفاصيل معركة قادش الشهيرة بين المصريين والحيثيين',
-        'الجدار الجنوبي يُظهر رمسيس الثاني على عجلته الحربية يهاجم قلعة آسيوية، والشرقي يصور انتصاراته',
-        'غُطّي بالرمال لقرون طويلة وأُعيد اكتشافه عام 1813م بواسطة المستكشف السويسري يوهان لودفيغ بوركهارت',
-        'نُقل المعبد بأكمله 65 متراً للأعلى بين 1964–1968م في أكبر عملية إنقاذ أثري في التاريخ إنقاذاً له من مياه السد العالي'
-      ],
-      zh:[
-        '每年2月22日和10月22日，阳光仅照射至圣所中三尊雕像，而不照射代表黑暗之神的普塔赫雕像',
-        '神庙前立面有四座拉美西斯二世的巨型坐像，每座约高20米',
-        '柱廊大厅北墙详细描绘了埃及人与赫梯人之间著名的卡迭什战役',
-        '南墙描绘国王驾战车攻击亚洲城堡，东墙描绘国王征服埃及敌人的场景',
-        '神庙被沙土掩埋数百年，1813年由瑞士探险家约翰·路德维希·布克哈特重新发现',
-        '1964年至1968年间，整座神庙被切割上移65米，这是史上规模最大的文物抢救行动，以免被阿斯旺高坝淹没'
-      ]
-    },
-    info:{
-      ar:[
-        ['الموقع','جنوب محافظة أسوان، مصر، بالقرب من الحدود السودانية'],
-        ['نوع الموقع','معبد صخري منحوت في الحجر الرملي الطبيعي'],
-        ['الباني','الملك رمسيس الثاني'],
-        ['الحضارة','المصرية القديمة — الدولة الحديثة — الأسرة التاسعة عشرة'],
-        ['تاريخ البناء','حوالي 1264 ق.م — 1244 ق.م'],
-        ['مدة البناء','حوالي 20 عاماً'],
-        ['الأبعاد','ارتفاع 33م × عرض 38م × عمق 63م'],
-        ['المواد','الحجر الرملي الطبيعي في الجبل'],
-        ['الآلهة المعبودة','آمون رع — رع حور أختي — بتاح'],
-        ['الاكتشاف الحديث','1813م — يوهان لودفيغ بوركهارت'],
-        ['تنظيف المدخل','1817م — جيوفاني بلزوني'],
-        ['نقل المعبد','1964–1968م — إنقاذاً من السد العالي'],
-        ['التسجيل','تراث عالمي باليونسكو 1979م'],
-        ['أوقات الزيارة','يومياً 6:00ص — 5:00م'],
-        ['ملاحظة','يُفضل الوصول مبكراً في الصيف بسبب الحرارة']
-      ],
-      zh:[
-        ['位置','埃及阿斯旺省南部，靠近苏丹边境'],
-        ['遗址类型','雕凿于天然砂岩中的岩凿神庙'],
-        ['建造者','法老拉美西斯二世'],
-        ['文明','古埃及 — 新王国 — 第十九王朝'],
-        ['建造时间','约公元前1264年—公元前1244年'],
-        ['建造历时','约20年'],
-        ['尺寸','高33米 × 宽38米 × 深63米'],
-        ['材料','山体天然砂岩'],
-        ['供奉神灵','阿蒙-拉 — 拉-哈拉赫提 — 普塔赫'],
-        ['现代发现','1813年 — 约翰·路德维希·布克哈特'],
-        ['入口清理','1817年 — 乔瓦尼·贝尔佐尼'],
-        ['神庙搬迁','1964–1968年 — 为免遭阿斯旺高坝淹没'],
-        ['列入名录','联合国教科文组织世界遗产 1979年'],
-        ['开放时间','每天上午6时至下午5时'],
-        ['温馨提示','夏季建议早到，以避开炎热天气']
-      ]
-    },
-    timeline:{
-      ar:[
-        {y:'1279 ق.م',e:'صعود رمسيس الثاني إلى عرش مصر وبدء حقبة البناء الملكية الكبرى في النوبة'},
-        {y:'1264 ق.م',e:'بدء تشييد معبد أبو سمبل الكبير المنحوت في قلب الصخر الرملي'},
-        {y:'1244 ق.م',e:'اكتمال المعبد بعد 20 عاماً وتكريسه لعبادة آمون رع ورع حور أختي وبتاح'},
-        {y:'القرن 6 ق.م',e:'نقوش يونانية وفينيقية تُكتب على أقدام التماثيل من قِبل المرتزقة الأجانب'},
-        {y:'1813 م',e:'إعادة اكتشافه بعد قرون من الطمر بالرمال على يد المستكشف السويسري يوهان بوركهارت'},
-        {y:'1817 م',e:'تنظيف المدخل بالكامل وأول دخول حديث إلى المعبد على يد الإيطالي جيوفاني بلزوني'},
-        {y:'1964–1968 م',e:'أكبر عملية إنقاذ أثري في التاريخ: نقل المعبد بالكامل 65 متراً للأعلى هرباً من مياه بحيرة ناصر'},
-        {y:'1979 م',e:'تسجيله رسمياً في قائمة التراث العالمي لليونسكو ضمن مواقع النوبة المصرية'}
-      ],
-      zh:[
-        {y:'公元前1279年',e:'拉美西斯二世登上埃及王位，开始在努比亚大规模建造神庙的王室计划'},
-        {y:'公元前1264年',e:'开始建造雕凿于砂岩山体之中的阿布辛贝勒大神庙'},
-        {y:'公元前1244年',e:'历时20年，神庙竣工，供奉阿蒙-拉、拉-哈拉赫提和普塔赫'},
-        {y:'公元前6世纪',e:'外国雇佣兵在雕像脚部刻写希腊文和腓尼基文铭文'},
-        {y:'1813年',e:'被沙土掩埋数百年后，由瑞士探险家约翰·布克哈特重新发现'},
-        {y:'1817年',e:'意大利探险家乔瓦尼·贝尔佐尼清理入口，首次现代进入神庙'},
-        {y:'1964–1968年',e:'史上最大规模文物抢救：整座神庙切割上移65米，免遭纳赛尔水库淹没'},
-        {y:'1979年',e:'正式列入联合国教科文组织世界遗产名录（努比亚遗址）'}
-      ]
-    },
-    innerPlaces:{
-      ar:[
-        {icon:'☀',title:'ظاهرة تعامد الشمس',text:'أهم ظاهرة في المعبد وهي من أندر الظواهر الفلكية التي جسّدها القدماء المصريون. تتعامد الشمس على ثلاثة تماثيل فقط: رمسيس الثاني، رع حور أختي، وآمون. ولا تتعامد على تمثال بتاح الذي كان يُعتبر إله الظلام. تحدث مرتين سنوياً: 22 فبراير و22 أكتوبر.'},
-        {icon:'🏛',title:'بهو الأعمدة (القاعة الكبرى)',text:'أول وأكبر قاعات المعبد بارتفاع 9 أمتار. سقفها يرتكز على 8 أعمدة أوزيرية على شكل تماثيل للملك رمسيس الثاني واقفاً بذراعين متقاطعتين. الجدار الشمالي: معركة قادش. الجدار الجنوبي: رمسيس على عجلته الحربية. الجدار الشرقي: انتصاراته. السقف: طيور بأجنحة ممدودة ونجوم السماء.'},
-        {icon:'✨',title:'قدس الأقداس',text:'في أعماق المعبد. يضم أربعة تماثيل جالسة: رمسيس الثاني، آمون رع، رع حور أختي، وبتاح. تتعامد الشمس على الثلاثة الأوائل مرتين سنوياً فقط، ولا تُضيء بتاح إله الظلام.'},
-        {icon:'🌹',title:'معبد نفرتاري الصغير',text:'مخصص للملكة نفرتاري والإلهة حتحور. يُجسّد مكانة الملكة الرفيعة في قلب رمسيس الثاني. يُعدّ من أهم الآثار في الموقع بجانب المعبد الكبير.'},
-        {icon:'🏺',title:'صالات الكنوز (الغرف الجانبية)',text:'حجرتان جانبيتان يؤدي إليهما الجدار الشمالي للقاعة الكبرى. تحتوي جدرانهما على مناظر للملك مع الآلهة. كانت تُستخدم لحفظ الأشياء الثمينة والمقتنيات الخاصة بالمعبد.'},
-        {icon:'🎭',title:'عرض الصوت والضوء',text:'يُقام كل ليلة. يحكي قصة المعبد عبر إضاءة درامية مذهلة على واجهة التماثيل العملاقة. من أجمل التجارب السياحية في مصر كله.'}
-      ],
-      zh:[
-        {icon:'☀',title:'太阳垂直照射奇观',text:'神庙中最重要的现象，也是古埃及人在神庙内体现的最罕见天文奇观。阳光仅照射三尊雕像：拉美西斯二世、拉-哈拉赫提和阿蒙，而不照射被视为黑暗之神的普塔赫雕像。每年两次：2月22日和10月22日。'},
-        {icon:'🏛',title:'柱廊大厅（大殿）',text:'神庙中最大的第一个大厅，高9米。天花板由8根奥西里斯柱支撑，刻有双臂交叉站立的拉美西斯二世形象。北墙：卡迭什战役。南墙：国王驾战车攻击亚洲城堡。东墙：征服敌人的场景。天花板：展翅飞鸟和星空装饰。'},
-        {icon:'✨',title:'至圣所',text:'位于神庙最深处，有四尊坐像：拉美西斯二世、阿蒙-拉、拉-哈拉赫提和普塔赫。每年仅阳光照射前三尊各一次，黑暗之神普塔赫的雕像始终处于阴影中。'},
-        {icon:'🌹',title:'奈费尔塔利小神庙',text:'专为王后奈费尔塔利和哈托尔女神而建，体现了王后在拉美西斯二世心中的崇高地位。被视为遗址中与大神庙并列的最重要文物之一。'},
-        {icon:'🏺',title:'宝藏室（侧室）',text:'两个侧室，由大厅北墙通向。墙壁上有国王与诸神同处的场景。曾用于存放神庙的珍贵物品和专属收藏。'},
-        {icon:'🎭',title:'声光表演',text:'每晚举行，通过戏剧性灯光照射在巨型雕像立面上讲述神庙故事。被誉为埃及最精彩的旅游体验之一。'}
-      ]
-    },
-    gallery:['images/img1.jpeg','images/img2.jpeg','images/img3.jpeg']
-  }
-];
+  <!-- DETAIL OVERLAY -->
+  <div class="detail-overlay" id="detailOverlay">
+    <button class="detail-close" onclick="closeDetail()">✕</button>
+    <div id="detailContent"></div>
+  </div>
 
-const civs = [
-  {glyph:'𓇯',name:{ar:'مصر الفرعونية',zh:'法老时代埃及'},era:{ar:'3100 – 30 ق.م',zh:'公元前3100–30年'},desc:{ar:'أرست الحضارة المصرية القديمة أسس العلوم والطب والرياضيات وبنت آثاراً لا تزال تُبهر العالم بعد آلاف السنين. من الفراعنة إلى الكتابة الهيروغليفية، تركت إرثاً لا يُضاهى في تاريخ البشرية.',zh:'古埃及文明奠定了科学、医学和数学的基础，建造了数千年后仍令世界叹为观止的纪念碑。从法老到象形文字，留下了人类历史上无与伦比的遗产。'},sites:{ar:['أهرامات الجيزة','الكرنك','أبو سمبل'],zh:['吉萨金字塔','卡纳克神庙','阿布辛贝']}},
-  {glyph:'𓉐',name:{ar:'بلاد الرافدين',zh:'美索不达米亚'},era:{ar:'3500 – 539 ق.م',zh:'公元前3500–539年'},desc:{ar:'بين نهري دجلة والفرات وُلدت أولى الكتابات وأقدم القوانين وأعظم المدن. السومريون والأكاديون والبابليون والآشوريون شكّلوا ملامح الحضارة الإنسانية الأولى.',zh:'在底格里斯河和幼发拉底河之间诞生了最早的文字、最古老的法律和最伟大的城市。苏美尔人、阿卡德人、巴比伦人和亚述人塑造了人类文明的最初面貌。'},sites:{ar:['بابل','أور','نينوى'],zh:['巴比伦','乌尔','尼尼微']}},
-  {glyph:'𓊪',name:{ar:'اليونان القديمة',zh:'古希腊'},era:{ar:'800 – 31 ق.م',zh:'公元前800–31年'},desc:{ar:'منحت الحضارة الإغريقية العالم الديمقراطية والفلسفة والمسرح والأولمبياد. أفلاطون وأرسطو وسقراط أسسوا التفكير الغربي، بينما بنى معماريوهم روائع لا تزال تُلهم.',zh:'希腊文明赋予了世界民主、哲学、戏剧和奥林匹克运动会。柏拉图、亚里士多德和苏格拉底奠定了西方思想的基础，而其建筑师们建造的杰作至今仍启迪人心。'},sites:{ar:['البارثينون','دلفي','أوليمبيا'],zh:['帕特农神庙','德尔菲','奥林匹亚']}},
-  {glyph:'𓋴',name:{ar:'الحضارة الإسلامية',zh:'伊斯兰文明'},era:{ar:'622 – 1600 م',zh:'622–1600年'},desc:{ar:'في عصرها الذهبي، أضاءت الحضارة الإسلامية العالم بعلوم الفلك والطب والرياضيات والعمارة. من بغداد إلى الأندلس، بنى المسلمون مراكز علمية وتحفاً معمارية لا تزال تُبهر.',zh:'在黄金时代，伊斯兰文明以天文学、医学、数学和建筑学照亮了世界。从巴格达到安达卢西亚，穆斯林建造了至今仍令人叹为观止的学术中心和建筑杰作。'},sites:{ar:['الحمراء','آيا صوفيا','قبة الصخرة'],zh:['阿尔罕布拉宫','圣索非亚大教堂','圆顶清真寺']}},
-  {glyph:'𓐍',name:{ar:'الحضارة الصينية',zh:'中华文明'},era:{ar:'2100 ق.م — الحاضر',zh:'公元前2100年至今'},desc:{ar:'تُعدّ الحضارة الصينية من أقدم وأعرق الحضارات في التاريخ. اخترع الصينيون الورق والطباعة والبارود والبوصلة، وبنوا سور الصين العظيم وأبدعوا في الفنون لآلاف السنين.',zh:'中华文明是世界上最古老、最悠久的文明之一。中国人发明了纸张、印刷术、火药和指南针，建造了万里长城，并在数千年间在艺术方面取得了卓越成就。'},sites:{ar:['سور الصين العظيم','المدينة المحرمة','تيرا كوتا'],zh:['万里长城','故宫','兵马俑']}},
-  {glyph:'𓎼',name:{ar:'حضارة الإنكا والمايا',zh:'印加与玛雅文明'},era:{ar:'2000 ق.م — 1500 م',zh:'公元前2000年—1500年'},desc:{ar:'في أمريكا قبل الكولومبية، بنت حضارتا الإنكا والمايا إمبراطوريات شاسعة بمعارف فلكية متقدمة ومعمار مبهر. ماتشو بيتشو وتشيتشن إيتزا شواهد على عبقريتهم الفريدة.',zh:'在前哥伦布时代的美洲，印加和玛雅文明建立了广阔的帝国，拥有先进的天文知识和令人叹为观止的建筑。马丘比丘和奇琴伊察是其独特天才的见证。'},sites:{ar:['ماتشو بيتشو','تشيتشن إيتزا','تيكال'],zh:['马丘比丘','奇琴伊察','蒂卡尔']}}
-];
+  <script>
+    // ===== DATA =====
+    const T = {
+      ar: {
+        historical: 'نبذة تاريخية', amazing: 'حقائق مذهلة',
+        gallery: 'معرض الصور', siteInfo: 'معلومات الموقع', timeline: 'الخط الزمني',
+        copyright: '© 2024 أثر — جميع الحقوق محفوظة',
+        logoText: 'أثـر'
+      },
+      zh: {
+        historical: '历史简介', amazing: '惊人事实',
+        gallery: '图片画廊', siteInfo: '遗址信息', timeline: '时间线',
+        copyright: '© 2024 Athar — 版权所有',
+        logoText: '遗 迹'
+      }
+    };
+    let currentLang = 'ar';
 
-const museums = [
-  {n:{ar:'المتحف المصري بالقاهرة',zh:'开罗埃及博物馆'},loc:{ar:'القاهرة، مصر',zh:'埃及，开罗'},desc:{ar:'يضم أكبر مجموعة من الآثار المصرية القديمة في العالم، تتجاوز 120,000 قطعة أثرية، من بينها كنوز الفرعون توتنخامون الذهبية الشهيرة.',zh:'收藏世界上最大的古埃及文物藏品，超过120,000件文物，包括著名的图坦卡蒙金色宝藏。'},tags:{ar:['مصر القديمة','توتنخامون','المومياوات'],zh:['古埃及','图坦卡蒙','木乃伊']}},
-  {n:{ar:'المتحف البريطاني',zh:'大英博物馆'},loc:{ar:'لندن، المملكة المتحدة',zh:'英国，伦敦'},desc:{ar:'من أكبر المتاحف في العالم، يضم ثمانية ملايين قطعة من حضارات الكرة الأرضية، من بينها حجر رشيد وآثار نينوى والقطع الرخامية للبارثينون.',zh:'世界上最大的博物馆之一，收藏来自全球文明的800万件文物，包括罗塞塔石碑、尼尼微文物和帕特农大理石雕塑。'},tags:{ar:['حجر رشيد','نينوى','متعدد الحضارات'],zh:['罗塞塔石碑','尼尼微','多元文明']}},
-  {n:{ar:'متحف اللوفر',zh:'卢浮宫博物馆'},loc:{ar:'باريس، فرنسا',zh:'法国，巴黎'},desc:{ar:'أكبر متحف في العالم وأكثره زيارةً، يضم روائع مصرية ويونانية وإسلامية ورومانية. تتصدره تحفة ليوناردو دا فينشي الشهيرة "الموناليزا".',zh:'世界上最大、参观人数最多的博物馆，收藏埃及、希腊、伊斯兰和罗马艺术珍品。以达芬奇的名作《蒙娜丽莎》为镇馆之宝。'},tags:{ar:['فنون عالمية','الموناليزا','متعدد'],zh:['世界艺术','蒙娜丽莎','多元']}},
-  {n:{ar:'المتحف الوطني الصيني',zh:'中国国家博物馆'},loc:{ar:'بكين، الصين',zh:'中国，北京'},desc:{ar:'أكبر متحف في العالم من حيث المساحة، يضم أكثر من 1.4 مليون قطعة أثرية تروي تاريخ الحضارة الصينية عبر خمسة آلاف عام متواصلة.',zh:'世界上面积最大的博物馆，收藏超过140万件文物，讲述中华文明5000年的连续历史。'},tags:{ar:['الحضارة الصينية','5000 سنة','بكين'],zh:['中华文明','5000年','北京']}},
-  {n:{ar:'متحف برلين — جزيرة المتاحف',zh:'柏林博物馆岛'},loc:{ar:'برلين، ألمانيا',zh:'德国，柏林'},desc:{ar:'تضم بوابة عشتار الأصلية من بابل وآثار مصرية نادرة ويونانية وبيزنطية. جُمّعت في جزيرة أثرية فريدة في قلب برلين مُدرجة في يونسكو.',zh:'收藏来自巴比伦的原版伊什塔尔门及珍贵的埃及、希腊和拜占庭文物。聚集于柏林市中心一座独特的考古岛上，已列入联合国教科文组织名录。'},tags:{ar:['بوابة عشتار','مصر','بابل'],zh:['伊什塔尔门','埃及','巴比伦']}},
-  {n:{ar:'متحف الحضارة الإسلامية — الشارقة',zh:'沙迦伊斯兰文明博物馆'},loc:{ar:'الشارقة، الإمارات',zh:'阿联酋，沙迦'},desc:{ar:'أحد أبرز المتاحف المتخصصة في الفن والحضارة الإسلامية، يضم مخطوطات ومجوهرات وأسلحة وأعمالاً فنية من ذهبي الحضارة الإسلامية.',zh:'伊斯兰艺术和文明领域最杰出的博物馆之一，收藏来自伊斯兰文明黄金时代的手稿、珠宝、武器和艺术品。'},tags:{ar:['الإسلامية','مخطوطات','فنون'],zh:['伊斯兰','手稿','艺术']}}
-];
+    const sites = [
+      {
+        id: 'abusimbel', cat: 'egypt', wide: true,
+        glyph: '𓇯', catLabel: { ar: 'مصر القديمة', zh: '古埃及' },
+        era: { ar: 'الأسرة التاسعة عشرة — 1264 ق.م', zh: '第十九王朝 — 公元前1264年' },
+        title: { ar: 'معبد أبو سمبل', zh: '阿布辛贝勒神庙' },
+        loc: { ar: 'أسوان، مصر', zh: '阿斯旺，埃及' },
+        meta: [
+          { v: { ar: '33م', zh: '33米' }, l: { ar: 'ارتفاع الواجهة', zh: '立面高度' } },
+          { v: { ar: '63م', zh: '63米' }, l: { ar: 'العمق في الصخر', zh: '岩石深度' } }
+        ],
+        heroImg: 'images/img2.jpeg',
+        videoSrc: 'videos/video.mp4',
+        stats: [
+          { icon: '⛰', v: { ar: '33م', zh: '33米' }, l: { ar: 'ارتفاع الواجهة', zh: '立面高度' } },
+          { icon: '📏', v: { ar: '63م — 38م', zh: '63米 × 38米' }, l: { ar: 'عمق × عرض الصخر', zh: '深度 × 宽度' } },
+          { icon: '👑', v: { ar: 'رمسيس الثاني', zh: '拉美西斯二世' }, l: { ar: 'الباني', zh: '建造者' } },
+          { icon: '🌍', v: 'UNESCO', l: { ar: 'تراث عالمي 1979', zh: '世界遗产 1979' } }
+        ],
+        desc: {
+          ar: `يُعدّ معبد أبو سمبل أعظم معابد النوبة، لما له من تأثير عميق في النفس لإعجازه المعماري وروعته الفنية ومناظره التاريخية والدينية. نُحت المعبد بارتفاع 33 متراً وعرض 38 متراً وبعمق 63 متراً في الصخر، وأُقيم لعبادة إله الشمس "رع حور أختي".\n\nبُني في عهد الملك رمسيس الثاني من الأسرة التاسعة عشرة، واستغرق بناؤه حوالي 20 عاماً كجزء من مشروع ملكي كبير لإقامة معابد في النوبة. يقع على الضفة الغربية لنهر النيل جنوب مصر، بالقرب من الحدود السودانية. اختير موقعه بعناية ليواجه الشرق بحيث تدخل أشعة الشمس إلى قدس الأقداس مرتين سنوياً في ظاهرة فلكية نادرة. كان الموقع قديماً قريباً من الحدود الجنوبية لمصر، لذلك حمل بُعداً دينياً وسياسياً في آنٍ واحد.\n\nالغرض من بنائه: تخليد ذكرى رمسيس الثاني وانتصاراته العسكرية، وعبادة الآلهة: آمون رع، رع حور أختي، وبتاح، وإظهار قوة مصر وهيبتها أمام شعوب الجنوب، وتثبيت النفوذ المصري في النوبة.`,
+          zh: `阿布辛贝勒神庙是努比亚最伟大的神庙，以其深刻的精神影响、建筑奇迹、艺术魅力和历史宗教景观而著称。神庙高33米、宽38米、深63米，完全雕凿于岩石之中，专为祭祀太阳神"拉-哈拉赫提"而建。\n\n神庙建于第十九王朝拉美西斯二世统治时期，历时约20年完工，是在努比亚建造神庙的宏大王室计划之一。它坐落于埃及南部尼罗河西岸，靠近苏丹边境。其选址经过精心设计，使阳光一年两次射入至圣所，呈现出罕见的天文奇观。该地点古时靠近埃及南部边境，因此同时具有宗教和政治意义。\n\n建造目的：纪念拉美西斯二世及其军事胜利，供奉诸神（阿蒙-拉、拉-哈拉赫提、普塔赫），展示埃及在南方各民族面前的力量与威严，并巩固埃及在努比亚的统治地位。`
+        },
+        quote: {
+          ar: 'يعكس معبد أبو سمبل قوة ونفوذ الدولة المصرية في عهد رمسيس الثاني، ويمثل أحد أعظم إنجازات العمارة الصخرية في التاريخ القديم.',
+          zh: '阿布辛贝勒神庙体现了拉美西斯二世时代埃及国家的力量与影响，是古代历史上岩石建筑最伟大成就之一。'
+        },
+        quoteSrc: {
+          ar: '— زاهي حواس، أبو سمبل: معابد الشمس المشرقة، دار الشروق',
+          zh: '— 扎希·哈瓦斯，《阿布辛贝勒：初升之阳的神庙》'
+        },
+        facts: {
+          ar: [
+            'تتعامد الشمس على ثلاثة تماثيل فقط في قدس الأقداس مرتين سنوياً: 22 فبراير و22 أكتوبر — ولا تُضيء تمثال بتاح إله الظلام',
+            'الواجهة الأمامية تضم أربعة تماثيل ضخمة لرمسيس الثاني بارتفاع يقارب 20 متراً لكل منها',
+            'الجدار الشمالي لبهو الأعمدة يصور تفاصيل معركة قادش الشهيرة بين المصريين والحيثيين',
+            'الجدار الجنوبي يُظهر رمسيس الثاني على عجلته الحربية يهاجم قلعة آسيوية، والشرقي يصور انتصاراته',
+            'غُطّي بالرمال لقرون طويلة وأُعيد اكتشافه عام 1813م بواسطة المستكشف السويسري يوهان لودفيغ بوركهارت',
+            'نُقل المعبد بأكمله 65 متراً للأعلى بين 1964–1968م في أكبر عملية إنقاذ أثري في التاريخ إنقاذاً له من مياه السد العالي'
+          ],
+          zh: [
+            '每年2月22日和10月22日，阳光仅照射至圣所中三尊雕像，而不照射代表黑暗之神的普塔赫雕像',
+            '神庙前立面有四座拉美西斯二世的巨型坐像，每座约高20米',
+            '柱廊大厅北墙详细描绘了埃及人与赫梯人之间著名的卡迭什战役',
+            '南墙描绘国王驾战车攻击亚洲城堡，东墙描绘国王征服埃及敌人的场景',
+            '神庙被沙土掩埋数百年，1813年由瑞士探险家约翰·路德维希·布克哈特重新发现',
+            '1964年至1968年间，整座神庙被切割上移65米，这是史上规模最大的文物抢救行动，以免被阿斯旺高坝淹没'
+          ]
+        },
+        info: {
+          ar: [
+            ['الموقع', 'جنوب محافظة أسوان، مصر، بالقرب من الحدود السودانية'],
+            ['نوع الموقع', 'معبد صخري منحوت في الحجر الرملي الطبيعي'],
+            ['الباني', 'الملك رمسيس الثاني'],
+            ['الحضارة', 'المصرية القديمة — الدولة الحديثة — الأسرة التاسعة عشرة'],
+            ['تاريخ البناء', 'حوالي 1264 ق.م — 1244 ق.م'],
+            ['مدة البناء', 'حوالي 20 عاماً'],
+            ['الأبعاد', 'ارتفاع 33م × عرض 38م × عمق 63م'],
+            ['المواد', 'الحجر الرملي الطبيعي في الجبل'],
+            ['الآلهة المعبودة', 'آمون رع — رع حور أختي — بتاح'],
+            ['الاكتشاف الحديث', '1813م — يوهان لودفيغ بوركهارت'],
+            ['تنظيف المدخل', '1817م — جيوفاني بلزوني'],
+            ['نقل المعبد', '1964–1968م — إنقاذاً من السد العالي'],
+            ['التسجيل', 'تراث عالمي باليونسكو 1979م'],
+            ['أوقات الزيارة', 'يومياً 6:00ص — 5:00م'],
+            ['ملاحظة', 'يُفضل الوصول مبكراً في الصيف بسبب الحرارة']
+          ],
+          zh: [
+            ['位置', '埃及阿斯旺省南部，靠近苏丹边境'],
+            ['遗址类型', '雕凿于天然砂岩中的岩凿神庙'],
+            ['建造者', '法老拉美西斯二世'],
+            ['文明', '古埃及 — 新王国 — 第十九王朝'],
+            ['建造时间', '约公元前1264年—公元前1244年'],
+            ['建造历时', '约20年'],
+            ['尺寸', '高33米 × 宽38米 × 深63米'],
+            ['材料', '山体天然砂岩'],
+            ['供奉神灵', '阿蒙-拉 — 拉-哈拉赫提 — 普塔赫'],
+            ['现代发现', '1813年 — 约翰·路德维希·布克哈特'],
+            ['入口清理', '1817年 — 乔瓦尼·贝尔佐尼'],
+            ['神庙搬迁', '1964–1968年 — 为免遭阿斯旺高坝淹没'],
+            ['列入名录', '联合国教科文组织世界遗产 1979年'],
+            ['开放时间', '每天上午6时至下午5时'],
+            ['温馨提示', '夏季建议早到，以避开炎热天气']
+          ]
+        },
+        timeline: {
+          ar: [
+            { y: '1279 ق.م', e: 'صعود رمسيس الثاني إلى عرش مصر وبدء حقبة البناء الملكية الكبرى في النوبة' },
+            { y: '1264 ق.م', e: 'بدء تشييد معبد أبو سمبل الكبير المنحوت في قلب الصخر الرملي' },
+            { y: '1244 ق.م', e: 'اكتمال المعبد بعد 20 عاماً وتكريسه لعبادة آمون رع ورع حور أختي وبتاح' },
+            { y: 'القرن 6 ق.م', e: 'نقوش يونانية وفينيقية تُكتب على أقدام التماثيل من قِبل المرتزقة الأجانب' },
+            { y: '1813 م', e: 'إعادة اكتشافه بعد قرون من الطمر بالرمال على يد المستكشف السويسري يوهان بوركهارت' },
+            { y: '1817 م', e: 'تنظيف المدخل بالكامل وأول دخول حديث إلى المعبد على يد الإيطالي جيوفاني بلزوني' },
+            { y: '1964–1968 م', e: 'أكبر عملية إنقاذ أثري في التاريخ: نقل المعبد بالكامل 65 متراً للأعلى هرباً من مياه بحيرة ناصر' },
+            { y: '1979 م', e: 'تسجيله رسمياً في قائمة التراث العالمي لليونسكو ضمن مواقع النوبة المصرية' }
+          ],
+          zh: [
+            { y: '公元前1279年', e: '拉美西斯二世登上埃及王位，开始在努比亚大规模建造神庙的王室计划' },
+            { y: '公元前1264年', e: '开始建造雕凿于砂岩山体之中的阿布辛贝勒大神庙' },
+            { y: '公元前1244年', e: '历时20年，神庙竣工，供奉阿蒙-拉、拉-哈拉赫提和普塔赫' },
+            { y: '公元前6世纪', e: '外国雇佣兵在雕像脚部刻写希腊文和腓尼基文铭文' },
+            { y: '1813年', e: '被沙土掩埋数百年后，由瑞士探险家约翰·布克哈特重新发现' },
+            { y: '1817年', e: '意大利探险家乔瓦尼·贝尔佐尼清理入口，首次现代进入神庙' },
+            { y: '1964–1968年', e: '史上最大规模文物抢救：整座神庙切割上移65米，免遭纳赛尔水库淹没' },
+            { y: '1979年', e: '正式列入联合国教科文组织世界遗产名录（努比亚遗址）' }
+          ]
+        },
+        innerPlaces: {
+          ar: [
+            { icon: '☀', title: 'ظاهرة تعامد الشمس', text: 'أهم ظاهرة في المعبد وهي من أندر الظواهر الفلكية التي جسّدها القدماء المصريون. تتعامد الشمس على ثلاثة تماثيل فقط: رمسيس الثاني، رع حور أختي، وآمون. ولا تتعامد على تمثال بتاح الذي كان يُعتبر إله الظلام. تحدث مرتين سنوياً: 22 فبراير و22 أكتوبر.' },
+            { icon: '🏛', title: 'بهو الأعمدة (القاعة الكبرى)', text: 'أول وأكبر قاعات المعبد بارتفاع 9 أمتار. سقفها يرتكز على 8 أعمدة أوزيرية على شكل تماثيل للملك رمسيس الثاني واقفاً بذراعين متقاطعتين. الجدار الشمالي: معركة قادش. الجدار الجنوبي: رمسيس على عجلته الحربية. الجدار الشرقي: انتصاراته. السقف: طيور بأجنحة ممدودة ونجوم السماء.' },
+            { icon: '✨', title: 'قدس الأقداس', text: 'في أعماق المعبد. يضم أربعة تماثيل جالسة: رمسيس الثاني، آمون رع، رع حور أختي، وبتاح. تتعامد الشمس على الثلاثة الأوائل مرتين سنوياً فقط، ولا تُضيء بتاح إله الظلام.' },
+            { icon: '🌹', title: 'معبد نفرتاري الصغير', text: 'مخصص للملكة نفرتاري والإلهة حتحور. يُجسّد مكانة الملكة الرفيعة في قلب رمسيس الثاني. يُعدّ من أهم الآثار في الموقع بجانب المعبد الكبير.' },
+            { icon: '🏺', title: 'صالات الكنوز (الغرف الجانبية)', text: 'حجرتان جانبيتان يؤدي إليهما الجدار الشمالي للقاعة الكبرى. تحتوي جدرانهما على مناظر للملك مع الآلهة. كانت تُستخدم لحفظ الأشياء الثمينة والمقتنيات الخاصة بالمعبد.' },
+            { icon: '🎭', title: 'عرض الصوت والضوء', text: 'يُقام كل ليلة. يحكي قصة المعبد عبر إضاءة درامية مذهلة على واجهة التماثيل العملاقة. من أجمل التجارب السياحية في مصر كله.' }
+          ],
+          zh: [
+            { icon: '☀', title: '太阳垂直照射奇观', text: '神庙中最重要的现象，也是古埃及人在神庙内体现的最罕见天文奇观。阳光仅照射三尊雕像：拉美西斯二世、拉-哈拉赫提和阿蒙，而不照射被视为黑暗之神的普塔赫雕像。每年两次：2月22日和10月22日。' },
+            { icon: '🏛', title: '柱廊大厅（大殿）', text: '神庙中最大的第一个大厅，高9米。天花板由8根奥西里斯柱支撑，刻有双臂交叉站立的拉美西斯二世形象。北墙：卡迭什战役。南墙：国王驾战车攻击亚洲城堡。东墙：征服敌人的场景。天花板：展翅飞鸟和星空装饰。' },
+            { icon: '✨', title: '至圣所', text: '位于神庙最深处，有四尊坐像：拉美西斯二世、阿蒙-拉、拉-哈拉赫提和普塔赫。每年仅阳光照射前三尊各一次，黑暗之神普塔赫的雕像始终处于阴影中。' },
+            { icon: '🌹', title: '奈费尔塔利小神庙', text: '专为王后奈费尔塔利和哈托尔女神而建，体现了王后在拉美西斯二世心中的崇高地位。被视为遗址中与大神庙并列的最重要文物之一。' },
+            { icon: '🏺', title: '宝藏室（侧室）', text: '两个侧室，由大厅北墙通向。墙壁上有国王与诸神同处的场景。曾用于存放神庙的珍贵物品和专属收藏。' },
+            { icon: '🎭', title: '声光表演', text: '每晚举行，通过戏剧性灯光照射在巨型雕像立面上讲述神庙故事。被誉为埃及最精彩的旅游体验之一。' }
+          ]
+        },
+        gallery: ['images/img1.jpeg', 'images/img2.jpeg', 'images/img3.jpeg']
+      },
+      {
+        id: 'giza', cat: 'egypt', wide: true,
+        glyph: '𓇼', catLabel: { ar: 'مصر القديمة', zh: '古埃及' },
+        era: { ar: 'الأسرة الرابعة — 2580 ق.م', zh: '第四王朝 — 公元前2580年' },
+        title: { ar: 'مجمع أهرامات الجيزة', zh: '吉萨金字塔群' },
+        loc: { ar: 'الجيزة، مصر', zh: '吉萨，埃及' },
+        meta: [
+          { v: { ar: '146م', zh: '146米' }, l: { ar: 'ارتفاع هرم خوفو الأصلي', zh: '胡夫金字塔原高' } },
+          { v: { ar: '3 أهرامات', zh: '3座金字塔' }, l: { ar: '+ أبو الهول + معابد', zh: '+ 狮身人面像 + 神庙' } }
+        ],
+        heroImg: 'images/pyramids.jpg',
+        videoSrc: null,
+        stats: [
+          { icon: '📐', v: { ar: '146م', zh: '146米' }, l: { ar: 'ارتفاع هرم خوفو الأصلي', zh: '胡夫金字塔原高' } },
+          { icon: '🏛', v: { ar: '3 أهرامات كبرى', zh: '3座大金字塔' }, l: { ar: '+ أبو الهول + معابد', zh: '+ 狮身人面像 + 神庙' } },
+          { icon: '👑', v: { ar: 'خوفو / خفرع / منكاورع', zh: '胡夫·卡夫拉·孟卡拉' }, l: { ar: 'ملوك الأسرة الرابعة', zh: '第四王朝诸王' } },
+          { icon: '🌍', v: 'UNESCO', l: { ar: 'تراث عالمي 1979', zh: '世界遗产 1979' } }
+        ],
+        desc: {
+          ar: `يُعدّ مجمع أهرامات الجيزة من أعظم المواقع الأثرية في العالم، ومن أبرز الشواهد الخالدة على عبقرية العمارة المصرية القديمة. يقع فوق هضبة الجيزة غرب نهر النيل، حيث شُيّد ليكون مركزاً جنائزياً وملكياً متكاملاً يجمع بين الأهرامات والمعابد والطرق الصاعدة والمقابر والتماثيل والنُّصب المرتبطة بعقيدة الخلود والبعث.\n\nلا تكمن أهمية مجمع الجيزة في وجود الأهرامات وحدها، بل في كونه منظومة معمارية متكاملة صُممت بعناية شديدة، بحيث يرتبط كل عنصر فيها بوظيفة دينية أو جنائزية أو رمزية. ولهذا لا يُنظر إليه بوصفه مجموعة مبانٍ منفصلة، بل باعتباره مشهداً معمارياً واحداً يجسّد فكر المصري القديم في الملكية والآخرة والسلطة المقدسة.\n\nيمتاز المجمع بأنه مشروع معماري موحد يقوم على الربط بين: الهرم بوصفه مركز الدفن الملكي، والمعبد الجنائزي بوصفه موضع الطقوس، والطريق الصاعد بوصفه محور الانتقال، ومعبد الوادي بوصفه نقطة البداية الشعائرية، وتمثال أبو الهول بوصفه رمزاً للحراسة والهيبة والشرعية.`,
+          zh: `吉萨金字塔群是世界上最伟大的考古遗址之一，是古埃及建筑天才最杰出的永恒见证。它位于尼罗河以西的吉萨台地上，被建造为一个完整的葬祭和王室中心，集金字塔、神庙、上升通道、墓葬、雕像和与永生复活信仰相关纪念碑于一体。\n\n吉萨建筑群的重要性不仅在于金字塔本身，更在于它是一个经过精心设计的完整建筑体系，其中每个元素都与宗教、葬祭或象征功能相关联。因此，吉萨不应被视为一组独立建筑，而应被视为一个统一的建筑景观，体现了古埃及人关于君主制、来世和神圣权威的思想。\n\n这一建筑群是一个统一的建筑工程，将以下各元素有机结合：作为皇家陵墓中心的金字塔、作为仪式场所的葬祭神庙、作为过渡轴线的上升通道、作为仪式起点的河谷神庙，以及作为守护、威严和合法性象征的狮身人面像。`
+        },
+        quote: {
+          ar: 'تكشف الجيزة عن رؤية مصرية قديمة بالغة الدقة، ترى أن العمارة ليست مجرد بناء، بل نظام رمزي وديني وسياسي متكامل.',
+          zh: '吉萨揭示了一种极其精妙的古埃及理念：建筑不仅仅是一种构筑物，而是一个完整的象征性、宗教性和政治性系统。'
+        },
+        quoteSrc: {
+          ar: '— من تراث الدراسات المعمارية المصرية القديمة',
+          zh: '— 古埃及建筑研究遗产'
+        },
+        facts: {
+          ar: [
+            'الهرم الأكبر هو الوحيد الباقي من عجائب الدنيا السبع القديمة، وظل أطول بناء في العالم لأكثر من 3800 عام',
+            'يُرجَّح أن بناء الهرم الأكبر استغرق حوالي 20 عاماً وشارك فيه عشرات الآلاف من العمال والمهندسين',
+            'الهرم الأكبر دقيق جداً في توجيهه نحو الشمال الجغرافي، بانحراف لا يتجاوز 3/60 من الدرجة',
+            'اكتُشفت مركبة خوفو الخشبية عام 1954م ويبلغ طولها 43 متراً، وهي من أروع الاكتشافات الأثرية في التاريخ',
+            'تمثال أبو الهول هو أضخم تمثال منحوت من صخرة واحدة في مصر القديمة بطول 73م وارتفاع يزيد على 20م',
+            'هرم خفرع يحتفظ بجزء من كسوته الجيرية البيضاء الأصلية قرب القمة حتى اليوم',
+            'مراكب الشمس المدفونة بجانب الهرم ترتبط بعقيدة رحلة الملك مع الإله رع في العالم الآخر',
+            'مجمع الجيزة مُدرج في قائمة التراث العالمي لليونسكو منذ عام 1979م'
+          ],
+          zh: [
+            '大金字塔是古代世界七大奇迹中唯一保存至今的，并保持世界最高建筑记录超过3800年',
+            '据估计大金字塔的建造历时约20年，数万名工人和工程师参与其中',
+            '大金字塔朝向地理北极点的精度极高，偏差不超过3/60度',
+            '1954年发现的胡夫木船长43米，是埃及最精彩的考古发现之一',
+            '狮身人面像是古埃及用单块岩石雕刻的最大雕像，长73米，高逾20米',
+            '卡夫拉金字塔顶部至今仍保留部分原始白色石灰岩外壳',
+            '金字塔旁埋藏的太阳船坑与法老与太阳神拉同行于来世的信仰相关',
+            '吉萨建筑群自1979年起被列入联合国教科文组织世界遗产名录'
+          ]
+        },
+        info: {
+          ar: [
+            ['الموقع', 'هضبة الجيزة — محافظة الجيزة — مصر'],
+            ['نوع الموقع', 'مجمع هرمي جنائزي ملكي متكامل'],
+            ['العصر', 'الأسرة الرابعة — الدولة القديمة'],
+            ['الملوك البناة', 'خوفو، خفرع، منكاورع'],
+            ['تاريخ البناء', 'حوالي 2580 – 2503 ق.م'],
+            ['أبعاد هرم خوفو', '146م ارتفاع أصلي — 230م ضلع القاعدة'],
+            ['أبعاد هرم خفرع', '143.5م ارتفاع أصلي — 215م ضلع القاعدة'],
+            ['أبعاد هرم منكاورع', '65م ارتفاع أصلي — 109م ضلع القاعدة'],
+            ['تمثال أبو الهول', '73م طولاً — 20م ارتفاعاً — حجر جيري'],
+            ['مركبة الشمس', 'اكتُشفت 1954م — طول 43م — خشب الأرز'],
+            ['التسجيل', 'تراث عالمي باليونسكو 1979م'],
+            ['أوقات الزيارة', 'يومياً 8:00ص — 5:00م'],
+            ['الأنشطة السياحية', 'دخول الهرم — ركوب الجمال — عرض الصوت والضوء']
+          ],
+          zh: [
+            ['位置', '吉萨台地 — 开罗吉萨省 — 埃及'],
+            ['遗址类型', '完整的王室金字塔葬祭建筑群'],
+            ['时代', '第四王朝 — 古王国时期'],
+            ['建造者', '胡夫、卡夫拉、孟卡拉'],
+            ['建造年代', '约公元前2580–2503年'],
+            ['胡夫金字塔尺寸', '原高146米 — 底边230米'],
+            ['卡夫拉金字塔尺寸', '原高143.5米 — 底边215米'],
+            ['孟卡拉金字塔尺寸', '原高65米 — 底边109米'],
+            ['狮身人面像', '长73米 — 高20米 — 石灰岩'],
+            ['太阳船', '1954年发现 — 长43米 — 雪松木'],
+            ['列入名录', '联合国教科文组织世界遗产 1979年'],
+            ['开放时间', '每天上午8时至下午5时'],
+            ['旅游活动', '进入金字塔内部 — 骑骆驼 — 声光表演']
+          ]
+        },
+        timeline: {
+          ar: [
+            { y: '2589 ق.م', e: 'بدء حكم الملك خوفو وشروعه في تخطيط مجمع هرمي ضخم على هضبة الجيزة' },
+            { y: '2580 ق.م', e: 'بدء تشييد هرم خوفو الأكبر — أعظم مشروع معماري في التاريخ القديم' },
+            { y: '2560 ق.م', e: 'اكتمال هرم خوفو بعد حوالي 20 عاماً من البناء المتواصل' },
+            { y: '2558 ق.م', e: 'بدء تشييد هرم خفرع ومجمعه الجنائزي المتكامل بما فيه معبد الوادي' },
+            { y: '2532 ق.م', e: 'بدء تشييد هرم منكاورع، آخر الأهرامات الملكية الكبرى في الجيزة' },
+            { y: '2500 ق.م', e: 'نحت تمثال أبو الهول من صخرة جيرية ضخمة واحدة' },
+            { y: '1400 ق.م تقريباً', e: 'الملك تحتمس الرابع يكشف التمثال من الرمال ويقيم لوحة الحلم الشهيرة بين يديه' },
+            { y: '820 م', e: 'الخليفة المأمون يفتح ممراً جديداً في هرم خوفو للوصول إلى داخله' },
+            { y: '1811 م', e: 'فحص داخلي لهرم خوفو بواسطة Giovanni Battista Caviglia' },
+            { y: '1837 م', e: 'دراسة شاملة لمجمع الجيزة بواسطة Richard William Howard Vyse' },
+            { y: '1954 م', e: 'اكتشاف مركبة خوفو الخشبية الشهيرة بجانب الهرم الأكبر على يد المهندس كمال الملاخ' },
+            { y: '1979 م', e: 'تسجيل مجمع أهرامات الجيزة في قائمة التراث العالمي لليونسكو' }
+          ],
+          zh: [
+            { y: '公元前2589年', e: '胡夫法老开始统治，策划在吉萨台地建造宏大的金字塔建筑群' },
+            { y: '公元前2580年', e: '开始建造胡夫大金字塔——古代历史上最伟大的建筑工程' },
+            { y: '公元前2560年', e: '历时约20年持续建设，胡夫金字塔竣工' },
+            { y: '公元前2558年', e: '开始建造卡夫拉金字塔及其完整的葬祭建筑群，包括河谷神庙' },
+            { y: '公元前2532年', e: '开始建造孟卡拉金字塔，吉萨最后一座大型王室金字塔' },
+            { y: '约公元前2500年', e: '狮身人面像从一块巨大的石灰岩整体雕凿而成' },
+            { y: '约公元前1400年', e: '图特摩斯四世清除沙土露出狮身人面像，并竖立著名的梦碑' },
+            { y: '820年', e: '哈里发马蒙在胡夫金字塔内开凿新通道，进入内部' },
+            { y: '1811年', e: '卡维利亚（Caviglia）对胡夫金字塔进行内部考察' },
+            { y: '1837年', e: '霍华德·瓦伊斯（Vyse）对吉萨建筑群进行全面研究' },
+            { y: '1954年', e: '工程师卡迈勒·马拉赫在大金字塔旁发现著名的胡夫木质太阳船' },
+            { y: '1979年', e: '吉萨金字塔群列入联合国教科文组织世界遗产名录' }
+          ]
+        },
+        innerPlaces: {
+          ar: [
+            { icon: '𓇼', title: 'هرم خوفو — الهرم الأكبر', text: 'أعظم الأهرامات المصرية وأحد عجائب الدنيا السبع القديمة. ارتفاعه الأصلي 146م، قاعدته 230م. يضم: المدخل الشمالي، الممر الهابط، حجرة الملكة ذات السقف الجمالوني، البهو الكبير الرائع، وحجرة الملك من الجرانيت الأحمر مع حجرات تخفيف الضغط فوقها.' },
+            { icon: '𓇼', title: 'هرم خفرع — الهرم الثاني', text: 'ثاني أكبر أهرامات الجيزة، ارتفاعه الأصلي 143.5م. يتميز ببقاء الكسوة الجيرية البيضاء قرب القمة. مجمعه الهرمي من أكمل المجمعات، ويضم معبد الوادي الأفضل حفظاً من عصر الدولة القديمة. شُيّد في عهد خفرع 2558–2532 ق.م.' },
+            { icon: '𓇼', title: 'هرم منكاورع — الهرم الثالث', text: 'أصغر الأهرامات الثلاثة الكبرى، ارتفاعه 65م. يتميز بكسوته الجرانيتية في أجزائه السفلى. ارتبطت مجمعته باكتشاف روائع فنية كتماثيل الثلاثيات مع الإلهة حتحور. شُيّد في عهد منكاورع 2532–2503 ق.م.' },
+            { icon: '𓁿', title: 'تمثال أبو الهول', text: 'أشهر معالم مجمع الجيزة، طوله 73م وارتفاعه يزيد على 20م. نُحت من صخرة جيرية واحدة. جسم أسد ورأس إنسان. يُرجَّح أنه يمثل الملك خفرع. ارتبط لاحقاً بعبادة الشمس باسم حور-إم-أخت. لوحة الحلم بين يديه تروي قصة تحتمس الرابع الشهيرة.' },
+            { icon: '🏛', title: 'منظومة المعابد والطرق الصاعدة', text: 'كان لكل هرم: معبد جنائزي بجانبه لأداء الطقوس، ومعبد وادٍ عنده حافة الهضبة، والطريق الصاعد ربطهما. هذه المنظومة تمثل المسار الطقسي الجنائزي الكامل من النيل حتى داخل الهرم.' },
+            { icon: '⛵', title: 'مراكب الشمس والمقابر والمصاطب', text: 'اكتُشفت عام 1954م مركبة خشبية بطول 43م من خشب الأرز اللبناني بجوار هرم خوفو، ترتبط برحلة الملك مع رع في الآخرة. وتحيط بالمجمع مقابر كبار رجال الدولة والمصاطب الغنية بالنقوش والمعلومات التاريخية.' }
+          ],
+          zh: [
+            { icon: '𓇼', title: '胡夫金字塔（大金字塔）', text: '最伟大的埃及金字塔，古代世界七大奇迹之一。原高146米，底边230米。内部有：北侧入口、下降通道、三角形天花板的王后室、宏伟的大画廊以及用红色花岗岩建造并设有减压室的王室内室。' },
+            { icon: '𓇼', title: '卡夫拉金字塔（第二金字塔）', text: '吉萨第二大金字塔，原高143.5米。以顶部保留石灰岩外壳而著称。其建筑群是吉萨保存最完整的，拥有古王国时期最好的河谷神庙。建于卡夫拉法老时期，约公元前2558–2532年。' },
+            { icon: '𓇼', title: '孟卡拉金字塔（第三金字塔）', text: '三座大金字塔中最小的，高65米。以其下部花岗岩外壳而著称。其建筑群与精美的三联雕像相关，是理解第四王朝末期建筑的重要范本。建于孟卡拉法老时期，约公元前2532–2503年。' },
+            { icon: '𓁿', title: '狮身人面像', text: '吉萨建筑群最著名的地标，长73米，高逾20米。从单块石灰岩整体雕凿。融合狮身人面，被认为代表卡夫拉法老。后与太阳崇拜相关联，称为"地平线上的荷鲁斯"。两爪间的梦碑讲述图特摩斯四世的传奇故事。' },
+            { icon: '🏛', title: '神庙系统与上升通道', text: '每座金字塔旁有葬祭神庙举行仪式，台地低处有河谷神庙，上升通道连接两者。这一系统代表了从尼罗河到金字塔内部的完整葬祭仪式路径。' },
+            { icon: '⛵', title: '太阳船、墓地与马斯塔巴墓', text: '1954年在胡夫金字塔旁发现长43米的雪松木船，与法老与太阳神拉同行于来世相关。建筑群周围还有大臣和贵族的陵墓区以及铭文丰富的马斯塔巴墓。' }
+          ]
+        },
+        pyramidGroups: {
+          ar: [
+            {
+              king: 'الملك خوفو',
+              kingTitle: 'خنوم-خوفو | الأسرة الرابعة | 2589–2566 ق.م',
+              kingDesc: 'أكبر ملوك الأسرة الرابعة، ابن الملك سنفرو، حكم حوالي 23 سنة. بنى أعظم هرم في التاريخ وكان مهتماً باستغلال مناجم سيناء والنوبة والصحراء الشرقية.',
+              img: 'images/Khufu_image.jpg',
+              elements: [
+                { name: 'هرم خوفو — الهرم الأكبر', detail: '146م ارتفاع أصلي | 230م قاعدة | 2.3 مليون كتلة حجرية' },
+                { name: 'المدخل الأصلي الشمالي', detail: 'على علو ملحوظ من سطح الأرض في الجهة الشمالية' },
+                { name: 'الممر الهابط والصاعد', detail: 'ممرات ضيقة تقود إلى قلب الهرم عبر مستويات متعددة' },
+                { name: 'البهو الكبير (Grand Gallery)', detail: 'مئة وسبعة وأربعون قدماً طولاً — سقف مرتفع بجدران متدرجة' },
+                { name: 'حجرة الملك', detail: 'جرانيت أحمر — سقف أفقي — خمس حجرات تخفيف ضغط فوقها' },
+                { name: 'حجرة الملكة', detail: 'سقف جمالوني مثلثي — وظيفة رمزية وشعائرية' },
+                { name: 'مراكب الشمس', detail: 'اكتُشفت 1954م — طول 43م — خشب الأرز اللبناني' }
+              ]
+            },
+            {
+              king: 'الملك خفرع',
+              kingTitle: 'خع إف رع | الأسرة الرابعة | 2558–2532 ق.م',
+              kingDesc: 'ابن الملك خوفو، حكم حوالي 26 سنة. بنى الهرم الثاني وارتبط اسمه بتمثال أبو الهول. تمثاله الشهير من حجر الديوريت محفوظ في المتحف المصري بالقاهرة.',
+              img: 'images/Kharfa3_image.jpg',
+              elements: [
+                { name: 'هرم خفرع', detail: '143.5م ارتفاع أصلي | 215م قاعدة | كسوة جيرية جزئية باقية' },
+                { name: 'معبد الوادي', detail: 'الأفضل حفظاً — جرانيت ومرمر — 23 تمثالاً ملكياً' },
+                { name: 'الطريق الصاعد', detail: 'يربط معبد الوادي بالمعبد الجنائزي' },
+                { name: 'المعبد الجنائزي', detail: 'فناء كبير — قاعات أعمدة — خمس كوات لتماثيل ملكية' },
+                { name: 'تمثال أبو الهول', detail: '73م طولاً — 20م ارتفاعاً — حجر جيري واحد' },
+                { name: 'حجرة الدفن', detail: 'سقف جمالوني مثلثي — تابوت جرانيتي مثبت في الأرضية' }
+              ]
+            },
+            {
+              king: 'الملك منكاورع',
+              kingTitle: 'من-كاو-رع | الأسرة الرابعة | 2532–2503 ق.م',
+              kingDesc: 'ابن خفرع وحفيد خوفو بحسب الأرجح. توفي قبل اكتمال مجمعه. ارتبطت مجمعته بروائع فنية من أجمل تماثيل عصر الأهرام كتماثيل الثلاثيات مع الإلهة حتحور ومعبودات الأقاليم.',
+              img: 'images/mankara3_image.jpg',
+              elements: [
+                { name: 'هرم منكاورع', detail: '65م ارتفاع أصلي | 109م قاعدة | كسوة جرانيتية سفلى' },
+                { name: 'ثلاثة أهرامات فرعية', detail: 'إلى الجنوب — لملكات أو أغراض شعائرية' },
+                { name: 'معبد الوادي', detail: 'استُكمل بالطوب اللبن بعد وفاة الملك — حفظ تماثيل رائعة' },
+                { name: 'الحجرات الانتقالية', detail: 'حجرة بنقوش تشبه واجهات القصور + حجرة ذات 6 حنيات' },
+                { name: 'حجرة الدفن', detail: 'جرانيت — تابوت مزخرف فُقد في البحر عام 1838م' },
+                { name: 'تماثيل الثلاثيات', detail: 'اكتُشفت في معبد الوادي — من روائع الفن المصري القديم' }
+              ]
+            }
+          ],
+          zh: [
+            {
+              king: '胡夫法老',
+              kingTitle: '赫纳姆-胡夫 | 第四王朝 | 公元前2589–2566年',
+              kingDesc: '第四王朝最伟大的法老，斯奈夫鲁之子，统治约23年。建造了历史上最伟大的金字塔，热衷于开发西奈半岛、努比亚和东部沙漠的矿山。',
+              img: 'images/khufu_entrance.jpg',
+              elements: [
+                { name: '胡夫金字塔（大金字塔）', detail: '原高146米 | 底边230米 | 230万块石头' },
+                { name: '北侧原始入口', detail: '位于北面高于地面的原始入口' },
+                { name: '下降通道与上升通道', detail: '狭窄通道引向金字塔核心，经历多个层次' },
+                { name: '大画廊（Grand Gallery）', detail: '宏伟的长廊 — 两侧阶梯状墙壁 — 极高天花板' },
+                { name: '王室内室', detail: '红色花岗岩 — 平顶 — 上方五个减压室' },
+                { name: '王后室', detail: '三角形山墙天花板 — 象征性和宗教意义' },
+                { name: '太阳船', detail: '1954年发现 — 长43米 — 黎巴嫩雪松木' }
+              ]
+            },
+            {
+              king: '卡夫拉法老',
+              kingTitle: '哈-艾夫-拉 | 第四王朝 | 公元前2558–2532年',
+              kingDesc: '胡夫之子，统治约26年。建造了第二座金字塔，其名与狮身人面像相关联。著名的闪绿岩雕像现藏于开罗埃及博物馆。',
+              img: 'images/khafre_entrance.jpg',
+              elements: [
+                { name: '卡夫拉金字塔', detail: '原高143.5米 | 底边215米 | 顶部保留石灰岩外壳' },
+                { name: '河谷神庙', detail: '古王国保存最好的 — 花岗岩和大理石 — 23尊雕像' },
+                { name: '上升通道', detail: '连接河谷神庙与葬祭神庙' },
+                { name: '葬祭神庙', detail: '大型庭院 — 柱廊大厅 — 五个王室雕像壁龛' },
+                { name: '狮身人面像', detail: '长73米 — 高20米 — 整块石灰岩' },
+                { name: '墓室', detail: '三角形山墙天花板 — 花岗岩石棺固定于地板' }
+              ]
+            },
+            {
+              king: '孟卡拉法老',
+              kingTitle: '门-考-拉 | 第四王朝 | 公元前2532–2503年',
+              kingDesc: '卡夫拉之子、胡夫之孙（最可能的说法）。在建筑群竣工前去世。其建筑群与精美的三联雕像相关联，这些与哈托尔女神并立的雕像是吉萨时代最精美的艺术品。',
+              img: 'images/menkaure_causeway.jpg',
+              elements: [
+                { name: '孟卡拉金字塔', detail: '原高65米 | 底边109米 | 下部花岗岩外壳' },
+                { name: '三座附属金字塔', detail: '位于南侧 — 用于王后或仪式目的' },
+                { name: '河谷神庙', detail: '法老去世后用泥砖完成 — 保存珍贵雕像' },
+                { name: '过渡室', detail: '宫殿立面纹饰室 + 六壁龛前室' },
+                { name: '墓室', detail: '花岗岩 — 装饰石棺于1838年在海上沉没' },
+                { name: '三联雕像', detail: '在河谷神庙发现 — 古埃及艺术珍品' }
+              ]
+            }
+          ]
+        },
+        archElements: {
+          ar: [
+            { num: '01', icon: '🏔', title: 'هرم خوفو', desc: 'أكبر وأشهر عناصر المجمع، وأحد عجائب الدنيا السبع القديمة. المقبرة الملكية للملك خوفو.' },
+            { num: '02', icon: '🏔', title: 'هرم خفرع', desc: 'ثاني أكبر أهرامات الجيزة، يحتفظ بكسوته الجيرية البيضاء قرب القمة حتى اليوم.' },
+            { num: '03', icon: '🏔', title: 'هرم منكاورع', desc: 'أصغر الأهرامات الثلاثة الكبرى، يتميز بكسوة جرانيتية مميزة في أجزائه السفلى.' },
+            { num: '04', icon: '👑', title: 'أهرامات الملكات', desc: 'أهرامات صغيرة خُصصت لدفن زوجات الملوك وذوات المكانة الرفيعة في الأسرة المالكة.' },
+            { num: '05', icon: '🏛', title: 'المعابد الجنائزية', desc: 'كان لكل هرم معبد جنائزي يُقام بجانبه لأداء الطقوس وتقديم القرابين للملك المتوفى.' },
+            { num: '06', icon: '🌊', title: 'معابد الوادي', desc: 'تُمثّل المدخل الرمزي والديني للمجمع، وكانت نقطة استقبال الجثمان الملكي وبداية الطقوس.' },
+            { num: '07', icon: '🛤', title: 'الطرق الصاعدة', desc: 'تربط معابد الوادي بالمعابد الجنائزية، وتمثل الانتقال الرمزي من عالم الحياة إلى الخلود.' },
+            { num: '08', icon: '𓁿', title: 'تمثال أبو الهول', desc: 'من أشهر المعالم في العالم، جسم أسد ورأس إنسان، طوله 73م. رمز الحراسة والهيبة المقدسة.' },
+            { num: '09', icon: '⛩', title: 'معبد أبو الهول', desc: 'أُقيم بالقرب من التمثال لتقديس أبو الهول وإقامة الشعائر والقرابين في عصر الدولة الحديثة.' },
+            { num: '10', icon: '🪦', title: 'المقابر الشرقية والغربية', desc: 'مقابر كبار رجال الدولة والكهنة والنبلاء، توضّح تخطيطاً عمرانياً دقيقاً داخل الهضبة.' },
+            { num: '11', icon: '🧱', title: 'المصاطب', desc: 'مقابر مستطيلة ذات أسقف مستوية وجدران مائلة، غنية بالنقوش والزخارف والمعلومات التاريخية.' },
+            { num: '12', icon: '⛵', title: 'حفر مراكب الشمس', desc: 'حفر خُصصت لدفن مراكب ملكية، ترتبط بعقيدة رحلة الملك مع الإله رع في العالم الآخر.' },
+            { num: '13', icon: '🏟', title: 'الساحات الطقسية', desc: 'مساحات مفتوحة لتنظيم الحركة والطقوس والمواكب، تجعل من المجمع وحدة معمارية متكاملة.' }
+          ],
+          zh: [
+            { num: '01', icon: '🏔', title: '胡夫金字塔', desc: '建筑群中最大最著名的元素，古代世界七大奇迹之一，胡夫法老的陵墓。' },
+            { num: '02', icon: '🏔', title: '卡夫拉金字塔', desc: '吉萨第二大金字塔，顶部至今保留原始白色石灰岩外壳。' },
+            { num: '03', icon: '🏔', title: '孟卡拉金字塔', desc: '三座大金字塔中最小的，以其独特的下部花岗岩外壳而著称。' },
+            { num: '04', icon: '👑', title: '王后金字塔', desc: '专为王后和宫廷贵妇陪葬而建的小型金字塔，体现了完整的皇室丧葬规划。' },
+            { num: '05', icon: '🏛', title: '葬祭神庙', desc: '每座金字塔旁的神庙，用于举行祭祀已故国王的仪式和供奉活动。' },
+            { num: '06', icon: '🌊', title: '河谷神庙', desc: '代表建筑群的象征性和宗教性入口，是接收王室遗体和仪式起点。' },
+            { num: '07', icon: '🛤', title: '上升通道', desc: '连接河谷神庙与葬祭神庙，象征从生命世界向永恒世界的过渡。' },
+            { num: '08', icon: '𓁿', title: '狮身人面像', desc: '世界最著名地标之一，狮身人面，长73米，神圣守护与威严的象征。' },
+            { num: '09', icon: '⛩', title: '狮身人面神庙', desc: '建于狮身人面像旁，用于其崇拜仪式，在新王国时期地位尤为突出。' },
+            { num: '10', icon: '🪦', title: '东西墓地', desc: '为大臣、祭司、贵族和王室成员提供的陵墓区，显示精密的城市规划。' },
+            { num: '11', icon: '🧱', title: '马斯塔巴墓', desc: '长方形平顶、略斜墙面的陵墓，铭文丰富，历史信息极为珍贵。' },
+            { num: '12', icon: '⛵', title: '太阳船坑', desc: '埋藏王室船只的船坑，与法老与太阳神拉同行于来世的信仰相关。' },
+            { num: '13', icon: '🏟', title: '仪式庭院', desc: '用于组织仪式游行的开放空间，将建筑群各元素连接为一个完整的建筑单元。' }
+          ]
+        },
 
-// ===== RENDER =====
-function renderSites(filter='all') {
-  const l = currentLang;
-  const filtered = filter === 'all' ? sites : sites.filter(s => s.cat === filter);
-  const grid = document.getElementById('sitesGrid');
-  grid.innerHTML = filtered.map((s,i) => `
-    <div class="site-card${s.wide?' wide':''}${s.tall?' tall':''}" onclick="openDetail('${s.id}')">
+        pyramidPassages: {
+          ar: {
+            khufu: {
+              king: 'الملك خوفو',
+              kingTitle: 'خنوم-خوفو | ẖnmw-ḫw=f-wj | الأسرة الرابعة | 2589–2566 ق.م',
+              kingDesc: 'أكبر ملوك الأسرة الرابعة، ابن الملك سنفرو وأمه الملكة حتب حرس. حكم حوالي 23 سنة. يُعدّ أعظم بُناة الأهرامات في التاريخ. كان مهتماً باستغلال مناجم سيناء والنوبة والصحراء الشرقية. والده سنفرو مهّد لتطور العمارة الهرمية، وابنه جدف رع أكمل بعض المنشآت بعد وفاته.',
+              passages: [
+                {
+                  num: '01', img: 'images/khufu_entrance.jpg', reverse: false,
+                  title: 'المدخل الأصلي الشمالي',
+                  body: 'يقع المدخل الأصلي في الجهة الشمالية من الهرم على ارتفاع ملحوظ عن مستوى سطح الأرض. اختيار الجهة الشمالية لم يكن عشوائياً، بل ارتبط بتوجيه الهرم نحو الجهات الأصلية الأربع بدقة كبيرة، وهو ما يعكس معرفة المصريين القدماء بعلم الفلك والرصد. من هذا المدخل تبدأ الرحلة إلى داخل الهرم.',
+                  tag: 'حجر جيري — على ارتفاع ملحوظ من الأرض'
+                },
+                {
+                  num: '02', img: 'images/khufu_descending.jpg', reverse: true,
+                  title: 'الممر الهابط',
+                  body: 'أول عنصر معماري داخل الهرم: ممر ضيق يميل إلى أسفل بزاوية حادة نسبياً. يمتد داخل جسم الهرم ثم يستمر إلى داخل الصخر أسفل البناء. سقفه منخفض ومستقيم وبسيط يُجبر الداخل على الانحناء. جدرانه مستقيمة دون زخارف. صُمِّم ليقود إلى مستوى سفلي أعمق داخل الهرم.',
+                  tag: 'ضيق — سقف منخفض مستقيم — يُجبر على الانحناء'
+                },
+                {
+                  num: '03', img: 'images/khufu_subterranean.jpg', reverse: false,
+                  title: 'الحجرة غير المكتملة',
+                  body: 'في نهاية الممر الهابط تقع الحجرة التحتية المنحوتة في الصخر أسفل مستوى الأرض. تبدو أقل اكتمالاً من الحجرات العليا وشكلها بسيط وخشن نسبياً. يعتقد بعض الباحثين أنها كانت جزءاً من مرحلة أولى من التخطيط قبل تعديل المشروع لاحقاً. يحيط بها إحساس بالعمق والعزلة لأنها تقع بعيداً عن الأجزاء العلوية المنظمة.',
+                  tag: 'منحوتة في الصخر — سقف غير منتظم — مرحلة أولى'
+                },
+                {
+                  num: '04', img: 'images/khufu_ascending_start.jpg', reverse: true,
+                  title: 'بداية الممر الصاعد',
+                  body: 'قبل الوصول الكامل إلى نهاية الامتداد السفلي، يتفرع الممر الصاعد وهو من أهم عناصر التخطيط المعماري. يبدأ من نقطة اتصال داخلية ويتجه إلى أعلى داخل جسم الهرم. مساحته ضيقة نسبياً لكنه يؤدي إلى عناصر أكثر تعقيداً في الداخل. سقفه منخفض ومائل مع اتجاه الممر يتطلب حركة حذرة.',
+                  tag: 'انتقال من السفلي — ضيق — يؤدي لقلب الهرم'
+                },
+                {
+                  num: '05', img: 'images/khufu_queens_chamber.jpg', reverse: false,
+                  title: 'حجرة الملكة',
+                  body: 'تقع تقريباً في قلب الهرم وهي من أشهر الحجرات الداخلية. رغم اسمها لا يوجد دليل قاطع على أنها كانت مخصصة لدفن ملكة، بل يرى بعض الباحثين أن لها وظيفة رمزية أو شعائرية. تحتوي على تجويف أو فجوة في الجدار الشرقي ربما كان له دور ديني. أهم ما يميزها: سقفها الجمالوني المزدوج الميل الذي يرتفع من الجانبين ليلتقي في نقطة وسطية كالسقف المثلثي من الداخل.',
+                  tag: 'سقف جمالوني مثلثي — فجوة شرقية — وظيفة رمزية'
+                },
+                {
+                  num: '06', img: 'images/khufu_grand_gallery.jpg', reverse: true,
+                  title: 'البهو الكبير — Grand Gallery',
+                  body: 'من أروع الإنجازات المعمارية داخل الهرم. عند الانتقال إليه يختلف الإحساس المعماري تماماً: من ضيق الممرات وانخفاضها إلى فراغ داخلي شاهق ومنظم بعناية. الجوانب مصممة بشكل متدرج إلى الداخل كلما ارتفعنا، مما يخفف الضغط على الفراغ الداخلي ويعطيه مظهراً هندسياً مميزاً. السقف مرتفع للغاية مقارنة ببقية أجزاء الهرم ويُظهر براعة فائقة في التحكم في الأحمال.',
+                  tag: 'شاهق — جدران متدرجة — أروع هندسة داخل الهرم'
+                },
+                {
+                  num: '07', img: 'images/khufu_antechamber.jpg', reverse: false,
+                  title: 'الغرفة التمهيدية',
+                  body: 'في نهاية البهو الكبير توجد منطقة انتقالية صغيرة تعمل كفاصل معماري بين الممر الضخم المرتفع وبين حجرة الملك النهائية ذات الطابع الجنائزي الخاص. هذا الفضاء الانتقالي يُضفي على الزيارة تسلسلاً درامياً محكماً يُعدّ من أذكى عناصر التصميم الداخلي للهرم.',
+                  tag: 'انتقالية — تهيئة نفسية — بين البهو وحجرة الملك'
+                },
+                {
+                  num: '08', img: 'images/khufu_kings_chamber.jpg', reverse: true,
+                  title: 'حجرة الملك',
+                  body: 'أهم فراغ داخلي في الهرم كله، غالباً هي الحجرة الرئيسية المرتبطة بدفن الملك خوفو. شُيّدت من الجرانيت الأحمر القادم من أسوان، وهو أكثر صلابة من الحجر الجيري. سقفها مسطح أفقي من كتل جرانيتية ضخمة. تحتوي على تابوت حجري كبير. فوقها خمس حجرات تخفيف الضغط صُممت لصرف الأحمال الهائلة القادمة من كتل الهرم بعيداً عن السقف.',
+                  tag: 'جرانيت أحمر أسواني — تابوت — خمس حجرات ضغط فوقها'
+                },
+                {
+                  num: '09', img: 'images/solar_boat.jpg', reverse: false,
+                  title: 'مركب الشمس',
+                  body: 'اكتُشفت عام 1954م بجوار هرم خوفو في حفرة مختومة. يبلغ طولها 43 متراً وصُنعت من خشب الأرز اللبناني من 1224 قطعة. كانت مرتبطة بعقيدة رحلة الملك مع إله الشمس رع في العالم الآخر. يُعرض اليوم في متحف مخصص له بجوار الهرم مباشرةً. من أروع الاكتشافات الأثرية الخشبية في التاريخ.',
+                  tag: 'اكتُشفت 1954م — 43م طولاً — 1224 قطعة أرز لبناني'
+                }
+              ]
+            },
+            khafre: {
+              king: 'الملك خفرع',
+              kingTitle: 'خع إف رع | ḫˁ.f-Rˁ | الأسرة الرابعة | 2558–2532 ق.م',
+              kingDesc: 'ابن الملك خوفو، يُرجَّح أن أمه الملكة حتب حرس الثانية. حكم حوالي 26 سنة. اسمه يعني "متجلّي رع" أو "ظهر رع". بنى الهرم الثاني وارتبط اسمه بتمثال أبو الهول. تمثاله الشهير من حجر الديوريت محفوظ في المتحف المصري بالقاهرة ويُعدّ من روائع الفن المصري القديم.',
+              passages: [
+                {
+                  num: '01', img: 'images/khafre_entrance.jpg', reverse: false,
+                  title: 'مدخل هرم خفرع',
+                  body: 'يحتوي هرم خفرع على نظام داخلي أبسط نسبياً من نظام الهرم الأكبر. يبدأ الدخول من مدخل في الجهة الشمالية وفق النمط الشائع في الأهرامات الملكية. من هذا المدخل يبدأ المسار الداخلي الذي يقود عبر ممرات مائلة وأفقية إلى حجرة الدفن. يمنح الزائر إحساساً بالانتقال التدريجي من العالم الخارجي المفتوح إلى فضاء داخلي أكثر عزلة وهيبة.',
+                  tag: 'مدخل شمالي — زاوية 26 درجة — أبسط من خوفو'
+                },
+                {
+                  num: '02', img: 'images/khafre_descending.jpg', reverse: true,
+                  title: 'الممر الهابط والأفقي',
+                  body: 'أول مرحلة في التخطيط الداخلي هي الممر الهابط، ممر ضيق ينحدر داخل جسم الهرم بزاوية تقارب 26 درجة. يمنح الزائر إحساساً بالانتقال التدريجي والرهبة. بعد اجتياز الجزء المنحدر ينتقل إلى ممر أفقي يمثل مرحلة انتقالية بين الحركة الهابطة وحجرة الدفن النهائية.',
+                  tag: 'هابط 26° ثم أفقي — إحساس بالرهبة والغموض'
+                },
+                {
+                  num: '03', img: 'images/khafre_burial.jpg', reverse: false,
+                  title: 'حجرة الدفن',
+                  body: 'في نهاية المسار الداخلي تقع حجرة الدفن، أهم فراغ معماري داخل الهرم. تقع تقريباً في منتصف الهرم. حجرة رئيسية ذات طابع بسيط وقوي، بُنيت بعناية لتتحمل الثقل الهائل فوقها. تضم تابوتاً من الجرانيت مثبتاً في الأرضية. يغلب على تصميمها الطابع الوظيفي والرمزي. سقفها جمالوني مثلثي من الحجر الجيري يساعد على توزيع الأحمال.',
+                  tag: 'سقف جمالوني جيري — تابوت جرانيت مثبت — 2558 ق.م'
+                }
+              ],
+              complex: [
+                {
+                  img: 'images/khafre_valley_temple1.jpg',
+                  title: 'معبد الوادي — قاعة الأعمدة',
+                  desc: 'الأفضل حفظاً من عصر الدولة القديمة. كان نقطة استقبال الجثمان الملكي وبداية الطقوس الجنائزية. شُيّد بكتل حجرية ضخمة واستُخدم فيه الجرانيت والمرمر. اكتُشف فيه تمثال خفرع الشهير من الديوريت. يُعتقد أنه كان يحتوي على 23 تمثالاً للملك خفرع.'
+                },
+                {
+                  img: 'images/khafre_valley_temple2.jpg',
+                  title: 'قاعة الأعمدة الداخلية',
+                  desc: 'القاعة الرئيسية في معبد الوادي تكشف عن دقة التخطيط المعماري. الأعمدة الجرانيتية الضخمة والأرضية المرمرية تُجسّد الفخامة الملكية. هذا الفضاء كان موضع أهم طقوس الاستقبال الجنائزي الملكي قبل الانتقال عبر الطريق الصاعد.'
+                },
+                {
+                  img: 'images/khafre_valley_exterior.jpg',
+                  title: 'الطريق الصاعد والمعبد الجنائزي',
+                  desc: 'الطريق الصاعد يربط بين معبد الوادي والمعبد الجنائزي، وكان من أهم المحاور الطقسية في المجموعة. ارتبط بنقل جثمان الملك ومرور المواكب الجنائزية. المعبد الجنائزي أمام الهرم مباشرة كان يضم فناءً كبيراً وقاعات أعمدة وخمس كوات لتماثيل ملكية.'
+                }
+              ]
+            },
+            menkaure: {
+              king: 'الملك منكاورع',
+              kingTitle: 'من-كاو-رع | mn-kꜢw-rꜥ | الأسرة الرابعة | 2532–2503 ق.م',
+              kingDesc: 'ابن خفرع وحفيد خوفو بحسب الأرجح في المصادر الحديثة. اسمه يُفهم على نحو قريب من "راسخة هي كاوات رع" أو "ثابتة هي قوى رع". توفي قبل اكتمال مجمعه، فاستُكمل بعض معابده بالطوب اللبن. ارتبطت مجمعته باكتشاف تماثيل الثلاثيات الرائعة للملك مع الإلهة حتحور ومعبودات الأقاليم.',
+              passages: [
+                {
+                  num: '01', img: 'images/menkaure_descending.jpg', reverse: false,
+                  title: 'الممر الهابط والحجرات الانتقالية',
+                  body: 'يحتوي هرم منكاورع على نظام داخلي يتكون من ممرات وحجرات متعددة تقود إلى حجرة الدفن. يبدأ المسار من المدخل الشمالي ثم يمر بعدة فراغات معمارية منها حجرة ذات زخارف تشبه واجهات القصور أو الألواح المقسمة، ثم حجرة أمامية ذات ست حنيات كبيرة. هذا التكوين يكشف عن درجة من التعقيد الداخلي تفوق البساطة التي قد توحي بها الهيئة الخارجية.',
+                  tag: 'مدخل شمالي — حجرات انتقالية مزخرفة — ست حنيات'
+                },
+                {
+                  num: '02', img: 'images/menkaure_causeway.jpg', reverse: true,
+                  title: 'الطريق الصاعد ومعبد الوادي',
+                  body: 'الطريق الصاعد يربط بين معبد الوادي والمعبد الجنائزي وكان من أهم المحاور الطقسية في المجموعة. توفي منكاورع قبل اكتمال مجمعه فنُفِّذ المعبد الجنائزي ومعبد الوادي بالطوب اللبن في مراحل الاستكمال بدلاً من الحجر الجيري المكسو بالجرانيت. ومع ذلك استمرت عبادة منكاورع قرابة 300 سنة بعد وفاته.',
+                  tag: 'استُكمل بالطوب اللبن — عبادة مستمرة 300 سنة'
+                },
+                {
+                  num: '03', img: 'images/menkaure_burial.jpg', reverse: false,
+                  title: 'حجرة الدفن والتابوت المفقود',
+                  body: 'في نهاية المسار الداخلي تقع حجرة الدفن، بُنيت بكتل كبيرة من الجرانيت. عُثر بها في العصر الحديث على تابوت حجري مزخرف نُقل لاحقاً وفُقد في البحر أثناء شحنه في القرن التاسع عشر. ثلاثة أهرامات فرعية تقع إلى الجنوب من الهرم الرئيسي يُرجَّح أن بعضها خُصص لدفن ملكات أو لوظائف شعائرية. تماثيل الثلاثيات المكتشفة في معبد الوادي من أروع ما أنتجه الفن المصري القديم.',
+                  tag: 'جرانيت — تابوت فُقد في البحر 1838م — ثلاثة أهرام فرعية'
+                }
+              ]
+            },
+            sphinx: {
+              king: 'تمثال أبو الهول',
+              kingTitle: 'حور-إم-أخت | حورختي | الأسرة الرابعة — 2500 ق.م',
+              kingDesc: 'أشهر آثار العالم وأحد أبرز رموز الحضارة المصرية القديمة. نُحت من صخرة جيرية واحدة: الطول 73 متراً، الارتفاع أكثر من 20 متراً، عرض الوجه 4م، عرض الكتفين 14م، طول الكف الأمامي 15م. يُنسب في الأغلب إلى الملك خفرع لموقعه أمام مجمعته الهرمية مباشرةً.',
+              desc: [
+                {
+                  title: 'سبب الإنشاء',
+                  text: 'كان الموقع في الأصل محجراً كبيراً للحجر الجيري استُخدم لاستخراج الأحجار اللازمة لبناء الأهرامات. بعد أعمال القطع بقيت كتلة صخرية ضخمة لم تكن مناسبة للبناء. يُعتقد أن مهندسي خفرع وجدوا أن شكلها الطبيعي يشبه أسداً رابضاً فقرروا نحتها وتحويلها إلى تمثال يمثل الملك في صورة أسد رمزاً للقوة والحماية والسيادة.'
+                },
+                {
+                  title: 'الملامح الفنية والرمزية',
+                  text: 'يتجه بوجهه نحو الشرق في مواجهة شروق الشمس. يحمل جسم أسد للدلالة على القوة. يرتدي غطاء الرأس الملكي النمس. كان يعلو رأسه تاج ملكي. كان له لحية ملكية سقطت مع الزمن. يُعتقد أن بعض أجزائه كانت مزيّنة بعناصر زخرفية مثل ريش الصقر وعقود حول الرقبة.'
+                },
+                {
+                  title: 'الرمال والكشف',
+                  text: 'على مدى آلاف السنين تعرّض أبو الهول لزحف الرمال الصحراوية حتى كان يُدفن بالكامل تقريباً ولا يظهر منه سوى الرأس. حُفر المنطقة المحيطة به بين 1926 و1936 لكشف جسمه بالكامل. حتى اليوم تستمر أعمال إزالة الرمال والصيانة.'
+                },
+                {
+                  title: 'قصة كسر الأنف ولوحة الحلم',
+                  text: 'تشير روايات تاريخية عربية إلى أن شخصاً يُعرف بصائم الدهر قام بتشويه وجه التمثال في القرن الخامس عشر الميلادي، وليس جنود نابليون كما شاع. أما لوحة الحلم فتروي أن الملك تحتمس الرابع رأى في المنام أن أبا الهول خاطبه ووعده بالملك إذا أزال الرمال عنه، فأمر بكشف التمثال وأقام لوحة الحلم بين كفّيه الأماميين تخليداً لهذه الرواية.'
+                },
+                {
+                  title: 'معبد أبو الهول وأهميته الدينية',
+                  text: 'يُنسب بناء معبد أبو الهول القريب من التمثال إلى الملك أمنحتب الثاني، ثم أضاف إليه ملوك آخرون مثل سيتي الأول ومرنبتاح أجزاء جديدة. عُثر حوله على لوحات تحمل رسوم آذان بشرية إشارة رمزية إلى اعتقاد المصريين أن الإله يسمع دعاءهم. في العصر اليوناني والروماني أصبح مقصداً للزوار وتركت فيه نقوش بأسماء الزائرين.'
+                }
+              ]
+            }
+          },
+          zh: {
+            khufu: {
+              king: '胡夫法老',
+              kingTitle: '赫纳姆-胡夫 | ẖnmw-ḫw=f-wj | 第四王朝 | 公元前2589–2566年',
+              kingDesc: '第四王朝最伟大的法老，斯奈夫鲁之子，其母为赫特普赫里斯王后。统治约23年。被誉为历史上最伟大的金字塔建造者。热衷于开发西奈半岛、努比亚和东部沙漠的矿山。其父斯奈夫鲁为金字塔建筑的发展奠定了基础，其子杰德夫拉在他去世后完成了部分建筑。',
+              passages: [
+                { num: '01', img: 'images/khufu_entrance.jpg', reverse: false, title: '北侧原始入口', body: '原始入口位于金字塔北侧，高于地面相当距离。选择北侧并非随意，而与金字塔精确朝向四个基本方向有关，体现了古埃及人对天文学和观测的深刻理解。从这个入口开始进入金字塔内部的旅程。', tag: '石灰岩 — 高于地面 — 精确朝向北方' },
+                { num: '02', img: 'images/khufu_descending.jpg', reverse: true, title: '下降通道', body: '金字塔内部第一个建筑元素：一条向下倾斜角度相当陡的狭窄通道。延伸穿过金字塔主体，然后继续进入建筑下方的岩石中。天花板低矮平直，进入者必须弯腰。墙壁平直无装饰，设计用于引导至金字塔内部更深的下层。', tag: '狭窄 — 低矮平直天花板 — 需要弯腰前行' },
+                { num: '03', img: 'images/khufu_subterranean.jpg', reverse: false, title: '未完成地下室', body: '下降通道尽头是位于地面以下的地下室，从岩石中雕凿而成。与上方房间相比显得不够完整，形状简单粗糙。一些研究者认为它是最初规划阶段的产物，后来项目有所修改。其深度和隔绝感令人印象深刻。', tag: '从岩石雕凿 — 不规则天花板 — 早期规划' },
+                { num: '04', img: 'images/khufu_ascending_start.jpg', reverse: true, title: '上升通道起点', body: '在到达下段终点之前，上升通道从内部路线分叉，是金字塔建筑规划中最重要的元素之一。从内部连接点开始，向上延伸进入金字塔主体。空间相对狭窄，但通向内部更复杂的结构。', tag: '从下层到主要区域的过渡 — 狭窄 — 核心' },
+                { num: '05', img: 'images/khufu_queens_chamber.jpg', reverse: false, title: '王后室', body: '位于金字塔中央位置，是最著名的内部房间之一。尽管名称如此，没有确凿证据表明它确实用于王后安葬，一些研究者认为它具有象征性或仪式性功能。东墙有一个壁龛，可能具有宗教意义。最显著特征：其山墙形三角形天花板从两侧向上倾斜在中央点相交，形如室内三角形屋顶。', tag: '山墙形三角天花板 — 东侧壁龛 — 象征功能' },
+                { num: '06', img: 'images/khufu_grand_gallery.jpg', reverse: true, title: '大画廊 — Grand Gallery', body: '金字塔内最令人叹为观止的建筑成就之一。进入时建筑感受完全改变：从狭窄低矮的通道转变为高耸而精心组织的内部空间。两侧按阶梯状向内倾斜以减轻内部空间的压力，呈现出独特的几何外观。天花板极高，展示出对荷载和空间的卓越控制能力。', tag: '高耸 — 阶梯状墙壁 — 金字塔内最壮观工程' },
+                { num: '07', img: 'images/khufu_antechamber.jpg', reverse: false, title: '前室', body: '在大画廊尽头有一个小型过渡区域，作为高大宽阔通道与最终墓室之间的建筑过渡空间。这一过渡区域使参观序列具有精心安排的戏剧性，被视为金字塔内部设计最精妙的元素之一。', tag: '过渡空间 — 大画廊与王室墓室之间' },
+                { num: '08', img: 'images/khufu_kings_chamber.jpg', reverse: true, title: '王室内室', body: '金字塔内最重要的内部空间，通常被认为是与胡夫法老安葬相关的主要房间。使用来自阿斯旺的红色花岗岩建造，比其他部分使用的石灰岩更为坚固。平顶由巨大花岗岩板组成。内有大型石棺。其上方有五个减压室，设计用于将巨大荷载从顶部石块引导远离主要天花板。', tag: '阿斯旺红色花岗岩 — 石棺 — 上方五个减压室' },
+                { num: '09', img: 'images/solar_boat.jpg', reverse: false, title: '太阳船', body: '1954年在胡夫金字塔旁的密封船坑中发现，长43米，由黎巴嫩雪松木制成，共1224块。与法老和太阳神拉在来世同行的信仰相关。今天在紧邻金字塔的专用博物馆中展出。是历史上最精彩的木质考古发现之一。', tag: '1954年发现 — 长43米 — 1224块黎巴嫩雪松木' }
+              ]
+            },
+            khafre: {
+              king: '卡夫拉法老',
+              kingTitle: '哈-艾夫-拉 | ḫˁ.f-Rˁ | 第四王朝 | 公元前2558–2532年',
+              kingDesc: '胡夫之子，其母被认为是赫特普赫里斯二世王后。统治约26年。其名意为"拉之显现"或"拉之升起"。建造了第二座金字塔，其名与狮身人面像相关。著名的闪绿岩雕像现藏于开罗埃及博物馆，被视为古埃及艺术的瑰宝。',
+              passages: [
+                { num: '01', img: 'images/khafre_entrance.jpg', reverse: false, title: '卡夫拉金字塔入口', body: '卡夫拉金字塔的内部系统比大金字塔相对简单，但仍是王室葬祭建筑的重要范例。入口在北侧，遵循王室金字塔的惯常模式。从入口开始的内部路线通过倾斜和水平通道通往墓室。给参观者一种从开放外部世界逐渐过渡到更隔绝庄严的内部空间的感受。', tag: '北侧入口 — 约26度倾角 — 比胡夫简单' },
+                { num: '02', img: 'images/khafre_descending.jpg', reverse: true, title: '下降通道与水平通道', body: '内部规划的第一阶段是下降通道，一条以约26度角向下延伸进入金字塔主体的狭窄通道。空气流通较少，行走需要谨慎缓慢。经过倾斜部分后转为水平通道，作为倾斜运动与最终墓室之间的过渡阶段，结构简单但在引导内部运动中发挥重要作用。', tag: '下降26° 后转水平 — 神秘与敬畏感' },
+                { num: '03', img: 'images/khafre_burial.jpg', reverse: false, title: '墓室', body: '内部路线的终点是墓室，金字塔内最重要的建筑空间。位于金字塔大约中央位置，是与卡夫拉法老安葬相关的核心空间。主房间设计简洁有力，精心建造以承受其上方的巨大重量。内有固定在地板中的花岗岩石棺。设计上功能性和象征性重于装饰。山墙形石灰岩三角天花板有助于分散荷载。', tag: '山墙形三角天花板 — 花岗岩石棺固定地板 — 公元前2558年' }
+              ],
+              complex: [
+                { img: 'images/khafre_valley_temple1.jpg', title: '河谷神庙 — 柱廊大厅', desc: '古王国时期保存最完好的河谷神庙。曾是接收王室遗体和开始葬祭仪式的场所。用巨大石块建造，使用花岗岩和大理石。在此发现了著名的卡夫拉闪绿岩雕像。据信曾存放23尊卡夫拉法老雕像。' },
+                { img: 'images/khafre_valley_temple2.jpg', title: '内部柱廊大厅', desc: '河谷神庙主殿揭示了建筑规划的精妙。巨大的花岗岩柱和大理石地板体现了王室的宏伟气魄。这一空间是最重要的王室葬祭接待仪式举行地，随后通过上升通道向上转移。' },
+                { img: 'images/khafre_valley_exterior.jpg', title: '上升通道与葬祭神庙', desc: '上升通道连接河谷神庙与葬祭神庙，是建筑群重要的仪式轴线，与转移王室遗体和举行葬祭游行相关。正对金字塔的葬祭神庙内有大型庭院、柱廊大厅和五个王室雕像壁龛。' }
+              ]
+            },
+            menkaure: {
+              king: '孟卡拉法老',
+              kingTitle: '门-考-拉 | mn-kꜢw-rꜥ | 第四王朝 | 公元前2532–2503年',
+              kingDesc: '最有可能是卡夫拉之子、胡夫之孙。其名被理解为"拉的力量永恒"或"拉的力量坚固"。在建筑群竣工前去世，部分神庙用泥砖完成。其建筑群与精美的三联组像相关，展示孟卡拉与哈托尔女神及各省神灵同立，是金字塔时代最精美的艺术品。',
+              passages: [
+                { num: '01', img: 'images/menkaure_descending.jpg', reverse: false, title: '下降通道与过渡室', body: '孟卡拉金字塔内部系统由通向墓室的多个通道和房间组成。路线从北侧入口开始，经过几个建筑空间，包括一间带有宫殿立面装饰或分格板图案的房间，以及一间有六个大壁龛的前室。这种布局揭示了内部复杂性超出外部简单外观所暗示的程度。', tag: '北侧入口 — 装饰过渡室 — 六壁龛前室' },
+                { num: '02', img: 'images/menkaure_causeway.jpg', reverse: true, title: '上升通道与河谷神庙', body: '上升通道连接河谷神庙与葬祭神庙，是建筑群的主要仪式轴线。孟卡拉在建筑群竣工前去世，葬祭神庙和河谷神庙原本计划用覆盖花岗岩的大型石灰岩块建造，但实际上在完工阶段改用泥砖。尽管如此，对孟卡拉的崇拜在其死后持续约300年。', tag: '泥砖完工 — 崇拜持续约300年' },
+                { num: '03', img: 'images/menkaure_burial.jpg', reverse: false, title: '墓室与失落的石棺', body: '内部路线终点的墓室用大型花岗岩块建造。现代时期在此发现了装饰精美的石棺，后被运走，于19世纪海运过程中在海上沉没。主金字塔南侧有三座附属小金字塔，据信部分用于王后墓葬或仪式目的。在河谷神庙发现的三联组像是古埃及艺术最精美的作品之一。', tag: '花岗岩 — 装饰石棺1838年沉海 — 三座附属小金字塔' }
+              ]
+            },
+            sphinx: {
+              king: '狮身人面像',
+              kingTitle: '地平线上的荷鲁斯 | 哈夫拉法老时期 | 约公元前2500年',
+              kingDesc: '世界上最著名的文物之一，古埃及文明最杰出的象征。从单块石灰岩雕凿：长73米，高逾20米，面宽4米，肩宽14米，前爪长15米。通常归属于哈夫拉法老，因其位于其金字塔建筑群正前方。',
+              desc: [
+                { title: '建造原因', text: '该地点原为开采金字塔和陵墓所需石材的大型采石场。切割作业后留下了一块不适合建筑的巨大岩石。据信卡夫拉的工程师发现其自然形状类似蹲伏的狮子，便决定将其雕凿成一座巨大雕像，以象征力量、保护和主权。' },
+                { title: '艺术与象征特征', text: '面朝东方直视日出。狮身象征力量。头戴王室头冠（奈姆斯）。曾戴王冠。曾有随时间脱落的王室胡须。据信部分曾饰有鹰羽和颈环等装饰元素。' },
+                { title: '沙土掩埋与发掘', text: '数千年来，狮身人面像屡遭沙漠流沙侵袭，几乎被完全掩埋，只露出头部。1926年至1936年间进行了重要发掘，清除沙土露出完整身体。至今仍持续进行除沙和维护工作。' },
+                { title: '鼻子破损与梦碑', text: '阿拉伯历史文献记载，一位名为"斋戒者"的人在15世纪破坏了雕像面部，并非如民间流传的拿破仑军队所为。梦碑讲述了图特摩斯四世在雕像阴影下小憩时梦见狮身人面像许诺赐予他王权（如果他清除其周围沙土），后来他在成为法老后履行了承诺，并竖立了梦碑以纪念这一神圣事件。' },
+                { title: '狮身人面像神庙与宗教意义', text: '狮身人面像附近的神庙据信由阿蒙霍特普二世建造，后来塞提一世和美伦普塔赫等法老添加了新的部分。周围发现了刻有人耳图案的石碑，象征性地指向古埃及人相信神灵倾听人们祈祷的信仰。在希腊罗马时代，该地点成为著名的参观和冥想场所，访客留下了自己的名字和铭文。' }
+              ]
+            }
+          }
+        },
+        gallery: [
+          'images/khufu_aerial.jpg',
+          'images/khafre_valley_exterior.jpg',
+          'images/sphinx_wide.jpg'
+        ]
+      }
+    ];
+
+    const civs = [
+      { glyph: '𓇯', name: { ar: 'مصر الفرعونية', zh: '法老时代埃及' }, era: { ar: '3100 – 30 ق.م', zh: '公元前3100–30年' }, desc: { ar: 'أرست الحضارة المصرية القديمة أسس العلوم والطب والرياضيات وبنت آثاراً لا تزال تُبهر العالم بعد آلاف السنين. من الفراعنة إلى الكتابة الهيروغليفية، تركت إرثاً لا يُضاهى في تاريخ البشرية.', zh: '古埃及文明奠定了科学、医学和数学的基础，建造了数千年后仍令世界叹为观止的纪念碑。从法老到象形文字，留下了人类历史上无与伦比的遗产。' }, sites: { ar: ['أهرامات الجيزة', 'الكرنك', 'أبو سمبل'], zh: ['吉萨金字塔', '卡纳克神庙', '阿布辛贝'] } },
+      { glyph: '𓉐', name: { ar: 'بلاد الرافدين', zh: '美索不达米亚' }, era: { ar: '3500 – 539 ق.م', zh: '公元前3500–539年' }, desc: { ar: 'بين نهري دجلة والفرات وُلدت أولى الكتابات وأقدم القوانين وأعظم المدن. السومريون والأكاديون والبابليون والآشوريون شكّلوا ملامح الحضارة الإنسانية الأولى.', zh: '在底格里斯河和幼发拉底河之间诞生了最早的文字、最古老的法律和最伟大的城市。苏美尔人、阿卡德人、巴比伦人和亚述人塑造了人类文明的最初面貌。' }, sites: { ar: ['بابل', 'أور', 'نينوى'], zh: ['巴比伦', '乌尔', '尼尼微'] } },
+      { glyph: '𓊪', name: { ar: 'اليونان القديمة', zh: '古希腊' }, era: { ar: '800 – 31 ق.م', zh: '公元前800–31年' }, desc: { ar: 'منحت الحضارة الإغريقية العالم الديمقراطية والفلسفة والمسرح والأولمبياد. أفلاطون وأرسطو وسقراط أسسوا التفكير الغربي، بينما بنى معماريوهم روائع لا تزال تُلهم.', zh: '希腊文明赋予了世界民主、哲学、戏剧和奥林匹克运动会。柏拉图、亚里士多德和苏格拉底奠定了西方思想的基础，而其建筑师们建造的杰作至今仍启迪人心。' }, sites: { ar: ['البارثينون', 'دلفي', 'أوليمبيا'], zh: ['帕特农神庙', '德尔菲', '奥林匹亚'] } },
+      { glyph: '𓋴', name: { ar: 'الحضارة الإسلامية', zh: '伊斯兰文明' }, era: { ar: '622 – 1600 م', zh: '622–1600年' }, desc: { ar: 'في عصرها الذهبي، أضاءت الحضارة الإسلامية العالم بعلوم الفلك والطب والرياضيات والعمارة. من بغداد إلى الأندلس، بنى المسلمون مراكز علمية وتحفاً معمارية لا تزال تُبهر.', zh: '在黄金时代，伊斯兰文明以天文学、医学、数学和建筑学照亮了世界。从巴格达到安达卢西亚，穆斯林建造了至今仍令人叹为观止的学术中心和建筑杰作。' }, sites: { ar: ['الحمراء', 'آيا صوفيا', 'قبة الصخرة'], zh: ['阿尔罕布拉宫', '圣索非亚大教堂', '圆顶清真寺'] } },
+      { glyph: '𓐍', name: { ar: 'الحضارة الصينية', zh: '中华文明' }, era: { ar: '2100 ق.م — الحاضر', zh: '公元前2100年至今' }, desc: { ar: 'تُعدّ الحضارة الصينية من أقدم وأعرق الحضارات في التاريخ. اخترع الصينيون الورق والطباعة والبارود والبوصلة، وبنوا سور الصين العظيم وأبدعوا في الفنون لآلاف السنين.', zh: '中华文明是世界上最古老、最悠久的文明之一。中国人发明了纸张、印刷术、火药和指南针，建造了万里长城，并在数千年间在艺术方面取得了卓越成就。' }, sites: { ar: ['سور الصين العظيم', 'المدينة المحرمة', 'تيرا كوتا'], zh: ['万里长城', '故宫', '兵马俑'] } },
+      { glyph: '𓎼', name: { ar: 'حضارة الإنكا والمايا', zh: '印加与玛雅文明' }, era: { ar: '2000 ق.م — 1500 م', zh: '公元前2000年—1500年' }, desc: { ar: 'في أمريكا قبل الكولومبية، بنت حضارتا الإنكا والمايا إمبراطوريات شاسعة بمعارف فلكية متقدمة ومعمار مبهر. ماتشو بيتشو وتشيتشن إيتزا شواهد على عبقريتهم الفريدة.', zh: '在前哥伦布时代的美洲，印加和玛雅文明建立了广阔的帝国，拥有先进的天文知识和令人叹为观止的建筑。马丘比丘和奇琴伊察是其独特天才的见证。' }, sites: { ar: ['ماتشو بيتشو', 'تشيتشن إيتزا', 'تيكال'], zh: ['马丘比丘', '奇琴伊察', '蒂卡尔'] } }
+    ];
+
+    const museums = [
+      { n: { ar: 'المتحف المصري بالقاهرة', zh: '开罗埃及博物馆' }, loc: { ar: 'القاهرة، مصر', zh: '埃及，开罗' }, desc: { ar: 'يضم أكبر مجموعة من الآثار المصرية القديمة في العالم، تتجاوز 120,000 قطعة أثرية، من بينها كنوز الفرعون توتنخامون الذهبية الشهيرة.', zh: '收藏世界上最大的古埃及文物藏品，超过120,000件文物，包括著名的图坦卡蒙金色宝藏。' }, tags: { ar: ['مصر القديمة', 'توتنخامون', 'المومياوات'], zh: ['古埃及', '图坦卡蒙', '木乃伊'] } },
+      { n: { ar: 'المتحف البريطاني', zh: '大英博物馆' }, loc: { ar: 'لندن، المملكة المتحدة', zh: '英国，伦敦' }, desc: { ar: 'من أكبر المتاحف في العالم، يضم ثمانية ملايين قطعة من حضارات الكرة الأرضية، من بينها حجر رشيد وآثار نينوى والقطع الرخامية للبارثينون.', zh: '世界上最大的博物馆之一，收藏来自全球文明的800万件文物，包括罗塞塔石碑、尼尼微文物和帕特农大理石雕塑。' }, tags: { ar: ['حجر رشيد', 'نينوى', 'متعدد الحضارات'], zh: ['罗塞塔石碑', '尼尼微', '多元文明'] } },
+      { n: { ar: 'متحف اللوفر', zh: '卢浮宫博物馆' }, loc: { ar: 'باريس، فرنسا', zh: '法国，巴黎' }, desc: { ar: 'أكبر متحف في العالم وأكثره زيارةً، يضم روائع مصرية ويونانية وإسلامية ورومانية. تتصدره تحفة ليوناردو دا فينشي الشهيرة "الموناليزا".', zh: '世界上最大、参观人数最多的博物馆，收藏埃及、希腊、伊斯兰和罗马艺术珍品。以达芬奇的名作《蒙娜丽莎》为镇馆之宝。' }, tags: { ar: ['فنون عالمية', 'الموناليزا', 'متعدد'], zh: ['世界艺术', '蒙娜丽莎', '多元'] } },
+      { n: { ar: 'المتحف الوطني الصيني', zh: '中国国家博物馆' }, loc: { ar: 'بكين، الصين', zh: '中国，北京' }, desc: { ar: 'أكبر متحف في العالم من حيث المساحة، يضم أكثر من 1.4 مليون قطعة أثرية تروي تاريخ الحضارة الصينية عبر خمسة آلاف عام متواصلة.', zh: '世界上面积最大的博物馆，收藏超过140万件文物，讲述中华文明5000年的连续历史。' }, tags: { ar: ['الحضارة الصينية', '5000 سنة', 'بكين'], zh: ['中华文明', '5000年', '北京'] } },
+      { n: { ar: 'متحف برلين — جزيرة المتاحف', zh: '柏林博物馆岛' }, loc: { ar: 'برلين، ألمانيا', zh: '德国，柏林' }, desc: { ar: 'تضم بوابة عشتار الأصلية من بابل وآثار مصرية نادرة ويونانية وبيزنطية. جُمّعت في جزيرة أثرية فريدة في قلب برلين مُدرجة في يونسكو.', zh: '收藏来自巴比伦的原版伊什塔尔门及珍贵的埃及、希腊和拜占庭文物。聚集于柏林市中心一座独特的考古岛上，已列入联合国教科文组织名录。' }, tags: { ar: ['بوابة عشتار', 'مصر', 'بابل'], zh: ['伊什塔尔门', '埃及', '巴比伦'] } },
+      { n: { ar: 'متحف الحضارة الإسلامية — الشارقة', zh: '沙迦伊斯兰文明博物馆' }, loc: { ar: 'الشارقة، الإمارات', zh: '阿联酋，沙迦' }, desc: { ar: 'أحد أبرز المتاحف المتخصصة في الفن والحضارة الإسلامية، يضم مخطوطات ومجوهرات وأسلحة وأعمالاً فنية من ذهبي الحضارة الإسلامية.', zh: '伊斯兰艺术和文明领域最杰出的博物馆之一，收藏来自伊斯兰文明黄金时代的手稿、珠宝、武器和艺术品。' }, tags: { ar: ['الإسلامية', 'مخطوطات', 'فنون'], zh: ['伊斯兰', '手稿', '艺术'] } }
+    ];
+
+    // ===== RENDER =====
+    function renderSites(filter = 'all') {
+      const l = currentLang;
+      const filtered = filter === 'all' ? sites : sites.filter(s => s.cat === filter);
+      const grid = document.getElementById('sitesGrid');
+      grid.innerHTML = filtered.map((s, i) => `
+    <div class="site-card${s.wide ? ' wide' : ''}${s.tall ? ' tall' : ''}" onclick="openDetail('${s.id}')">
       <img class="card-img" src="${s.heroImg}" alt="${typeof s.title === 'object' ? s.title[l] : s.title}" loading="lazy">
       <div class="card-overlay"></div>
       <span class="card-glyph">${s.glyph}</span>
@@ -667,68 +2645,72 @@ function renderSites(filter='all') {
         <h3 class="card-title">${typeof s.title === 'object' ? s.title[l] : s.title}</h3>
         <p class="card-loc">📍 ${typeof s.loc === 'object' ? s.loc[l] : s.loc}</p>
         <div class="card-meta">
-          ${s.meta.map(m=>`<div><div class="meta-v">${typeof m.v==='object'?m.v[l]:m.v}</div><div class="meta-l">${typeof m.l==='object'?m.l[l]:m.l}</div></div>`).join('')}
+          ${s.meta.map(m => `<div><div class="meta-v">${typeof m.v === 'object' ? m.v[l] : m.v}</div><div class="meta-l">${typeof m.l === 'object' ? m.l[l] : m.l}</div></div>`).join('')}
         </div>
       </div>
     </div>
   `).join('');
-}
+    }
 
-function renderCivs() {
-  const l = currentLang;
-  document.getElementById('civCards').innerHTML = civs.map(c=>`
+    function renderCivs() {
+      const l = currentLang;
+      document.getElementById('civCards').innerHTML = civs.map(c => `
     <div class="civ-card">
       <span class="civ-glyph">${c.glyph}</span>
       <div class="civ-name">${c.name[l]}</div>
       <div class="civ-era">${c.era[l]}</div>
       <p class="civ-desc">${c.desc[l]}</p>
-      <div class="civ-sites">${c.sites[l].map(s=>`<span class="civ-site-tag">${s}</span>`).join('')}</div>
+      <div class="civ-sites">${c.sites[l].map(s => `<span class="civ-site-tag">${s}</span>`).join('')}</div>
       <div class="civ-bar"></div>
     </div>
   `).join('');
-}
+    }
 
-function renderMuseums() {
-  const l = currentLang;
-  document.getElementById('museumList').innerHTML = museums.map((m,i)=>`
+    function renderMuseums() {
+      const l = currentLang;
+      document.getElementById('museumList').innerHTML = museums.map((m, i) => `
     <div class="museum-card">
-      <div class="museum-num">0${i+1}</div>
+      <div class="museum-num">0${i + 1}</div>
       <div class="museum-info">
         <div class="museum-name">${m.n[l]}</div>
         <div class="museum-loc">📍 ${m.loc[l]}</div>
         <p class="museum-desc">${m.desc[l]}</p>
-        <div>${m.tags[l].map(t=>`<span class="museum-tag">${t}</span>`).join('')}</div>
+        <div>${m.tags[l].map(t => `<span class="museum-tag">${t}</span>`).join('')}</div>
       </div>
     </div>
   `).join('');
-}
+    }
 
-function openDetail(id) {
-  const s = sites.find(x=>x.id===id);
-  const l = currentLang;
-  const t = T[l];
-  const overlay = document.getElementById('detailOverlay');
+    function openDetail(id) {
+      const s = sites.find(x => x.id === id);
+      const l = currentLang;
+      const t = T[l];
+      const overlay = document.getElementById('detailOverlay');
 
-  const tl      = typeof s.title==='object'?s.title[l]:s.title;
-  const era     = typeof s.era==='object'?s.era[l]:s.era;
-  const descTxt = typeof s.desc==='object'?s.desc[l]:s.desc;
-  const parts   = descTxt.split('\n\n');
-  const quoteTxt  = typeof s.quote==='object'?s.quote[l]:s.quote;
-  const quoteSrc  = typeof s.quoteSrc==='object'?s.quoteSrc[l]:s.quoteSrc;
-  const facts   = typeof s.facts==='object'?s.facts[l]:s.facts;
-  const info    = typeof s.info==='object'?s.info[l]:s.info;
-  const tl2     = typeof s.timeline==='object'?s.timeline[l]:s.timeline;
-  const places  = s.innerPlaces ? (s.innerPlaces[l]||s.innerPlaces) : null;
+      const tl = typeof s.title === 'object' ? s.title[l] : s.title;
+      const era = typeof s.era === 'object' ? s.era[l] : s.era;
+      const descTxt = typeof s.desc === 'object' ? s.desc[l] : s.desc;
+      const parts = descTxt.split('\n\n');
+      const quoteTxt = typeof s.quote === 'object' ? s.quote[l] : s.quote;
+      const quoteSrc = typeof s.quoteSrc === 'object' ? s.quoteSrc[l] : s.quoteSrc;
+      const facts = typeof s.facts === 'object' ? s.facts[l] : s.facts;
+      const info = typeof s.info === 'object' ? s.info[l] : s.info;
+      const tl2 = typeof s.timeline === 'object' ? s.timeline[l] : s.timeline;
+      const places = s.innerPlaces ? (s.innerPlaces[l] || s.innerPlaces) : null;
 
-  // Labels
-  const lbl = {
-    ar:{ desc:'تعريف بالمكان', arch:'الوصف المعماري والنقوش', places:'أهم الأماكن داخل الموقع',
-         video:'جولة مصورة', src:'المصادر' },
-    zh:{ desc:'地点介绍', arch:'建筑描述与铭文', places:'遗址内重要地点',
-         video:'视频导览', src:'参考资料' }
-  }[l];
+      // Labels
+      const lbl = {
+        ar: {
+          desc: 'تعريف بالمكان', arch: 'الوصف المعماري والنقوش', places: 'أهم الأماكن داخل الموقع',
+          video: 'جولة مصورة', src: 'المصادر'
+        },
+        zh: {
+          desc: '地点介绍', arch: '建筑描述与铭文', places: '遗址内重要地点',
+          video: '视频导览', src: '参考资料'
+        }
+      }[l];
 
-  document.getElementById('detailContent').innerHTML = `
+      document.getElementById('detailContent').innerHTML = `
     <div class="detail-hero">
       <img class="detail-hero-img" src="${s.heroImg}" alt="${tl}">
       <div class="detail-hero-overlay"></div>
@@ -741,11 +2723,11 @@ function openDetail(id) {
 
       <!-- STATS -->
       <div class="detail-stats">
-        ${s.stats.map(st=>`
+        ${s.stats.map(st => `
           <div class="stat-box">
             <span class="stat-icon">${st.icon}</span>
-            <span class="stat-value">${typeof st.v==='object'?st.v[l]:st.v}</span>
-            <span class="stat-label">${typeof st.l==='object'?st.l[l]:st.l}</span>
+            <span class="stat-value">${typeof st.v === 'object' ? st.v[l] : st.v}</span>
+            <span class="stat-label">${typeof st.l === 'object' ? st.l[l] : st.l}</span>
           </div>`).join('')}
       </div>
 
@@ -753,25 +2735,25 @@ function openDetail(id) {
       <div class="detail-grid">
         <div class="detail-description">
           <h3>${lbl.desc}</h3>
-          ${parts.map(p=>`<p>${p}</p>`).join('')}
+          ${parts.map(p => `<p>${p}</p>`).join('')}
           <div class="quote-block">
             <p class="quote-text">${quoteTxt}</p>
             <p class="quote-source">${quoteSrc}</p>
           </div>
           <h3>${t.amazing}</h3>
-          <ul class="detail-facts">${facts.map(f=>`<li>${f}</li>`).join('')}</ul>
+          <ul class="detail-facts">${facts.map(f => `<li>${f}</li>`).join('')}</ul>
         </div>
         <div class="detail-sidebar">
           <h3>${t.siteInfo}</h3>
-          <table class="info-table">${info.map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table>
+          <table class="info-table">${info.map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</table>
           <div class="timeline-section">
             <h3 style="margin-top:2rem">${t.timeline}</h3>
-            ${tl2.map(item=>`
+            ${tl2.map(item => `
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div>
-                  <div class="timeline-year">${item.y||item.year}</div>
-                  <div class="timeline-event">${item.e||item.event}</div>
+                  <div class="timeline-year">${item.y || item.year}</div>
+                  <div class="timeline-event">${item.e || item.event}</div>
                 </div>
               </div>`).join('')}
           </div>
@@ -782,13 +2764,146 @@ function openDetail(id) {
       ${places ? `
       <div class="detail-section-hd"><span class="detail-section-glyph">𓉐</span><h3>${lbl.places}</h3></div>
       <div class="detail-places-grid">
-        ${places.map(p=>`
+        ${places.map(p => `
           <div class="detail-place-card">
             <span class="detail-place-icon">${p.icon}</span>
             <div class="detail-place-title">${p.title}</div>
             <p class="detail-place-text">${p.text}</p>
           </div>`).join('')}
       </div>` : ''}
+
+      <!-- PYRAMID GROUPS (Giza only) -->
+      ${s.pyramidGroups ? (() => {
+          const groups = s.pyramidGroups[l];
+          const groupLbl = l === 'ar' ? 'المجموعات الهرمية الملكية الثلاث' : '三座王室金字塔建筑群';
+          return `
+      <div class="detail-section-hd"><span class="detail-section-glyph">𓇼</span><h3>${groupLbl}</h3></div>
+      <div class="pyramid-groups-wrap">
+        ${groups.map(g => `
+          <div class="pyramid-group-card">
+            <div class="pg-img-wrap">
+              <img src="${g.img}" class="pg-img" loading="lazy" alt="${g.king}">
+              <div class="pg-img-overlay"></div>
+              <div class="pg-king-badge">${g.king}</div>
+            </div>
+            <div class="pg-body">
+              <div class="pg-king-title">${g.kingTitle}</div>
+              <p class="pg-king-desc">${g.kingDesc}</p>
+              <div class="pg-elements">
+                ${g.elements.map(el => `
+                  <div class="pg-el">
+                    <span class="pg-el-name">◈ ${el.name}</span>
+                    <span class="pg-el-detail">${el.detail}</span>
+                  </div>`).join('')}
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>`;
+        })() : ''}
+
+      <!-- ARCH ELEMENTS GRID (Giza only) -->
+      ${s.archElements ? (() => {
+          const elems = s.archElements[l];
+          const archLbl = l === 'ar' ? 'العناصر المعمارية الثلاثة عشر للمجمع' : '建筑群13个建筑元素';
+          return `
+      <div class="detail-section-hd"><span class="detail-section-glyph">𓉐</span><h3>${archLbl}</h3></div>
+      <div class="arch-elements-grid">
+        ${elems.map(el => `
+          <div class="arch-el-card">
+            <div class="arch-el-num">${el.num}</div>
+            <div class="arch-el-icon">${el.icon}</div>
+            <div class="arch-el-title">${el.title}</div>
+            <p class="arch-el-desc">${el.desc}</p>
+          </div>`).join('')}
+      </div>`;
+        })() : ''}
+
+      <!-- PYRAMID PASSAGES DETAILED SECTION -->
+      ${s.pyramidPassages ? (() => {
+          const pp = s.pyramidPassages[l];
+          const lbls = {
+            ar: { title: 'التخطيط الداخلي التفصيلي للأهرامات', khufu: 'المجموعة الهرمية للملك خوفو — الهرم الأكبر', khafre: 'المجموعة الهرمية للملك خفرع — الهرم الثاني', menkaure: 'المجموعة الهرمية للملك منكاورع — الهرم الثالث', sphinx: 'تمثال أبو الهول — الحارس الصامت', passages: 'الممرات والحجرات الداخلية', complex: 'مجموعة المعابد والطريق الصاعد', sphinxSec: 'أبعاد ومعلومات' },
+            zh: { title: '金字塔详细内部规划', khufu: '胡夫法老金字塔建筑群 — 大金字塔', khafre: '卡夫拉法老金字塔建筑群 — 第二金字塔', menkaure: '孟卡拉法老金字塔建筑群 — 第三金字塔', sphinx: '狮身人面像 — 沉默的守护者', passages: '内部通道与墓室', complex: '神庙群与上升通道', sphinxSec: '尺寸与信息' }
+          }[l];
+
+          function renderKing(data) {
+            return `<div class="king-card">
+            <div class="king-seal">𓇼</div>
+            <div>
+              <div class="king-name">${data.king}</div>
+              <div class="king-title">${data.kingTitle}</div>
+              <p class="king-desc">${data.kingDesc}</p>
+            </div>
+          </div>`;
+          }
+
+          function renderPassages(passages) {
+            return `<div class="passage-list">${passages.map(p => `
+            <div class="passage-block${p.reverse ? ' reverse' : ''}">
+              <div class="passage-img-wrap">
+                <img class="passage-img" src="${p.img}" loading="lazy" alt="${p.title}">
+              </div>
+              <div class="passage-text-wrap">
+                <div class="passage-num">الممر ${p.num}</div>
+                <div class="passage-title">${p.title}</div>
+                <p class="passage-body">${p.body}</p>
+                <span class="passage-tag">${p.tag}</span>
+              </div>
+            </div>`).join('')}</div>`;
+          }
+
+          function renderComplex(items) {
+            return `<div class="complex-grid">${items.map(c => `
+            <div class="complex-card">
+              <div class="complex-img-wrap"><img class="complex-img" src="${c.img}" loading="lazy" alt="${c.title}"></div>
+              <div class="complex-body">
+                <div class="complex-title">${c.title}</div>
+                <p class="complex-desc">${c.desc}</p>
+              </div>
+            </div>`).join('')}</div>`;
+          }
+
+          function renderSphinx(data) {
+            return `<div class="sphinx-block">
+            <div class="sphinx-img-wrap"><img class="sphinx-img" src="images/sphinx_wide.jpg" loading="lazy" alt="${data.king}"></div>
+            <div class="sphinx-info">
+              ${data.desc.map(d => `<div class="sphinx-info-block"><div class="sphinx-info-title">${d.title}</div><p class="sphinx-info-text">${d.text}</p></div>`).join('')}
+            </div>
+          </div>`;
+          }
+
+          return `
+      <div class="detail-section-hd"><span class="detail-section-glyph">𓇼</span><h3>${lbls.title}</h3></div>
+
+      <div class="pyr-section">
+        <div class="pyr-section-hd"><span class="pyr-section-glyph">𓇼</span><div><h2>${lbls.khufu}</h2></div></div>
+        ${renderKing(pp.khufu)}
+        <div class="detail-section-hd" style="margin-top:1rem"><span class="detail-section-glyph">𓂀</span><h3>${lbls.passages}</h3></div>
+        ${renderPassages(pp.khufu.passages)}
+      </div>
+
+      <div class="pyr-section">
+        <div class="pyr-section-hd"><span class="pyr-section-glyph">𓇼</span><div><h2>${lbls.khafre}</h2></div></div>
+        ${renderKing(pp.khafre)}
+        <div class="detail-section-hd" style="margin-top:1rem"><span class="detail-section-glyph">𓂀</span><h3>${lbls.passages}</h3></div>
+        ${renderPassages(pp.khafre.passages)}
+        <div class="detail-section-hd" style="margin-top:1rem"><span class="detail-section-glyph">𓉐</span><h3>${lbls.complex}</h3></div>
+        ${renderComplex(pp.khafre.complex)}
+      </div>
+
+      <div class="pyr-section">
+        <div class="pyr-section-hd"><span class="pyr-section-glyph">𓇼</span><div><h2>${lbls.menkaure}</h2></div></div>
+        ${renderKing(pp.menkaure)}
+        <div class="detail-section-hd" style="margin-top:1rem"><span class="detail-section-glyph">𓂀</span><h3>${lbls.passages}</h3></div>
+        ${renderPassages(pp.menkaure.passages)}
+      </div>
+
+      <div class="pyr-section">
+        <div class="pyr-section-hd"><span class="pyr-section-glyph">𓁿</span><div><h2>${lbls.sphinx}</h2></div></div>
+        ${renderKing(pp.sphinx)}
+        ${renderSphinx(pp.sphinx)}
+      </div>`;
+        })() : ''}
 
       <!-- VIDEO -->
       ${s.videoSrc ? `
@@ -801,16 +2916,16 @@ function openDetail(id) {
 
       <!-- GALLERY -->
       <div class="detail-section-hd"><span class="detail-section-glyph">𓃀</span><h3>${t.gallery}</h3></div>
-      <div class="detail-gallery">${s.gallery.map(img=>`<img class="gallery-img" src="${img}" loading="lazy">`).join('')}</div>
+      <div class="detail-gallery">${s.gallery.map(img => `<img class="gallery-img" src="${img}" loading="lazy">`).join('')}</div>
 
     </div>
   `;
 
-  // inject extra CSS for new elements if not yet added
-  if (!document.getElementById('detail-extra-styles')) {
-    const style = document.createElement('style');
-    style.id = 'detail-extra-styles';
-    style.textContent = `
+      // inject extra CSS for new elements if not yet added
+      if (!document.getElementById('detail-extra-styles')) {
+        const style = document.createElement('style');
+        style.id = 'detail-extra-styles';
+        style.textContent = `
       .detail-section-hd { display:flex; align-items:center; gap:0.8rem; margin:2.5rem 0 1.2rem; padding-bottom:0.6rem; border-bottom:1px solid rgba(201,168,76,0.18); }
       .detail-section-glyph { font-size:1.3rem; color:var(--gold); }
       .detail-section-hd h3 { font-family:'Amiri',serif; font-size:1.4rem; color:var(--gold-light); }
@@ -821,128 +2936,160 @@ function openDetail(id) {
       .detail-place-title { font-family:'Amiri',serif; font-size:1.05rem; color:var(--gold-light); margin-bottom:0.5rem; }
       .detail-place-text { font-size:0.82rem; color:var(--sand-dark); line-height:1.85; }
       .detail-video-wrap { border:1px solid rgba(201,168,76,0.15); overflow:hidden; margin-bottom:0.5rem; }
+      /* ===== PYRAMID GROUPS ===== */
+      .pyramid-groups-wrap { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-bottom:0.5rem; }
+      .pyramid-group-card { background:var(--stone); border:1px solid rgba(201,168,76,0.12); overflow:hidden; transition:border-color 0.4s, transform 0.3s; }
+      .pyramid-group-card:hover { border-color:rgba(201,168,76,0.45); transform:translateY(-3px); }
+      .pg-img-wrap { position:relative; height:180px; overflow:hidden; }
+      .pg-img { width:100%; height:100%; object-fit:cover; filter:sepia(25%) brightness(0.75); transition:filter 0.5s, transform 0.5s; }
+      .pyramid-group-card:hover .pg-img { filter:sepia(10%) brightness(0.88); transform:scale(1.05); }
+      .pg-img-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(13,10,5,0.9),transparent 60%); }
+      .pg-king-badge { position:absolute; bottom:0.8rem; right:0.8rem; font-family:'Amiri',serif; font-size:1.1rem; color:var(--gold-light); text-shadow:0 1px 6px rgba(0,0,0,0.8); }
+      .pg-body { padding:1.2rem; }
+      .pg-king-title { font-size:0.7rem; color:var(--gold-dark); letter-spacing:0.12em; margin-bottom:0.6rem; border-bottom:1px solid rgba(201,168,76,0.12); padding-bottom:0.5rem; }
+      .pg-king-desc { font-size:0.82rem; color:var(--sand-dark); line-height:1.75; margin-bottom:1rem; }
+      .pg-elements { display:flex; flex-direction:column; gap:0.45rem; }
+      .pg-el { display:flex; flex-direction:column; gap:0.1rem; padding:0.45rem 0; border-bottom:1px solid rgba(201,168,76,0.06); }
+      .pg-el-name { font-size:0.8rem; color:var(--sand); }
+      .pg-el-detail { font-size:0.7rem; color:var(--gold-dark); letter-spacing:0.05em; }
+      /* ===== ARCH ELEMENTS 13 ===== */
+      .arch-elements-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.9rem; margin-bottom:0.5rem; }
+      .arch-el-card { background:var(--stone); border:1px solid rgba(201,168,76,0.1); border-top:2px solid var(--gold-dark); padding:1.1rem; position:relative; transition:border-color 0.3s, transform 0.3s; }
+      .arch-el-card:hover { border-color:rgba(201,168,76,0.4); border-top-color:var(--gold); transform:translateY(-2px); }
+      .arch-el-num { position:absolute; top:0.7rem; left:0.8rem; font-size:0.65rem; color:rgba(201,168,76,0.35); letter-spacing:0.15em; font-family:'Amiri',serif; }
+      html[data-lang="ar"] .arch-el-num { left:auto; right:0.8rem; }
+      .arch-el-icon { font-size:1.5rem; display:block; margin-bottom:0.5rem; text-align:center; }
+      .arch-el-title { font-family:'Amiri',serif; font-size:0.95rem; color:var(--gold-light); margin-bottom:0.4rem; text-align:center; }
+      .arch-el-desc { font-size:0.75rem; color:var(--sand-dark); line-height:1.7; text-align:center; }
+      @media(max-width:900px){
+        .pyramid-groups-wrap { grid-template-columns:1fr; }
+        .pg-img-wrap { height:220px; }
+      }
       @media(max-width:700px){
         .detail-places-grid { grid-template-columns:1fr 1fr; }
+        .arch-elements-grid { grid-template-columns:repeat(2,1fr); }
       }
       @media(max-width:480px){
         .detail-places-grid { grid-template-columns:1fr; }
+        .arch-elements-grid { grid-template-columns:1fr 1fr; }
       }
     `;
-    document.head.appendChild(style);
-  }
+        document.head.appendChild(style);
+      }
 
-  overlay.classList.add('active');
-  overlay.scrollTop = 0;
-  document.body.style.overflow = 'hidden';
-}
-
-function closeDetail() {
-  document.getElementById('detailOverlay').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// ===== SECTION NAV =====
-function showSection(name) {
-  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
-  document.getElementById('sec-'+name).classList.add('active');
-  document.querySelectorAll('.nav-link').forEach(a=>a.classList.remove('active'));
-  const idx = {home:0,civs:1,museums:2,about:3}[name];
-  document.querySelectorAll('.nav-link')[idx]?.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-  // trigger fade-ins
-  setTimeout(()=>{
-    document.querySelectorAll('#sec-'+name+' .fade-in').forEach(el=>el.classList.add('visible'));
-  },100);
-  if(name==='civs') renderCivs();
-  if(name==='museums') renderMuseums();
-}
-
-// ===== LANGUAGE =====
-function setLang(lang) {
-  currentLang = lang;
-  document.documentElement.setAttribute('data-lang', lang);
-  document.documentElement.setAttribute('lang', lang);
-  document.documentElement.setAttribute('dir', lang==='ar'?'rtl':'ltr');
-
-  document.querySelectorAll('.lang-btn').forEach(b=>{
-    b.classList.toggle('active', b.textContent.trim()===(lang==='ar'?'عربي':'中文'));
-  });
-
-  // Update logo
-  document.getElementById('logo-text').textContent = lang==='ar'?'أثـر':'遗 迹';
-  document.getElementById('logo-sub').textContent = lang==='ar'?'حضارات خالدة':'永恒的文明';
-
-  // Update nav links
-  document.querySelectorAll('[data-ar]').forEach(el=>{
-    if(el.tagName==='A'||el.classList.contains('nav-link')) {
-      el.textContent = lang==='ar'?el.dataset.ar:el.dataset.zh;
+      overlay.classList.add('active');
+      overlay.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
     }
-  });
 
-  // Update all data-ar / data-zh elements
-  document.querySelectorAll('[data-ar]').forEach(el=>{
-    if(el.tagName!=='BUTTON') {
-      el.textContent = lang==='ar'?el.dataset.ar:el.dataset.zh;
+    function closeDetail() {
+      document.getElementById('detailOverlay').classList.remove('active');
+      document.body.style.overflow = '';
     }
-  });
 
-  // Filter buttons
-  document.querySelectorAll('.filter-btn').forEach(b=>{
-    b.textContent = lang==='ar'?b.dataset.ar:b.dataset.zh;
-  });
+    // ===== SECTION NAV =====
+    function showSection(name) {
+      document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('sec-' + name).classList.add('active');
+      document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+      const idx = { home: 0, civs: 1, museums: 2, about: 3 }[name];
+      document.querySelectorAll('.nav-link')[idx]?.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // trigger fade-ins
+      setTimeout(() => {
+        document.querySelectorAll('#sec-' + name + ' .fade-in').forEach(el => el.classList.add('visible'));
+      }, 100);
+      if (name === 'civs') renderCivs();
+      if (name === 'museums') renderMuseums();
+    }
 
-  // Footer
-  document.getElementById('footer-left').textContent = lang==='ar'?'© 2024 أثر — جميع الحقوق محفوظة':'© 2024 Athar — 版权所有';
-  document.getElementById('footer-right').textContent = lang==='ar'?'صُنع بشغف للحضارة':'为文明而生';
+    // ===== LANGUAGE =====
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
-  // Re-render grid
-  const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter||'all';
-  renderSites(activeFilter);
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.classList.toggle('active', b.textContent.trim() === (lang === 'ar' ? 'عربي' : '中文'));
+      });
 
-  // Re-render current section
-  const activeSec = document.querySelector('.page-section.active')?.id?.replace('sec-','');
-  if(activeSec==='civs') renderCivs();
-  if(activeSec==='museums') renderMuseums();
-}
+      // Update logo
+      document.getElementById('logo-text').textContent = lang === 'ar' ? 'أثـر' : '遗 迹';
+      document.getElementById('logo-sub').textContent = lang === 'ar' ? 'حضارات خالدة' : '永恒的文明';
 
-// ===== INIT =====
-renderSites();
+      // Update nav links
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        if (el.tagName === 'A' || el.classList.contains('nav-link')) {
+          el.textContent = lang === 'ar' ? el.dataset.ar : el.dataset.zh;
+        }
+      });
 
-// Filter
-document.getElementById('filterBar').addEventListener('click', e=>{
-  const btn = e.target.closest('.filter-btn');
-  if(!btn) return;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderSites(btn.dataset.filter);
-});
+      // Update all data-ar / data-zh elements
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        if (el.tagName !== 'BUTTON') {
+          el.textContent = lang === 'ar' ? el.dataset.ar : el.dataset.zh;
+        }
+      });
 
-// Cursor
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e=>{ cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
-document.addEventListener('click', ()=>{ cursor.style.transform='translate(-50%,-50%) scale(0.7)'; setTimeout(()=>cursor.style.transform='',150); });
+      // Filter buttons
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.textContent = lang === 'ar' ? b.dataset.ar : b.dataset.zh;
+      });
 
-// Hover cursor
-document.addEventListener('mouseover', e=>{
-  if(e.target.closest('a,button,.site-card,.filter-btn,.gallery-img,.civ-card,.museum-card')) cursor.classList.add('hover');
-  else cursor.classList.remove('hover');
-});
+      // Footer
+      document.getElementById('footer-left').textContent = lang === 'ar' ? '© 2024 أثر — جميع الحقوق محفوظة' : '© 2024 Athar — 版权所有';
+      document.getElementById('footer-right').textContent = lang === 'ar' ? 'صُنع بشغف للحضارة' : '为文明而生';
 
-// Scroll effects
-const header = document.getElementById('mainHeader');
-window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>60));
+      // Re-render grid
+      const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+      renderSites(activeFilter);
 
-// Scroll animations
-const obs = new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }),{threshold:0.1});
-document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+      // Re-render current section
+      const activeSec = document.querySelector('.page-section.active')?.id?.replace('sec-', '');
+      if (activeSec === 'civs') renderCivs();
+      if (activeSec === 'museums') renderMuseums();
+    }
 
-// Hero CTA
-document.querySelector('.hero-cta')?.addEventListener('click', e=>{
-  e.preventDefault();
-  document.getElementById('sites').scrollIntoView({behavior:'smooth'});
-});
+    // ===== INIT =====
+    renderSites();
 
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDetail(); });
-</script>
+    // Filter
+    document.getElementById('filterBar').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderSites(btn.dataset.filter);
+    });
+
+    // Cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+    document.addEventListener('click', () => { cursor.style.transform = 'translate(-50%,-50%) scale(0.7)'; setTimeout(() => cursor.style.transform = '', 150); });
+
+    // Hover cursor
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest('a,button,.site-card,.filter-btn,.gallery-img,.civ-card,.museum-card')) cursor.classList.add('hover');
+      else cursor.classList.remove('hover');
+    });
+
+    // Scroll effects
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+    // Scroll animations
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    // Hero CTA
+    document.querySelector('.hero-cta')?.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('sites').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+  </script>
 </body>
+
 </html>
